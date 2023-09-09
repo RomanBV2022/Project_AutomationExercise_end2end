@@ -17,7 +17,7 @@ public class HomePage {
     }
 
     //Locators
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[@href=\"/login\"]")
     WebElement login;
 
 
@@ -27,9 +27,20 @@ public class HomePage {
         driver.get("http://automationexercise.com");
     }
 
+    public String notLogged() {
+        return login.getText();
+    }
+
     public void clickLogin() {
         login.click();
     }
+
+
+
+
+
+
+
 
 
     public void tearDown() {
