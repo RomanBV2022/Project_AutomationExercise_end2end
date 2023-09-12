@@ -1,40 +1,30 @@
 package org.example.pages;
 
 
+
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-
-    final WebDriver driver;
-
-    //constructor
+    WebDriver driver;
+    public String baseUrl = "https://automationexercise.com/";
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    //Locators
-    @FindBy(xpath = "")
-    WebElement login;
-
-
-    //Methods
-
     public void goToHomePage() {
-        driver.get("http://automationexercise.com");
+        driver.get(baseUrl);
     }
-
-    public void clickLogin() {
-        login.click();
+    public String urlCurrentGet(){
+        return driver.getCurrentUrl();
     }
-
-
-    public void tearDown() {
-        driver.quit();
-    }
-
-
 }
+
+
+
+
+
+
+
