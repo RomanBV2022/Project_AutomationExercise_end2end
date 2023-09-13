@@ -1,6 +1,6 @@
 package org.example.pages;
 
-//import org.apache.commons.compress.archivers.zip.X000A_NTFS;
+import org.apache.commons.compress.archivers.zip.X000A_NTFS;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,7 +59,18 @@ public class SignUpPage {
 
 
     //Methods
-
+//    public void addGender() {
+//        genderMale.click();
+//    }
+//
+//    public void addPassword(String password) {
+//        this.password.sendKeys(password);
+//    }
+//
+//    public void addDay(int day) {
+//        days.sendKeys(Integer.toString(day));
+//
+//    }
 
     public void addAccountInformation(String password, int day, int month, int year) {
         genderMale.click();
