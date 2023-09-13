@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- Maven properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
@@ -102,8 +104,6 @@
             <version>5.10.0</version>
             <scope>compile</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -135,5 +135,7 @@
 
         </plugins>
     </build>
+
+
 
 </project>
