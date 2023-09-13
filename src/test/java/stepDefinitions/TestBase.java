@@ -16,7 +16,7 @@ public class TestBase {
     public static WebDriver initialize() {
         System.out.println("Initialize  Web Driver");
         ChromeOptions ops = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "C:\\Disk D\\Java-Selenium\\Selenium_AutomationExercise\\src\\main\\resources\\chromedriverNew.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriverNew.exe");
         WebDriver driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

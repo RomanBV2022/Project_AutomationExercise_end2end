@@ -81,19 +81,23 @@ public class Steps {
     @When("I click to Continue button")
     public void i_click_to_continue_button() {
         accountCreated.clickButtonContinue();
-        accountCreated.clickDismissAdd();
-        driver.quit();
+        String url = driver.getCurrentUrl();
+        if (url.equals("https://automationexercise.com/account_created#google_vignette")) {
+            driver.get("https://automationexercise.com/account_created");
+            accountCreated.clickButtonContinue();
+            //accountCreated.clickDismissAdd();
+            //driver.quit();
 
+        }
     }
-
-    @Then("I am on HomePage logged like New User")
-    public void i_am_on_home_page_logged_like_new_user() {
+        @Then("I am on HomePage logged like New User")
+        public void i_am_on_home_page_logged_like_new_user () {
 //        System.out.println(accountCreated.showHomePage());
 //        System.out.println(accountCreated.showLoggedUser());
 //        Assertions.assertEquals(" Home", accountCreated.showHomePage());
 //        Assertions.assertEquals("Robert", accountCreated.showLoggedUser());
 
-    }
+        }
 
 
 }
