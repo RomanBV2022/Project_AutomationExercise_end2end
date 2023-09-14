@@ -49,7 +49,6 @@ public class Steps {
         loginPage = pageObjectManager.getLoginPage();
         accountCreated = pageObjectManager.getAccountCreated();
         signUpPage = pageObjectManager.getSignUpPage();
-        driver.getCurrentUrl();
     }
 
 
