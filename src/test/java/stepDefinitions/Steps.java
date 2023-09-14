@@ -37,8 +37,7 @@ public class Steps {
     }
     @After
     public void cleanArea(){
-        driver.close();
-        driver.quit();
+               driver.quit();
     }
 
 
