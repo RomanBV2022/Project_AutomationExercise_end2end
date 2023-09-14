@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 
 
 public class Steps {
-    WebDriver driver = null;
+    WebDriver driver;
     HomePage homePage;
     LoginPage loginPage;
     SignUpPage signUpPage;
@@ -23,13 +25,27 @@ public class Steps {
     PageObjectManager pageObjectManager;
 
     TestBase testBase = new TestBase();
+    @Before
+
+    public void setTestArea() {
+
+        driver = TestBase.initialize();
+        pageObjectManager = new PageObjectManager(driver);
+        homePage = pageObjectManager.getHomePage();
+        loginPage = pageObjectManager.getLoginPage();
+        signUpPage=pageObjectManager.getSignUpPage();
+        accountCreated = pageObjectManager.getAccountCreated();
+
+    }
+    @After
+    public void cleanArea(){
+        driver.close();
+        driver.quit();
+    }
 
 
     @Given("I am on HomePage")
     public void i_am_on_home_page() {
-        driver = testBase.initialize();
-        pageObjectManager = new PageObjectManager(driver);
-        homePage = pageObjectManager.getHomePage();
         homePage.goToHomePage();
 
     }
@@ -47,8 +63,6 @@ public class Steps {
 
     @Then("I create New user")
     public void i_create_new_user() {
-        pageObjectManager = new PageObjectManager(driver);
-        loginPage = pageObjectManager.getLoginPage();
         loginPage.createUser("Robert", "Bob808@gmail.com");
     }
 
@@ -59,8 +73,6 @@ public class Steps {
 
     @Then("I fill to registration form")
     public void i_fill_to_registration_form() {
-        pageObjectManager =new PageObjectManager(driver);
-        signUpPage=pageObjectManager.getSignUpPage();
         signUpPage.addAccountInformation("1234", 8, 9, 2023);
         signUpPage.addAddressInformation("Robert", "Kowalski", "ASD", "RedStreet12", "GreenStreet13","Alberta", "Ednomton", 17123, 172321155);
     }
@@ -72,8 +84,6 @@ public class Steps {
 
     @Then("New User Account was created")
     public void new_user_account_was_created() {
-        pageObjectManager = new PageObjectManager(driver);
-       accountCreated = pageObjectManager.getAccountCreated();
         System.out.println(accountCreated.confirmAccountCreated());
        Assertions.assertEquals("ACCOUNT CREATED!", accountCreated.confirmAccountCreated());
     }
@@ -85,17 +95,13 @@ public class Steps {
         if (url.equals("https://automationexercise.com/account_created#google_vignette")) {
             driver.get("https://automationexercise.com/account_created");
             accountCreated.clickButtonContinue();
-            //accountCreated.clickDismissAdd();
-            //driver.quit();
 
         }
     }
         @Then("I am on HomePage logged like New User")
         public void i_am_on_home_page_logged_like_new_user () {
-//        System.out.println(accountCreated.showHomePage());
-//        System.out.println(accountCreated.showLoggedUser());
-//        Assertions.assertEquals(" Home", accountCreated.showHomePage());
-//        Assertions.assertEquals("Robert", accountCreated.showLoggedUser());
+            Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
+            Assertions.assertEquals(homePage.loggedNameGet(),"Robert");
 
         }
 

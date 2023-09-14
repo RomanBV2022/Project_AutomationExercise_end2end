@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.security.PublicKey;
+
 public class HomePage {
 
     final WebDriver driver;
@@ -17,14 +19,19 @@ public class HomePage {
     }
 
     //Locators
-    @FindBy(xpath = "//a[@href=\"/login\"]")
+    @FindBy(xpath = "//a[@href='/login']")
     WebElement login;
-
+    @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a/b")
+    WebElement loggedName;
+    @FindBy(xpath = "//*[@href='/logout']")
+    WebElement logoutButton;
+    @FindBy(xpath = "//*[@href='/delete_account']" )
+    WebElement deleteAccount;
 
     //Methods
-
+        String baseUrl = "https://automationexercise.com/";
     public void goToHomePage() {
-        driver.get("http://automationexercise.com");
+        driver.get(baseUrl);
     }
 
     public String notLogged() {
@@ -35,17 +42,13 @@ public class HomePage {
         login.click();
     }
 
-
-
-
-
-
-
-
-
-    public void tearDown() {
-        driver.quit();
+    public String getBaseUrl() {
+        return baseUrl;
     }
+    public String loggedNameGet(){
+        return loggedName.getText();
+    }
+
 
 
 }

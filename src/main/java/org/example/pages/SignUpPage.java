@@ -18,6 +18,8 @@ public class SignUpPage {
     //locators
     @FindBy(xpath = "//input[@id=\"id_gender1\"]")
     WebElement genderMale;
+    @FindBy(xpath = "//*[@data-qa='name']")
+    WebElement userName;
     @FindBy(xpath = "//input[@data-qa=\"password\"]")
     WebElement password;
     @FindBy(xpath = "//select[@id=\"days\"]")
@@ -93,6 +95,11 @@ public class SignUpPage {
 
     public void clickCreateAccount() {
         buttonCreateAccount.click();
+    }
+
+    private String name;
+    public String getName(){
+        return userName.getText();
     }
 
 
