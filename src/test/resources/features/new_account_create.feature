@@ -5,7 +5,7 @@ Feature: Automation end2end tests   to verify users
   I want login to my account
   So that I can access the website's features
 
-#Background: Browser start and navigate to BASE_URL
+Background: Browser start and navigate to BASE_URL
 
 #  Scenario: Create new account
 #    Then  Click on 'Signup / Login' button
