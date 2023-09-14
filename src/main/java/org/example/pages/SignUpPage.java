@@ -1,6 +1,6 @@
 package org.example.pages;
 
-import org.apache.commons.compress.archivers.zip.X000A_NTFS;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +18,8 @@ public class SignUpPage {
     //locators
     @FindBy(xpath = "//input[@id=\"id_gender1\"]")
     WebElement genderMale;
+    @FindBy(xpath = "//*[@data-qa='name']")
+    WebElement userName;
     @FindBy(xpath = "//input[@data-qa=\"password\"]")
     WebElement password;
     @FindBy(xpath = "//select[@id=\"days\"]")

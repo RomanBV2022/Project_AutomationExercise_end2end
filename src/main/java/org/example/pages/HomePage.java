@@ -33,7 +33,7 @@ public class HomePage {
 
     //Methods
 
-    public  void goToHomePage() {
+    public void goToHomePage() {
         driver.get("http://automationexercise.com");
     }
 

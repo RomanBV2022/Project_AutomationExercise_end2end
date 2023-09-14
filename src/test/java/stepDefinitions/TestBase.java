@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
     public WebDriver driver;
 
-    @Before
     public static WebDriver initialize() {
         //For use driver in src\\main\\resources\\ uncomment next 4 string
 
