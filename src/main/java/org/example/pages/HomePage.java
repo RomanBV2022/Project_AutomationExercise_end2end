@@ -63,6 +63,9 @@ public class HomePage {
     public String checkNameUser() {
         return nameUser.getText();
     }
+    public void deleteAccount(){
+        deleteAccount.click();
+    }
 
     public void clickLogOut() {
         logOut.click();

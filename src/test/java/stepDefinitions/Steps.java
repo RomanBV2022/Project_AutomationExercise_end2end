@@ -40,7 +40,11 @@ public class Steps {
     }
 
     @Before
-    public void uploadPageObjects() {
+
+    public void setTestArea() {
+
+        driver = TestBase.initialize();
+        pageObjectManager = new PageObjectManager(driver);
         homePage = pageObjectManager.getHomePage();
         loginPage = pageObjectManager.getLoginPage();
         accountCreated = pageObjectManager.getAccountCreated();
@@ -295,5 +299,13 @@ public class Steps {
 
 
 
+    @When("User Click Delete Account button")
+    public void userClickDeleteAccountButton() {
+        homePage.deleteAccount();
+    }
+    @Then("User Account was Deleted")
+    public void userAccountWasDeleted() {
+        accountDelete.accDeleteConfirm();
+    }
 
 }
