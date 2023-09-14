@@ -48,6 +48,9 @@ public class HomePage {
     public String loggedNameGet(){
         return loggedName.getText();
     }
+    public void deleteAccount(){
+        deleteAccount.click();
+    }
 
 
 

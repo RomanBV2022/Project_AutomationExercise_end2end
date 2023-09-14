@@ -7,10 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.managers.PageObjectManager;
-import org.example.pages.AccountCreated;
-import org.example.pages.HomePage;
-import org.example.pages.LoginPage;
-import org.example.pages.SignUpPage;
+import org.example.pages.*;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
@@ -21,7 +18,7 @@ public class Steps {
     LoginPage loginPage;
     SignUpPage signUpPage;
     AccountCreated accountCreated;
-
+    AccountDelete accountDelete;
     PageObjectManager pageObjectManager;
 
     TestBase testBase = new TestBase();
@@ -35,6 +32,7 @@ public class Steps {
         loginPage = pageObjectManager.getLoginPage();
         signUpPage=pageObjectManager.getSignUpPage();
         accountCreated = pageObjectManager.getAccountCreated();
+        accountDelete = pageObjectManager.getAccountDelete();
 
     }
     @After
@@ -105,5 +103,13 @@ public class Steps {
 
         }
 
+    @When("User Click Delete Account button")
+    public void userClickDeleteAccountButton() {
+        homePage.deleteAccount();
+    }
+    @Then("User Account was Deleted")
+    public void userAccountWasDeleted() {
+        accountDelete.accDeleteConfirm();
+    }
 
 }
