@@ -23,7 +23,6 @@ public class Steps {
 
     TestBase testBase = new TestBase();
     @Before
-
     public void setTestArea() {
 
         driver = TestBase.initialize();
@@ -37,7 +36,7 @@ public class Steps {
     }
     @After
     public void cleanArea(){
-               driver.quit();
+        driver.quit();
     }
 
 
@@ -95,12 +94,12 @@ public class Steps {
 
         }
     }
-        @Then("I am on HomePage logged like New User")
-        public void i_am_on_home_page_logged_like_new_user () {
-            Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
-            Assertions.assertEquals(homePage.loggedNameGet(),"Robert");
+    @Then("I am on HomePage logged like New User")
+    public void i_am_on_home_page_logged_like_new_user () {
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
+        Assertions.assertEquals(homePage.loggedNameGet(),"Robert");
 
-        }
+    }
 
     @When("User Click Delete Account button")
     public void userClickDeleteAccountButton() {
