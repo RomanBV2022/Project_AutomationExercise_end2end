@@ -1,6 +1,8 @@
-package org.example.stepDefinitions;
+package tests.stepDefinitions;
 
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
@@ -16,22 +18,18 @@ import org.junit.jupiter.api.Assertions;
 public class StepsCreateNewAccount {
 
 
-    WebDriver driver;
+    static WebDriver driver;
 
 
     HomePage homePage;
     HeaderComponent headerComponent;
     LoginPage loginPage;
     SignupPage signupPage;
-    AccountCreateMassage accountCreateMassage;
+    CreateAccountMassage createAccountMassage;
+    DeleteAccountMasage deleteAccountMasage;
+    PageObjectManager pageObjectManager;
 
-    PageObjectManager pageObjectManager;// = new PageObjectManager(driver);
 
-    @BeforeAll
-    void setDriver(){
-//        driver = WebDriverSetup.initializeDriver();
-//        pageObjectManager = new PageObjectManager(driver);
-    }
     @Before
     public void setTestArea() {
 
@@ -41,13 +39,20 @@ public class StepsCreateNewAccount {
         headerComponent = pageObjectManager.getHeaderComponent();
         loginPage = pageObjectManager.getLoginPage();
         signupPage = pageObjectManager.getSignupPage();
-        accountCreateMassage = pageObjectManager.getAccountCreatedPage();
+        createAccountMassage = pageObjectManager.getAccountCreatedPage();
+        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
+    }
+
+    @After
+    public void cleanArea() {
+       driver.quit();
+
     }
 
     @Given("User on HomePage")
     public void userOnHomePage() {
         homePage.goToHomePage();
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.baseUrl);
+        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
     }
 
     @Given("User not logged")
@@ -103,40 +108,40 @@ public class StepsCreateNewAccount {
 
     @Then("New User Account was created")
     public void newUserAccountWasCreated() {
-        Assertions.assertEquals(accountCreateMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
+        Assertions.assertEquals(createAccountMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
     }
 
     @When("User press Continue")
     public void userPressContinue() {
-        accountCreateMassage.accCreateConfirm();
+        createAccountMassage.accCreateConfirm();
         String url = driver.getCurrentUrl();
         if (url.equals("https://automationexercise.com/account_created#google_vignette")) {
             driver.get("https://automationexercise.com/account_created");
-            accountCreateMassage.accCreateConfirm();
+            createAccountMassage.accCreateConfirm();
         }
     }
 
     @Then("User back to Home Page")
     public void userBackToHomePage() {
 
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.baseUrl);
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
     }
 
     @Then("User is logged")
     public void userIsLogged() {
 
-//        Assertions.assertEquals(headerComponent.loggedNameGet(),loginPage.inputedNameGet());
+        Assertions.assertEquals(headerComponent.loggedNameGet(), loginPage.getName());
     }
 
-    @Given("User am on HomePage")
-    public void userAmOnHomePage() {
-
+    @When("User Click Delete Account button")
+    public void userClickDeleteAccountButton() {
+        headerComponent.deleteAccount();
     }
 
-    @When("User Click Delete Account button for moving to Delete_account page")
-    public void userClickDeleteAccountButtonForMovingToDeleteAccountPage() {
-
+    @Then("User Account was Deleted")
+    public void userAccountWasDeleted() {
+        deleteAccountMasage.accDeleteConfirm();
     }
-
 
 }
+

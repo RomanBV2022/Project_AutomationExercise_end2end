@@ -1,12 +1,17 @@
 package runners;
 
 import io.cucumber.java.BeforeAll;
+import org.example.managers.PageObjectManager;
 import org.example.managers.WebDriverSetup;
 import org.openqa.selenium.WebDriver;
 
 public class Hooks {
-    @BeforeAll
-    public static void setDriver(){
-        WebDriver driver = WebDriverSetup.initializeDriver();
-    }
+//    static WebDriver driver;
+//    static PageObjectManager pageObjectManager;
+//    @BeforeAll
+//    public static void setDriver(){
+//        driver = WebDriverSetup.initializeDriver();
+//        pageObjectManager = new PageObjectManager();
+//    }
+
 }

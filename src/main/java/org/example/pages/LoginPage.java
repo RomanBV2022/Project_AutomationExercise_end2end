@@ -24,15 +24,14 @@ public class LoginPage {
     @FindBy(xpath = "//*[@data-qa='signup-button']" )
     WebElement signupButton;
 
-
+    private String name = "John";
 
     public void nameInput(){
-        String name;
-        name = "John";
+
         nameInputField.click();
         nameInputField.sendKeys(name);
     }
-    public String inputedNameGet(){
+    public String inputNameGet(){
         return nameInputField.getText();
     }
     public void emailInput(){
@@ -43,4 +42,7 @@ public class LoginPage {
         signupButton.click();
     }
 
+    public String getName() {
+        return name;
+    }
 }

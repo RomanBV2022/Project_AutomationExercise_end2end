@@ -7,15 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignupPage {
     final WebDriver driver;
-
-    public SignupPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
     @FindBy(xpath = "//*[@id='id_gender1']")
     WebElement genderMrCheckBox;
-
     @FindBy(xpath = "//*[@id='password']")
     WebElement passwdInputField;
     @FindBy(xpath = "//*[@id='uniform-days']")
@@ -54,6 +47,13 @@ public class SignupPage {
     WebElement phoneInputField;
     @FindBy(xpath = "//*[@data-qa='create-account']")
     WebElement createAccButton;
+    @FindBy(xpath = "//*[@data-qa='name'")
+    WebElement userName;
+
+    public SignupPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     public void titleSelect() {
         genderMrCheckBox.click();
@@ -124,4 +124,6 @@ public class SignupPage {
 
         createAccButton.submit();
     }
+
+
 }
