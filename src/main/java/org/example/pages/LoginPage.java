@@ -19,11 +19,19 @@ public class LoginPage {
     //Locators
     @FindBy(xpath = "//input[@name=\"name\"]")
     WebElement name;
-    @FindBy(xpath= "//input[@data-qa=\"signup-email\"]")
+    @FindBy(xpath = "//input[@data-qa=\"signup-email\"]")
     WebElement signUpEmail;
     @FindBy(xpath = "//button[@data-qa=\"signup-button\"]")
     WebElement signUpButton;
+    @FindBy(xpath = "//input[@data-qa=\"login-email\"]")
+    WebElement loginEmail;
 
+    @FindBy(xpath = "//input[@data-qa=\"login-password\"]")
+    WebElement password;
+    @FindBy(xpath = "//button[@data-qa=\"login-button\"]")
+    WebElement loginButton;
+    @FindBy(xpath = "//a[@href=\"/login\"]")
+    WebElement login;
 
     //Methods
     public void createUser(String name, String email) {
@@ -36,5 +44,14 @@ public class LoginPage {
 
     }
 
+    public void logIn(String email, String password) {
+        loginEmail.sendKeys(email);
+        this.password.sendKeys(password);
+        loginButton.click();
+
+    }
+    public String notLogged() {
+        return login.getText();
+    }
 
 }

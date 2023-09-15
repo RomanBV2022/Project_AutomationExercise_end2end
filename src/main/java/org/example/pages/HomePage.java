@@ -19,6 +19,12 @@ public class HomePage {
     //Locators
     @FindBy(xpath = "//a[@href=\"/login\"]")
     WebElement login;
+    @FindBy(xpath = "//li[1]/a")
+    WebElement homeLink;
+    @FindBy(xpath = "//li/a[contains(text(), 'Logged in as')]/b")
+    WebElement nameUser;
+    @FindBy(xpath = "//a[contains(text(), \"Logout\")]")
+    WebElement logOut;
 
 
     //Methods
@@ -35,12 +41,17 @@ public class HomePage {
         login.click();
     }
 
+    public String getHomeLink() {
+       return  homeLink.getAttribute("style");
+    }
 
+    public String checkNameUser() {
+        return nameUser.getText();
+    }
 
-
-
-
-
+    public void clickLogOut() {
+        logOut.click();
+    }
 
 
     public void tearDown() {

@@ -55,18 +55,7 @@ public class SignUpPage {
 
 
     //Methods
-//    public void addGender() {
-//        genderMale.click();
-//    }
-//
-//    public void addPassword(String password) {
-//        this.password.sendKeys(password);
-//    }
-//
-//    public void addDay(int day) {
-//        days.sendKeys(Integer.toString(day));
-//
-//    }
+
 
     public void addAccountInformation(String password, int day, int month, int year) {
         genderMale.click();
