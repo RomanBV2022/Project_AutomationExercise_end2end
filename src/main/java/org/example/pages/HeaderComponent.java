@@ -36,9 +36,13 @@ public class HeaderComponent{
         wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
         wait.until(d -> loginButton.isDisplayed());
     }
-
+    public boolean loginButtonDisplaed(){
+        return loginButton.isDisplayed();
+    }
     public void clickLogin() {
-
+        Wait<WebDriver> wait;
+        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
+        wait.until(d -> loginButton.isDisplayed());
         loginButton.click();
     }
     public String loggedNameGet(){
@@ -47,5 +51,19 @@ public class HeaderComponent{
     public void deleteAccount(){
         deleteAccount.click();
     }
+
+    public void clickLogout(){
+        logoutButton.click();
+
+    }
+    public void deletAccountClick(){
+        deleteAccount.click();
+        String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/#google_vignette")) {
+            driver.get("https://automationexercise.com/");
+            deleteAccount.click();
+        }
+    }
+
 
 }

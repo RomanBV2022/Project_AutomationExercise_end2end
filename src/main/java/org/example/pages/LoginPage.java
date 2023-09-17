@@ -9,40 +9,64 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     final WebDriver driver;
-
-    public LoginPage(WebDriver driver){
-        this.driver =driver;
-        PageFactory.initElements(driver, this);
-    }
-
+    private final String baseUrl = "https://automationexercise.com/login";
+    private final String name = "John";
     @FindBy(xpath = "//*[@data-qa='signup-name']")
     WebElement nameInputField;
 
     @FindBy(xpath = "//*[@data-qa='signup-email']")
-    WebElement emailInputField;
+    WebElement emailSignupInputField;
 
-    @FindBy(xpath = "//*[@data-qa='signup-button']" )
+    @FindBy(xpath = "//*[@data-qa='signup-button']")
     WebElement signupButton;
+    @FindBy(xpath = "//*[@data-qa='login-email']")
+    WebElement emailLoginInputField;
+    @FindBy(xpath = "//*[@data-qa='login-password']")
+    WebElement passwdLLoginInputField;
+    @FindBy(xpath = "//*[@data-qa='login-button']")
+    WebElement loginButton;
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
-    private String name = "John";
-
-    public void nameInput(){
-
+    public void nameInput(String name) {
         nameInputField.click();
         nameInputField.sendKeys(name);
     }
-    public String inputNameGet(){
+
+    public String inputNameGet() {
         return nameInputField.getText();
     }
-    public void emailInput(){
-        emailInputField.click();
-        emailInputField.sendKeys("john321@mail.com");
+
+    public void emailInputSignupForm(String email) {
+        emailSignupInputField.click();
+        emailSignupInputField.sendKeys(email);
     }
-    public void signupButtonClick(){
+
+    public void PasswdLLoginInputField(String passwd) {
+        passwdLLoginInputField.click();
+        passwdLLoginInputField.sendKeys(passwd);
+    }
+
+    public void signupButtonClick() {
         signupButton.click();
     }
 
     public String getName() {
         return name;
+    }
+
+    public void emailLoginInputField(String email) {
+        emailLoginInputField.click();
+        emailLoginInputField.sendKeys(email);
+    }
+
+    public void loginButtonSubmit(){
+        loginButton.submit();
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
     }
 }

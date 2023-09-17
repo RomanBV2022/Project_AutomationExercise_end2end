@@ -19,6 +19,11 @@ public class CreateAccountMassage {
 
     public void accCreateConfirm(){
        continueButton.click();
+        String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/account_created#google_vignette")) {
+            driver.get("https://automationexercise.com/account_created");
+            continueButton.click();
+        }
     }
 
     public String accCreateMassageTextget(){
