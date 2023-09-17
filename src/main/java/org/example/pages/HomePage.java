@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
     WebDriver driver;
-    private String baseUrl = "https://automationexercise.com/";
+    private final String baseUrl = "https://automationexercise.com/";
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -23,6 +23,7 @@ public class HomePage {
     public String getBaseUrl(){
         return baseUrl;
     }
+
 }
 
 
