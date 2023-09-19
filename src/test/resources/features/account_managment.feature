@@ -9,10 +9,10 @@ Feature: Automation end2end tests to account management functionality
 
   Scenario: Create new user
 
-#    Given John is not regidstred user
-    And John not logged
+    Given John is not regidstred user
+#    And John not logged
 
-    When John fill er
+    When John press Signup/Login
     When John move to LoginPage
     Then John be able to fill singup form
 
