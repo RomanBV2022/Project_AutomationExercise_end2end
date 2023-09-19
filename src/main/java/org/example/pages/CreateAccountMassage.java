@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-public class AccountCreateMassage {
+public class CreateAccountMassage {
     final WebDriver driver;
 
-    public AccountCreateMassage(WebDriver driver){
+    public CreateAccountMassage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -19,6 +19,11 @@ public class AccountCreateMassage {
 
     public void accCreateConfirm(){
        continueButton.click();
+        String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/account_created#google_vignette")) {
+            driver.get("https://automationexercise.com/account_created");
+            continueButton.click();
+        }
     }
 
     public String accCreateMassageTextget(){

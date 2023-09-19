@@ -10,10 +10,10 @@ public class PageObjectManager {
     private HeaderComponent headerComponent;
     private LoginPage loginPage;
     private SignupPage signupPage;
-    private AccountCreateMassage accountCreateMassage;
+    private CreateAccountMassage createAccountMassage;
+    private DeleteAccountMasage deleteAccountMasage;
 
-    public PageObjectManager(WebDriver driver) {
-        this.driver = driver;
+    public PageObjectManager() {
     }
 
     public PageObjectManager(HomePage homePage) {
@@ -31,14 +31,22 @@ public class PageObjectManager {
         this.loginPage = loginPage;
     }
 
-    PageObjectManager(SignupPage signupPage) {
+    public PageObjectManager(SignupPage signupPage) {
 
         this.signupPage = signupPage;
     }
+    public PageObjectManager(DeleteAccountMasage deleteAccountMasage) {
 
-    PageObjectManager(AccountCreateMassage accountCreateMassage) {
+        this.deleteAccountMasage = deleteAccountMasage;
+    }
 
-        this.accountCreateMassage = accountCreateMassage;
+    public PageObjectManager(CreateAccountMassage createAccountMassage) {
+
+        this.createAccountMassage = createAccountMassage;
+    }
+
+    public PageObjectManager(WebDriver driver) {
+        this.driver =driver;
     }
 
 
@@ -61,8 +69,12 @@ public class PageObjectManager {
         return (signupPage == null) ? signupPage = new SignupPage(driver) : signupPage;
     }
 
-    public AccountCreateMassage getAccountCreatedPage() {
-        return (accountCreateMassage == null) ? accountCreateMassage = new AccountCreateMassage(driver) : accountCreateMassage;
+    public CreateAccountMassage getAccountCreatedPage() {
+        return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
+    }
+
+    public DeleteAccountMasage getDeleteAccountPage() {
+        return (deleteAccountMasage == null) ? deleteAccountMasage = new DeleteAccountMasage(driver) : deleteAccountMasage;
     }
 
 }

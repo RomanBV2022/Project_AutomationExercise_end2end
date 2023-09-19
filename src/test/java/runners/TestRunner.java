@@ -7,12 +7,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/new_account_create.feature",
-        glue = {"org/example/stepDefinitions"},
-        plugin = {"pretty", "html:target/cucumber-reports"},
+        features = "src/test/resources/features/account_managment2.feature",
+        glue = {"test/stepsDefinitions"},
+        plugin = {"pretty", "html:output/cucumber-report.html"},
+//        tags = "@smoke",
         snippets = CucumberOptions.SnippetType.CAMELCASE
+
 )
 public class TestRunner {
-
 
 }

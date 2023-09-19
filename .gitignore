@@ -9,10 +9,12 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-/.idea
+.idea
 *.iws
 *.iml
 *.ipr
+.gitignore
+target
 
 ### Eclipse ###
 .apt_generated

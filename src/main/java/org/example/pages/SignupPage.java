@@ -8,14 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 public class SignupPage {
     final WebDriver driver;
 
-    public SignupPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
-
+    private final String baseUrl = "https://automationexercise.com/signup";
+    @FindBy(xpath = "//h2/b[text()='Enter Account Information']")
+    WebElement accountInformationForm;
     @FindBy(xpath = "//*[@id='id_gender1']")
     WebElement genderMrCheckBox;
-
     @FindBy(xpath = "//*[@id='password']")
     WebElement passwdInputField;
     @FindBy(xpath = "//*[@id='uniform-days']")
@@ -54,13 +51,22 @@ public class SignupPage {
     WebElement phoneInputField;
     @FindBy(xpath = "//*[@data-qa='create-account']")
     WebElement createAccButton;
+    @FindBy(xpath = "//*[@data-qa='name'")
+    WebElement userName;
 
+    public SignupPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+    public void accountInformatinFormIsPresent(){
+        accountInformationForm.isDisplayed();
+    }
     public void titleSelect() {
         genderMrCheckBox.click();
     }
 
-    public void passwdInput() {
-        passwdInputField.sendKeys("qwerty");
+    public void passwdInput(String password) {
+        passwdInputField.sendKeys(password);
     }
 
     public void daySelect() {
@@ -87,16 +93,16 @@ public class SignupPage {
         offerCheckBox.click();
     }
 
-    public void first_nameInput() {
-        first_nameInputField.sendKeys("John");
+    public void first_nameInput(String firstName) {
+        first_nameInputField.sendKeys(firstName);
     }
 
-    public void last_nameInput() {
-        last_nameInputField.sendKeys("Wick");
+    public void last_nameInput(String lastName) {
+        last_nameInputField.sendKeys(lastName);
     }
 
-    public void addressInput() {
-        address1InputField.sendKeys("Any street 5 - 6");
+    public void addressInput(String address) {
+        address1InputField.sendKeys(address);
     }
 
     public void countrySelect() {
@@ -104,24 +110,29 @@ public class SignupPage {
         countryValue.click();
     }
 
-    public void stateInput() {
-        stateInputField.sendKeys("Texas");
+    public void stateInput(String state) {
+        stateInputField.sendKeys(state);
     }
 
-    public void cityInput() {
-        citiInputField.sendKeys("Dallas");
+    public void cityInput(String city) {
+        citiInputField.sendKeys(city);
     }
 
-    public void zipcodeInput() {
-        zipcodeInputField.sendKeys("12543");
+    public void zipcodeInput(Integer zipcode) {
+        zipcodeInputField.sendKeys(Integer.toString(zipcode));
     }
 
-    public void phoneInput() {
-        phoneInputField.sendKeys("+132978987");
+    public void phoneInput(String phone) {
+        phoneInputField.sendKeys(phone);
     }
 
     public void createAccButtonClick() {
 
         createAccButton.submit();
     }
+
+    public String getBaseUrl(){
+        return baseUrl;
+    }
+
 }
