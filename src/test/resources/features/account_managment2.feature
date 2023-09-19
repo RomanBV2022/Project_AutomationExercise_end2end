@@ -70,7 +70,7 @@ Feature: Automation end2end tests to account management functionality
     And John input e-mail <e-mail>
     And John input password <passwd>
     And  John press Login
-    Then John no HomePage
+    Then John on HomePage
     And John is logged
     Examples:
       | e-mail             | passwd   |
