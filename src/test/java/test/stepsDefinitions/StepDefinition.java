@@ -51,11 +51,8 @@ public class StepDefinition {
 
     }
         //START FEATURE
-        // START REGISTRATION
-    @Given("John is not registered user")
-    public void johnIsNotRegisteredUser() {
-    }
 
+        // START REGISTRATION
 
     @Given("John on HomePage")
     public void johnOnHomePage() {
@@ -188,10 +185,10 @@ public class StepDefinition {
 
     }
 
-//    @Then("John back to HomePage")
-//    public void johnBackToHomePage() {
-//        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
-//    }
+    @Then("John back to HomePage")
+    public void johnBackToHomePage() {
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
+    }
 
     @Then("John is logged")
     public void johnIsLogged() {
@@ -209,6 +206,7 @@ public class StepDefinition {
         Assumptions.assumeTrue(headerComponent.loginButtonDisplaed());
     }
         //END LOGOUT
+
         //START LOGIN
     @When("John input e-mail {string}")
     public void johnInputEMail(String email) {
@@ -226,6 +224,7 @@ public class StepDefinition {
 
     }
         //END LOGIN
+
         //START DELETE
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {

@@ -8,8 +8,8 @@ Feature: Automation end2end tests to account management functionality
 
   @smoke
   Scenario: John REGISTERING in shop like new user
-    Given John is not registered user
-    And   John on HomePage
+    Given John on HomePage
+    And   John not logged
     When John press Signup/Login
     When John move to LoginPage
     Then John be able to fill signup form
@@ -52,7 +52,7 @@ Feature: Automation end2end tests to account management functionality
   Scenario: John`s Account was CREATED
     When John see Account Created massage
     And John press Continue
-    Then John on HomePage
+    Then John back to HomePage
     And John is logged
 
 @smoke
@@ -80,5 +80,5 @@ Feature: Automation end2end tests to account management functionality
     When John is logged
     And Press DeleteAccount
     And Confirm Account Deleted masage
-    Then John on HomePage
+    Then John back to HomePage
     And John not logged
