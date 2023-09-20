@@ -10,8 +10,8 @@ public class PageObjectManager {
     private NavigationBar navigationBar;
     private LoginPage loginPage;
     private SignupPage signupPage;
-    private CreateAccountMessage createAccountMessage;
-    private DeleteAccountMessage deleteAccountMessage;
+    private CreateAccountMassage createAccountMassage;
+    private DeleteAccountMasage deleteAccountMasage;
 
     public PageObjectManager() {
     }
@@ -35,18 +35,19 @@ public class PageObjectManager {
 
         this.signupPage = signupPage;
     }
-    public PageObjectManager(DeleteAccountMessage deleteAccountMessage) {
 
-        this.deleteAccountMessage = deleteAccountMessage;
+    public PageObjectManager(DeleteAccountMasage deleteAccountMasage) {
+
+        this.deleteAccountMasage = deleteAccountMasage;
     }
 
-    public PageObjectManager(CreateAccountMessage createAccountMessage) {
+    public PageObjectManager(CreateAccountMassage createAccountMassage) {
 
-        this.createAccountMessage = createAccountMessage;
+        this.createAccountMassage = createAccountMassage;
     }
 
     public PageObjectManager(WebDriver driver) {
-        this.driver =driver;
+        this.driver = driver;
     }
 
 
@@ -69,12 +70,12 @@ public class PageObjectManager {
         return (signupPage == null) ? signupPage = new SignupPage(driver) : signupPage;
     }
 
-    public CreateAccountMessage getCreateAccountMessage() {
-        return (createAccountMessage == null) ? createAccountMessage = new CreateAccountMessage(driver) : createAccountMessage;
+    public CreateAccountMassage getAccountCreatedMassage() {
+        return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
     }
 
-    public DeleteAccountMessage getDeleteAccountMessage() {
-        return (deleteAccountMessage == null) ? deleteAccountMessage = new DeleteAccountMessage(driver) : deleteAccountMessage;
+    public DeleteAccountMasage getDeleteAccountPage() {
+        return (deleteAccountMasage == null) ? deleteAccountMasage = new DeleteAccountMasage(driver) : deleteAccountMasage;
     }
 
 }

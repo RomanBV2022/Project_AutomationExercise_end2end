@@ -1,10 +1,13 @@
 package org.example.pages;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class NavigationBar {
     final WebDriver driver;
@@ -28,11 +31,18 @@ public class NavigationBar {
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a")
     WebElement loggedLink;
 
-
+    public void loginButtonDisplaedWait(){
+        Wait<WebDriver> wait;
+        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
+        wait.until(d -> loginButton.isDisplayed());
+    }
     public boolean loginButtonDisplaed(){
         return loginButton.isDisplayed();
     }
     public void clickLogin() {
+        Wait<WebDriver> wait;
+        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
+        wait.until(d -> loginButton.isDisplayed());
         loginButton.click();
     }
     public String loggedNameGet(){
