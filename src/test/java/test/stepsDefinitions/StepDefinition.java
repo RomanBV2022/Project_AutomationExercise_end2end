@@ -7,8 +7,7 @@ import io.cucumber.java.en.When;
 import org.example.managers.PageObjectManager;
 import org.example.pages.*;
 import org.openqa.selenium.WebDriver;
-import org.junit.jupiter.api.Assertions;
-import test.RegistrationTest;
+import test.AccountManagementTest;
 
 
 public class StepDefinition {
@@ -24,13 +23,14 @@ public class StepDefinition {
     CreateAccountMassage createAccountMassage;
     DeleteAccountMasage deleteAccountMasage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
-    RegistrationTest registrationTest = new RegistrationTest();
+    AccountManagementTest accountManagementTest = new AccountManagementTest();
+//    LogoutTest logoutTest = new LogoutTest();
 
 //    @BeforeAll
 //    public static void setupEnvironment() {
 //        driver = WebDriverSetup.initializeDriver();
 //    }
-//
+////
 //    @AfterAll
 //    public static void cleanEnvironment() {
 //        driver.quit();
@@ -53,7 +53,7 @@ public class StepDefinition {
 
     @Given("John on HomePage")
     public void johnOnHomePage() {
-        registrationTest.homePageUrlTest();
+        accountManagementTest.homePageUrlTest();
 //        homePage.goToHomePage();
 //        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
 
@@ -61,13 +61,13 @@ public class StepDefinition {
 
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
-        registrationTest.loginLinkNavBarTest();
+        accountManagementTest.loginLinkNavBarTest();
 //        navigationBar.clickLogin();
     }
 
     @When("John move to LoginPage")
     public void johnMoveToLoginPage() {
-        registrationTest.loginPageUploadTest();
+        accountManagementTest.loginPageUploadTest();
     }
 
     @Then("John be able to fill signup form")
@@ -77,147 +77,148 @@ public class StepDefinition {
 
     @When("John input Name: {string}")
     public void johnInputName(String name) {
-        registrationTest.signupNameFieldTest(name);
+        accountManagementTest.signupNameFieldTest(name);
     }
 
     @When("John input Email Address: {string}")
     public void johnInputEmailAddress(String email) {
-        registrationTest.signupEmailFieldTest(email);
+        accountManagementTest.signupEmailFieldTest(email);
     }
 
     @Then("John can signup")
     public void johnCanSignup() {
-        registrationTest.signupButtonTest();
+        accountManagementTest.signupButtonTest();
     }
 
     @When("John on SignupPage")
     public void johnOnSignupPage() {
-    registrationTest.accountInformationFormTest();
+    accountManagementTest.accountInformationFormTest();
     }
 
     @When("John select gender")
     public void johnSelectGender() {
-        registrationTest.titleRadioButtonTest();
+        accountManagementTest.titleRadioButtonTest();
     }
 
     @When("John create password:{string}")
     public void johnCreatePassword(String password) {
-        registrationTest.passwdAccountInformationFieldTest(password);
+        accountManagementTest.passwdAccountInformationFieldTest(password);
     }
 
     @When("John input his Date of Birth: <{int} June {int}>")
     public void johnInputHisDateOfBirthJune(Integer int1, Integer int2) {
-        registrationTest.dayOfBirthTest();
-        registrationTest.monthOfBirthTest();
-        registrationTest.yearOfBirthTest();
+        accountManagementTest.dayOfBirthTest();
+        accountManagementTest.monthOfBirthTest();
+        accountManagementTest.yearOfBirthTest();
     }
 
     @When("confirm: Sign up for our newsletter!")
     public void confirmSignUpForOurNewsletter() {
-        registrationTest.checkConfirmSignUpForOurNewsletterTest();
+        accountManagementTest.checkConfirmSignUpForOurNewsletterTest();
     }
 
     @When("confirm: Receive special offers from our partners!")
     public void confirmReceiveSpecialOffersFromOurPartners() {
-        registrationTest.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
+        accountManagementTest.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
     }
 
     @When("John input First name: {string}")
     public void johnInputFirstName(String firstName) {
-registrationTest.firstNameInputFieldAddressInfoTest(firstName);
+accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
 
 
     }
 
     @When("John input Last name: {string}")
     public void johnInputLastName(String lastName) {
-        registrationTest.lastNameInputFieldAddressInfoTest(lastName);
+        accountManagementTest.lastNameInputFieldAddressInfoTest(lastName);
 
     }
 
     @When("John input Address: {string}")
     public void johnInputAddress(String address) {
-        registrationTest.addressInputFieldAddressInfoTest(address);
+        accountManagementTest.addressInputFieldAddressInfoTest(address);
     }
 
     @When("John input Country: {string}")
     public void johnInputCountry(String string) {
-        registrationTest.countrySelectFieldAddressInfoTest();
+        accountManagementTest.countrySelectFieldAddressInfoTest();
     }
 
     @When("John input State: {string}")
     public void johnInputState(String state) {
-        registrationTest.stateInputFieldAddressInfoTest(state);
+        accountManagementTest.stateInputFieldAddressInfoTest(state);
     }
 
     @When("John input City: {string}")
     public void johnInputCity(String city) {
-        registrationTest.cityInputFieldAddressInfoTest(city);
+        accountManagementTest.cityInputFieldAddressInfoTest(city);
     }
 
     @When("John input Zipcode: {int}")
     public void johnInputZipcode(Integer zipcode) {
-        registrationTest.zipcodeInputFieldAddressInfoTest(zipcode);
+        accountManagementTest.zipcodeInputFieldAddressInfoTest(zipcode);
     }
 
     @When("John input Mobile Number: {string}")
     public void johnInputMobileNumber(String phone) {
-        registrationTest.phoneInputFieldAddressInfoTest(phone);
+        accountManagementTest.phoneInputFieldAddressInfoTest(phone);
     }
 
     @Then("John can Create Account")
     public void johnCanCreateAccount() {
-        registrationTest.createAccountButtonTest();
+        accountManagementTest.createAccountButtonTest();
     }
 
     @When("John see Account Created massage")
     public void johnOnAccountCreatedMassagePage() {
-        registrationTest.createAccountMassageTest();
+        accountManagementTest.createAccountMassageTest();
     }
 
     @When("John press Continue")
     public void johnPressContinue() {
-        registrationTest.confirmButtonAccountCreatedMassageTest();
+        accountManagementTest.confirmButtonAccountCreatedMassageTest();
 
     }
 
     @Then("John back to HomePage")
     public void johnBackToHomePage() {
-        registrationTest.returnToHomePageTest();
+        accountManagementTest.returnToHomePageTest();
     }
 
     @Then("John is logged")
     public void johnIsLogged() {
-        registrationTest.loggedNameInNavBarTest();
+        accountManagementTest.loggedNameInNavBarTest();
     }
 
     // END OF REGISTRATION
     //START LOGOUT
     @When("John press Logout")
     public void johnPressLogout() {
-        navigationBar.clickLogout();
+        accountManagementTest.logoutLinkInNavBarTest();
     }
 
     @Then("John not logged")
     public void johnNotLogged() {
-        registrationTest.loginStatusTest();
+        accountManagementTest.loginStatusTest();
     }
     //END LOGOUT
 
     //START LOGIN
     @When("John input e-mail {string}")
     public void johnInputEMail(String email) {
-        loginPage.emailLoginInputField(email);
+        accountManagementTest.emailInputLoginFormTest(email);
     }
 
     @When("John input password {string}")
-    public void johnInputPassword(String passwd) {
-        loginPage.PasswdLLoginInputField(passwd);
+    public void johnInputPassword(String password) {
+        accountManagementTest.passwdInputLoginFormTest(password);
+
     }
 
     @When("John press Login")
     public void johnPressLogin() {
-        loginPage.loginButtonSubmit();
+        accountManagementTest.loginButtonTest();
 
     }
     //END LOGIN
@@ -225,14 +226,12 @@ registrationTest.firstNameInputFieldAddressInfoTest(firstName);
     //START DELETE
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {
-        navigationBar.deleteAccount();
+        accountManagementTest.deleteAccountNavBarLinkTest();
     }
 
     @When("Confirm Account Deleted masage")
-    public void confirmAccountDeletedMasage() {
-        Assertions.assertEquals(deleteAccountMasage.accDeleteMassageTextget(), "ACCOUNT DELETED!");
-        deleteAccountMasage.accDeleteConfirm();
-
+    public void confirmAccountDeletedMassage() {
+        accountManagementTest.deleteAccountMassageTest();
     }
     //END DELETE
 //    END OF FEATURE
