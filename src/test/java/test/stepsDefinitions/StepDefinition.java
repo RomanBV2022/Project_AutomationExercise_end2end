@@ -14,39 +14,10 @@ public class StepDefinition {
 
 
     static WebDriver driver;
-
-
-    HomePage homePage;
-    NavigationBar navigationBar;
-    LoginPage loginPage;
-    SignupPage signupPage;
-    CreateAccountMassage createAccountMassage;
-    DeleteAccountMasage deleteAccountMasage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
     AccountManagementTest accountManagementTest = new AccountManagementTest();
-//    LogoutTest logoutTest = new LogoutTest();
 
-//    @BeforeAll
-//    public static void setupEnvironment() {
-//        driver = WebDriverSetup.initializeDriver();
-//    }
-////
-//    @AfterAll
-//    public static void cleanEnvironment() {
-//        driver.quit();
-//    }
-//
-//    @Before
-//    public void uploadPageObjects() {
-//        homePage = pageObjectManager.getHomePage();
-//        navigationBar = pageObjectManager.getNavigationBar();
-//        loginPage = pageObjectManager.getLoginPage();
-//        signupPage = pageObjectManager.getSignupPage();
-//        createAccountMassage = pageObjectManager.getAccountCreatedPage();
-//        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
-//
-//
-//    }
+
     //START FEATURE
 
     // START REGISTRATION
@@ -54,15 +25,11 @@ public class StepDefinition {
     @Given("John on HomePage")
     public void johnOnHomePage() {
         accountManagementTest.homePageUrlTest();
-//        homePage.goToHomePage();
-//        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
-
     }
 
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
         accountManagementTest.loginLinkNavBarTest();
-//        navigationBar.clickLogin();
     }
 
     @When("John move to LoginPage")
@@ -72,7 +39,6 @@ public class StepDefinition {
 
     @Then("John be able to fill signup form")
     public void johnBeAbleToFillSignupForm() {
-
     }
 
     @When("John input Name: {string}")
@@ -92,7 +58,7 @@ public class StepDefinition {
 
     @When("John on SignupPage")
     public void johnOnSignupPage() {
-    accountManagementTest.accountInformationFormTest();
+        accountManagementTest.accountInformationFormTest();
     }
 
     @When("John select gender")
@@ -124,15 +90,12 @@ public class StepDefinition {
 
     @When("John input First name: {string}")
     public void johnInputFirstName(String firstName) {
-accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
-
-
+        accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
     }
 
     @When("John input Last name: {string}")
     public void johnInputLastName(String lastName) {
         accountManagementTest.lastNameInputFieldAddressInfoTest(lastName);
-
     }
 
     @When("John input Address: {string}")
@@ -178,7 +141,6 @@ accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
     @When("John press Continue")
     public void johnPressContinue() {
         accountManagementTest.confirmButtonAccountCreatedMassageTest();
-
     }
 
     @Then("John back to HomePage")
@@ -192,6 +154,7 @@ accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
     }
 
     // END OF REGISTRATION
+
     //START LOGOUT
     @When("John press Logout")
     public void johnPressLogout() {
@@ -234,6 +197,7 @@ accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
         accountManagementTest.deleteAccountMassageTest();
     }
     //END DELETE
+
 //    END OF FEATURE
 }
 
