@@ -49,9 +49,9 @@ public class LoginPage {
         emailSignupInputField.sendKeys(email);
     }
 
-    public void PasswdLLoginInputField(String passwd) {
+    public void PasswdLLoginInputField(String password) {
         passwdLLoginInputField.click();
-        passwdLLoginInputField.sendKeys(passwd);
+        passwdLLoginInputField.sendKeys(password);
     }
 
     public void signupButtonClick() {

@@ -74,7 +74,7 @@ public class PageObjectManager {
         return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
     }
 
-    public DeleteAccountMasage getDeleteAccountPage() {
+    public DeleteAccountMasage getDeleteAccountMassage() {
         return (deleteAccountMasage == null) ? deleteAccountMasage = new DeleteAccountMasage(driver) : deleteAccountMasage;
     }
 
