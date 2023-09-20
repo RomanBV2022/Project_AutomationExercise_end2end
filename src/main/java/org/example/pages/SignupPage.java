@@ -58,8 +58,8 @@ public class SignupPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void accountInformatinFormIsPresent(){
-        accountInformationForm.isDisplayed();
+    public boolean accountInformatinFormIsPresent(){
+       return accountInformationForm.isDisplayed();
     }
     public void titleSelect() {
         genderMrCheckBox.click();

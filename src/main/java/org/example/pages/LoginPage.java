@@ -11,8 +11,11 @@ public class LoginPage {
     final WebDriver driver;
     private final String baseUrl = "https://automationexercise.com/login";
     private final String name = "John";
+
+    @FindBy(className = "signup-form")
+    WebElement signupForm;
     @FindBy(xpath = "//*[@data-qa='signup-name']")
-    WebElement nameInputField;
+    WebElement nameInputSignupField;
 
     @FindBy(xpath = "//*[@data-qa='signup-email']")
     WebElement emailSignupInputField;
@@ -29,14 +32,16 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
+    public boolean nameSignupInputFieldDisplayed(){
+        return nameInputSignupField.isDisplayed();
+    }
     public void nameInput(String name) {
-        nameInputField.click();
-        nameInputField.sendKeys(name);
+        nameInputSignupField.click();
+        nameInputSignupField.sendKeys(name);
     }
 
     public String inputNameGet() {
-        return nameInputField.getText();
+        return nameInputSignupField.getText();
     }
 
     public void emailInputSignupForm(String email) {
@@ -50,7 +55,7 @@ public class LoginPage {
     }
 
     public void signupButtonClick() {
-        signupButton.click();
+        signupButton.submit();
     }
 
     public String getName() {
@@ -68,5 +73,8 @@ public class LoginPage {
 
     public String getBaseUrl() {
         return baseUrl;
+    }
+    public boolean signupFormDisplayed(){
+        return signupForm.isDisplayed();
     }
 }

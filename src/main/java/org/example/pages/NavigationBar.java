@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HeaderComponent{
+public class NavigationBar {
     final WebDriver driver;
 
-    public HeaderComponent(WebDriver driver) {
+    public NavigationBar(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

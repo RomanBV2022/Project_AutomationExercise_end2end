@@ -7,7 +7,7 @@ public class PageObjectManager {
 
     private WebDriver driver;
     private HomePage homePage;
-    private HeaderComponent headerComponent;
+    private NavigationBar navigationBar;
     private LoginPage loginPage;
     private SignupPage signupPage;
     private CreateAccountMassage createAccountMassage;
@@ -21,9 +21,9 @@ public class PageObjectManager {
         this.homePage = homePage;
     }
 
-    public PageObjectManager(HeaderComponent headerComponent) {
+    public PageObjectManager(NavigationBar navigationBar) {
 
-        this.headerComponent = headerComponent;
+        this.navigationBar = navigationBar;
     }
 
     public PageObjectManager(LoginPage loginPage) {
@@ -35,6 +35,7 @@ public class PageObjectManager {
 
         this.signupPage = signupPage;
     }
+
     public PageObjectManager(DeleteAccountMasage deleteAccountMasage) {
 
         this.deleteAccountMasage = deleteAccountMasage;
@@ -46,7 +47,7 @@ public class PageObjectManager {
     }
 
     public PageObjectManager(WebDriver driver) {
-        this.driver =driver;
+        this.driver = driver;
     }
 
 
@@ -56,9 +57,9 @@ public class PageObjectManager {
                 homePage = new HomePage(driver) : homePage;
     }
 
-    public HeaderComponent getHeaderComponent() {
-        return (headerComponent == null) ?
-                headerComponent = new HeaderComponent(driver) : headerComponent;
+    public NavigationBar getNavigationBar() {
+        return (navigationBar == null) ?
+                navigationBar = new NavigationBar(driver) : navigationBar;
     }
 
     public LoginPage getLoginPage() {
@@ -69,7 +70,7 @@ public class PageObjectManager {
         return (signupPage == null) ? signupPage = new SignupPage(driver) : signupPage;
     }
 
-    public CreateAccountMassage getAccountCreatedPage() {
+    public CreateAccountMassage getAccountCreatedMassage() {
         return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
     }
 

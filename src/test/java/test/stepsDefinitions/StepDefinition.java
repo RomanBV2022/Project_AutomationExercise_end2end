@@ -1,18 +1,14 @@
 package test.stepsDefinitions;
 
 
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.managers.PageObjectManager;
-import org.example.managers.WebDriverSetup;
 import org.example.pages.*;
-import org.junit.jupiter.api.Assumptions;
 import org.openqa.selenium.WebDriver;
 import org.junit.jupiter.api.Assertions;
+import test.RegistrationTest;
 
 
 public class StepDefinition {
@@ -22,192 +18,193 @@ public class StepDefinition {
 
 
     HomePage homePage;
-    HeaderComponent headerComponent;
+    NavigationBar navigationBar;
     LoginPage loginPage;
     SignupPage signupPage;
     CreateAccountMassage createAccountMassage;
     DeleteAccountMasage deleteAccountMasage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
+    RegistrationTest registrationTest = new RegistrationTest();
 
+//    @BeforeAll
+//    public static void setupEnvironment() {
+//        driver = WebDriverSetup.initializeDriver();
+//    }
+//
+//    @AfterAll
+//    public static void cleanEnvironment() {
+//        driver.quit();
+//    }
+//
+//    @Before
+//    public void uploadPageObjects() {
+//        homePage = pageObjectManager.getHomePage();
+//        navigationBar = pageObjectManager.getNavigationBar();
+//        loginPage = pageObjectManager.getLoginPage();
+//        signupPage = pageObjectManager.getSignupPage();
+//        createAccountMassage = pageObjectManager.getAccountCreatedPage();
+//        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
+//
+//
+//    }
+    //START FEATURE
 
-    @BeforeAll
-    public static void setupEnvironment() {
-        driver = WebDriverSetup.initializeDriver();
-    }
-
-    @AfterAll
-    public static void cleanEnvironment() {
-        driver.quit();
-    }
-
-    @Before
-    public void uploadPageObjects() {
-        homePage = pageObjectManager.getHomePage();
-        headerComponent = pageObjectManager.getHeaderComponent();
-        loginPage = pageObjectManager.getLoginPage();
-        signupPage = pageObjectManager.getSignupPage();
-        createAccountMassage = pageObjectManager.getAccountCreatedPage();
-        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
-
-    }
-        //START FEATURE
-
-        // START REGISTRATION
+    // START REGISTRATION
 
     @Given("John on HomePage")
     public void johnOnHomePage() {
-
-        homePage.goToHomePage();
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
+        registrationTest.homePageUrlTest();
+//        homePage.goToHomePage();
+//        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
 
     }
 
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
-
-        headerComponent.clickLogin();
+        registrationTest.loginLinkNavBarTest();
+//        navigationBar.clickLogin();
     }
 
     @When("John move to LoginPage")
     public void johnMoveToLoginPage() {
-        Assertions.assertEquals("https://automationexercise.com/login", driver.getCurrentUrl());
+        registrationTest.loginPageUploadTest();
     }
 
     @Then("John be able to fill signup form")
     public void johnBeAbleToFillSignupForm() {
-        Assertions.assertEquals(loginPage.getBaseUrl(), driver.getCurrentUrl());
+
     }
 
     @When("John input Name: {string}")
     public void johnInputName(String name) {
-        loginPage.nameInput(name);
+        registrationTest.signupNameFieldTest(name);
     }
 
     @When("John input Email Address: {string}")
     public void johnInputEmailAddress(String email) {
-        loginPage.emailInputSignupForm(email);
+        registrationTest.signupEmailFieldTest(email);
     }
 
     @Then("John can signup")
-    public void johnCanSingup() {
-        loginPage.signupButtonClick();
+    public void johnCanSignup() {
+        registrationTest.signupButtonTest();
     }
 
     @When("John on SignupPage")
     public void johnOnSignupPage() {
-//        Assertions.assertEquals(signupPage.getBaseUrl(),driver.getCurrentUrl());
-        signupPage.accountInformatinFormIsPresent();
+    registrationTest.accountInformationFormTest();
     }
 
     @When("John select gender")
     public void johnSelectGender() {
-        signupPage.titleSelect();
+        registrationTest.titleRadioButtonTest();
     }
 
     @When("John create password:{string}")
     public void johnCreatePassword(String password) {
-        signupPage.passwdInput(password);
+        registrationTest.passwdAccountInformationFieldTest(password);
     }
 
     @When("John input his Date of Birth: <{int} June {int}>")
     public void johnInputHisDateOfBirthJune(Integer int1, Integer int2) {
-        signupPage.daySelect();
-        signupPage.monthSelect();
-        signupPage.yearSelect();
+        registrationTest.dayOfBirthTest();
+        registrationTest.monthOfBirthTest();
+        registrationTest.yearOfBirthTest();
     }
 
     @When("confirm: Sign up for our newsletter!")
     public void confirmSignUpForOurNewsletter() {
-        signupPage.newsletterClick();
+        registrationTest.checkConfirmSignUpForOurNewsletterTest();
     }
 
     @When("confirm: Receive special offers from our partners!")
     public void confirmReceiveSpecialOffersFromOurPartners() {
-        signupPage.offerClick();
+        registrationTest.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
     }
 
     @When("John input First name: {string}")
     public void johnInputFirstName(String firstName) {
+registrationTest.firstNameInputFieldAddressInfoTest(firstName);
 
-        signupPage.first_nameInput(firstName);
 
     }
 
     @When("John input Last name: {string}")
     public void johnInputLastName(String lastName) {
-        signupPage.last_nameInput(lastName);
+        registrationTest.lastNameInputFieldAddressInfoTest(lastName);
 
     }
 
     @When("John input Address: {string}")
     public void johnInputAddress(String address) {
-        signupPage.addressInput(address);
+        registrationTest.addressInputFieldAddressInfoTest(address);
     }
 
     @When("John input Country: {string}")
     public void johnInputCountry(String string) {
-        signupPage.countrySelect();
+        registrationTest.countrySelectFieldAddressInfoTest();
     }
 
     @When("John input State: {string}")
     public void johnInputState(String state) {
-        signupPage.stateInput(state);
+        registrationTest.stateInputFieldAddressInfoTest(state);
     }
 
     @When("John input City: {string}")
     public void johnInputCity(String city) {
-        signupPage.cityInput(city);
+        registrationTest.cityInputFieldAddressInfoTest(city);
     }
 
     @When("John input Zipcode: {int}")
     public void johnInputZipcode(Integer zipcode) {
-        signupPage.zipcodeInput(zipcode);
+        registrationTest.zipcodeInputFieldAddressInfoTest(zipcode);
     }
 
     @When("John input Mobile Number: {string}")
     public void johnInputMobileNumber(String phone) {
-        signupPage.phoneInput(phone);
+        registrationTest.phoneInputFieldAddressInfoTest(phone);
     }
 
     @Then("John can Create Account")
     public void johnCanCreateAccount() {
-        signupPage.createAccButtonClick();
+        registrationTest.createAccountButtonTest();
     }
 
     @When("John see Account Created massage")
     public void johnOnAccountCreatedMassagePage() {
-        Assertions.assertEquals(createAccountMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
+        registrationTest.createAccountMassageTest();
     }
 
     @When("John press Continue")
     public void johnPressContinue() {
-        createAccountMassage.accCreateConfirm();
+        registrationTest.confirmButtonAccountCreatedMassageTest();
 
     }
 
     @Then("John back to HomePage")
     public void johnBackToHomePage() {
-        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
+        registrationTest.returnToHomePageTest();
     }
 
     @Then("John is logged")
     public void johnIsLogged() {
-        Assertions.assertEquals(headerComponent.loggedNameGet(), loginPage.getName());
+        registrationTest.loggedNameInNavBarTest();
     }
-        // END OF REGISTRATION
-        //START LOGOUT
+
+    // END OF REGISTRATION
+    //START LOGOUT
     @When("John press Logout")
     public void johnPressLogout() {
-        headerComponent.clickLogout();
+        navigationBar.clickLogout();
     }
 
     @Then("John not logged")
     public void johnNotLogged() {
-        Assumptions.assumeTrue(headerComponent.loginButtonDisplaed());
+        registrationTest.loginStatusTest();
     }
-        //END LOGOUT
+    //END LOGOUT
 
-        //START LOGIN
+    //START LOGIN
     @When("John input e-mail {string}")
     public void johnInputEMail(String email) {
         loginPage.emailLoginInputField(email);
@@ -223,12 +220,12 @@ public class StepDefinition {
         loginPage.loginButtonSubmit();
 
     }
-        //END LOGIN
+    //END LOGIN
 
-        //START DELETE
+    //START DELETE
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {
-        headerComponent.deleteAccount();
+        navigationBar.deleteAccount();
     }
 
     @When("Confirm Account Deleted masage")
