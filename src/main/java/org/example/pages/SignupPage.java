@@ -105,7 +105,7 @@ public class SignupPage {
         address1InputField.sendKeys(address);
     }
 
-    public void countrySelect() {
+    public void countrySelect(String country) {
         countryDDlist.click();
         countryValue.click();
     }

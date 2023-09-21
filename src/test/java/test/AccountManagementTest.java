@@ -204,9 +204,9 @@ public class AccountManagementTest {
     }
     @Test
     @Order(190)
-    public void countrySelectFieldAddressInfoTest(){
+    public void countrySelectFieldAddressInfoTest(String country){
         signupPage = pageObjectManager.getSignupPage();
-        signupPage.countrySelect();
+        signupPage.countrySelect(country);
     }
     @Test
     @Order(200)
