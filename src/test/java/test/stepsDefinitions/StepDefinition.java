@@ -1,11 +1,11 @@
 package test.stepsDefinitions;
 
 
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.managers.PageObjectManager;
-import org.example.pages.*;
 import org.openqa.selenium.WebDriver;
 import test.AccountManagementTest;
 
@@ -13,8 +13,6 @@ import test.AccountManagementTest;
 public class StepDefinition {
 
 
-    static WebDriver driver;
-    PageObjectManager pageObjectManager = new PageObjectManager(driver);
     AccountManagementTest accountManagementTest = new AccountManagementTest();
 
 
@@ -199,5 +197,6 @@ public class StepDefinition {
     //END DELETE
 
 //    END OF FEATURE
+
 }
 
