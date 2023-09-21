@@ -10,15 +10,15 @@ Feature: Automation end2end tests to account management functionality
     Given John on HomePage
     And   John not logged
     When John press Signup/Login
-    And John get <NickName> and <E-mail> in Singaup form
-    And John get required data in ACCOUNT INFORMATION form: <Password> ,<Date of Birth>
-    And John get required data in ADDRESS INFORMATION form: <First name>, <Last name>, <Address>,  <Country>, <State>, <City>, <Zipcode>,<Phone>
-    Examples:
-     |NickName |E-mail    |First name | Last name | Password    | Address          | Country         | State   | City     | Zipcode | Phone         |
-      |"John"| "Wick@mail.com"   |"John"     | "Wick"    | "qasxdsewr" | "Any street 5-6" | "United States" | "Texas" | "Dallas" | 13245   | "+1324542542" |
+    And John put <NickName> and  <E-mail> in Signup form
+    And John put required data in ACCOUNT INFORMATION form: <Password> ,<DateOfBirth>
+    And John put required data in ADDRESS INFORMATION form: <First name>, <Last name>, <Address>,  <Country>, <State>, <City>, <Zipcode>,<Phone>
+
     Then John back to HomePage
     And John is logged
-
+    Examples:
+      | NickName | E-mail          | First name | Last name | Password    |DateOfBirth| Address          | Country         | State   | City     | Zipcode | Phone         |
+      | "John"   | "Wick@mail.com" | "John"     | "Wick"    | "qasxdsewr" |"" |"Any street 5-6" | "United States" | "Texas" | "Dallas" | 13245   | "+1324542542" |
 
   Scenario:John LOGOUT from shop
     When John is logged
@@ -30,16 +30,16 @@ Feature: Automation end2end tests to account management functionality
     Given John on HomePage
     And John not logged
     When John press Signup/Login
-    And John input <E-mail> and <Password> in Login form
+    And John put <E-mail> and <Password> in Login form
     Then John back to HomePage
     And John is logged
     Examples:
-      | E-mail          | Password      |
+      | E-mail          | Password    |
       | "Wick@mail.com" | "qasxdsewr" |
 
   Scenario: John DELETE Account
     When John is logged
     And Press DeleteAccount
-    And Confirm Account Deleted masage
+    And Confirm Account Deleted massage
     Then John back to HomePage
     And John not logged
