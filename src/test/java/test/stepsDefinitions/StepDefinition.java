@@ -1,12 +1,9 @@
 package test.stepsDefinitions;
 
 
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import test.AccountManagementTest;
 
 
