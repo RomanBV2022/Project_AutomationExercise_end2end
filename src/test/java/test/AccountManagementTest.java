@@ -43,6 +43,8 @@ public class AccountManagementTest {
 //
 //    }
 
+
+
     @Test
     @Order(10)
     @DisplayName("Home page url test")
@@ -299,5 +301,9 @@ public class AccountManagementTest {
         deleteAccountMasage.accDeleteConfirm();
 
     }
-
+    @Test
+    @Order(340)
+    public void driverStop(){
+        driver.quit();
+    }
 }

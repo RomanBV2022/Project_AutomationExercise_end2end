@@ -20,7 +20,7 @@ public class DeleteAccountMasage {
     public void accDeleteConfirm(){
         continueButton.click();
         String url = driver.getCurrentUrl();
-        if(url.equals("https://automationexercise.com/delete_account#google_vignette")) {
+        if(url.equals("https://automationexercise.com/#google_vignette")) {
             driver.get("https://automationexercise.com/delete_account");
             continueButton.click();
         }

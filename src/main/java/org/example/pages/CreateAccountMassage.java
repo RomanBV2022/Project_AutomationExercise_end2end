@@ -20,7 +20,7 @@ public class CreateAccountMassage {
     public void accCreateConfirm(){
        continueButton.click();
         String url = driver.getCurrentUrl();
-        if(url.equals("https://automationexercise.com/account_created#google_vignette")) {
+        if(!url.equals("https://automationexercise.com/")) {
             driver.get("https://automationexercise.com/account_created");
             continueButton.click();
         }
