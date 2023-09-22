@@ -17,7 +17,7 @@ public class LoginPage {
     }
 
     //Locators
-    @FindBy(xpath = "//input[@name=\"name\"]")
+    @FindBy(xpath = "//input[@name='name']")
     WebElement name;
     @FindBy(xpath = "//input[@data-qa=\"signup-email\"]")
     WebElement signUpEmail;
@@ -30,7 +30,7 @@ public class LoginPage {
     WebElement password;
     @FindBy(xpath = "//button[@data-qa=\"login-button\"]")
     WebElement loginButton;
-    @FindBy(xpath = "//a[@href=\"/login\"]")
+    @FindBy(xpath = "//a[@href='/login']")
     WebElement login;
 
     //Methods

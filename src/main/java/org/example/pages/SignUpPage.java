@@ -54,6 +54,10 @@ public class SignUpPage {
     WebElement buttonCreateAccount;
 
 
+    @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[3]/div/form/p")
+    WebElement errorMessageEmailExists;
+
+
     //Methods
 
 
@@ -82,6 +86,10 @@ public class SignUpPage {
 
     public void clickCreateAccount() {
         buttonCreateAccount.click();
+    }
+
+    public String showErrorMessageEmailExists() {
+        return errorMessageEmailExists.getText();
     }
 
 

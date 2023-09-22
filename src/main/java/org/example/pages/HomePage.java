@@ -17,28 +17,43 @@ public class HomePage {
     }
 
     //Locators
-    @FindBy(xpath = "//a[@href=\"/login\"]")
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")
     WebElement login;
     @FindBy(xpath = "//li[1]/a")
     WebElement homeLink;
-    @FindBy(xpath = "//li/a[contains(text(), 'Logged in as')]/b")
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a")
     WebElement nameUser;
-    @FindBy(xpath = "//a[contains(text(), \"Logout\")]")
+    @FindBy(xpath = "//a[contains(text(), 'Logout')]")
     WebElement logOut;
+    @FindBy(xpath = "//li[5]/a[@href=\"/delete_account\"]")
+    WebElement deleteAccount;
+
+
 
 
     //Methods
 
-    public void goToHomePage() {
+    public  void goToHomePage() {
         driver.get("http://automationexercise.com");
     }
 
     public String notLogged() {
+        System.out.println(login.getText());
         return login.getText();
     }
 
     public void clickLogin() {
-        login.click();
+        if(login.getText().equals("Signup / Login")){
+            login.click();
+        }
+        else if(login.getText().equals("Logout")){
+            login.click();
+        }
+        else {
+            System.out .println(login.getText());
+
+        }
+
     }
 
     public String getHomeLink() {
@@ -52,11 +67,12 @@ public class HomePage {
     public void clickLogOut() {
         logOut.click();
     }
-
-
-    public void tearDown() {
-        driver.quit();
+    public void clickDeleteAccount() {
+        deleteAccount.click();
     }
+
+
+
 
 
 }
