@@ -11,20 +11,21 @@ Feature: Automation end2end tests to account management functionality
     Given John on HomePage
     And   John not logged
     When John press Signup/Login
-    When John move to LoginPage
-    Then John be able to fill signup form
+    Then John move to LoginPage
+
 
   Scenario Outline: John fill "New User Signup!" form
-    When John input Name: <Name>
-    And John input Email Address: <E-mail>
-    Then John can signup
+    Given John be able to fill signup form
+    When John input Name: <Name> and Email Address: <E-mail>
+    When John press Signup button
+    Then John on SignupPage
     Examples:
       | Name   | E-mail             |
       | "John" | "Wick@mail.com" |
 
   Scenario Outline: John fill required ACCOUNT INFORMATION
-    When John on SignupPage
-    And John select gender
+    Given John on SignupPage
+    When John select gender
     And John create password:<Password>
     And John input his Date of Birth: <6 June 1977>
     And confirm: Sign up for our newsletter!
