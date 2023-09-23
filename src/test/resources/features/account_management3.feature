@@ -13,12 +13,11 @@ Feature: Automation end2end tests to account management functionality
     And John put <NickName> and  <E-mail> in Signup form
     And John put required data in ACCOUNT INFORMATION form: <Password> ,<DateOfBirth>
     And John put required data in ADDRESS INFORMATION form: <First name>, <Last name>, <Address>,  <Country>, <State>, <City>, <Zipcode>,<Phone>
-
     Then John back to HomePage
     And John is logged
     Examples:
-      | NickName | E-mail          | First name | Last name | Password    |DateOfBirth| Address          | Country         | State   | City     | Zipcode | Phone         |
-      | "John"   | "Wick@mail.com" | "John"     | "Wick"    | "qasxdsewr" |"" |"Any street 5-6" | "United States" | "Texas" | "Dallas" | 13245   | "+1324542542" |
+      | NickName | E-mail          | First name | Last name | Password    | DateOfBirth | Address          | Country         | State   | City     | Zipcode | Phone         |
+      | "John"   | "Wick@mail.com" | "John"     | "Wick"    | "qasxdsewr" | ""          | "Any street 5-6" | "United States" | "Texas" | "Dallas" | 13245   | "+1324542542" |
 
   Scenario:John LOGOUT from shop
     When John is logged
@@ -40,6 +39,6 @@ Feature: Automation end2end tests to account management functionality
   Scenario: John DELETE Account
     When John is logged
     And Press DeleteAccount
-    And Confirm Account Deleted massage
+    And Confirm Account Deleted message
     Then John back to HomePage
     And John not logged

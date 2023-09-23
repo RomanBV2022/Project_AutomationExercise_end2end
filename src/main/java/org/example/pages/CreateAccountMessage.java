@@ -4,32 +4,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-public class DeleteAccountMasage {
+public class CreateAccountMessage {
     final WebDriver driver;
 
-    public DeleteAccountMasage(WebDriver driver) {
+    public CreateAccountMessage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//*[@data-qa='account-deleted']")
-    WebElement accDeleteH2Text;
+
+    @FindBy(xpath = "//*[@data-qa='account-created']")
+    WebElement accCreateH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
 
-    public void accDeleteConfirm(){
-        continueButton.click();
+    public void accCreateConfirm(){
+       continueButton.click();
         String url = driver.getCurrentUrl();
-        if(url.equals("https://automationexercise.com/#google_vignette")) {
-            driver.get("https://automationexercise.com/delete_account");
+        if(!url.equals("https://automationexercise.com/")) {
+            driver.get("https://automationexercise.com/account_created");
             continueButton.click();
         }
     }
 
-    public String accDeleteMassageTextget(){
-        return accDeleteH2Text.getText();
+    public String accCreateMessageTextGet(){
+        return accCreateH2Text.getText();
 
     }
-
-
 }
