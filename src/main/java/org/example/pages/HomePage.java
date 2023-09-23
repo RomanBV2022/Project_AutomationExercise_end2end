@@ -17,9 +17,7 @@ public class HomePage {
     public void goToHomePage() {
         driver.get(baseUrl);
     }
-    public String urlCurrentGet(){
-        return driver.getCurrentUrl();
-    }
+
     public String getBaseUrl(){
         return baseUrl;
     }

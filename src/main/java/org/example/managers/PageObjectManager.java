@@ -7,11 +7,11 @@ public class PageObjectManager {
 
     private WebDriver driver;
     private HomePage homePage;
-    private HeaderComponent headerComponent;
+    private NavigationBar navigationBar;
     private LoginPage loginPage;
     private SignupPage signupPage;
-    private CreateAccountMassage createAccountMassage;
-    private DeleteAccountMasage deleteAccountMasage;
+    private CreateAccountMessage createAccountMessage;
+    private DeleteAccountMessage deleteAccountMessage;
 
     public PageObjectManager() {
     }
@@ -21,9 +21,9 @@ public class PageObjectManager {
         this.homePage = homePage;
     }
 
-    public PageObjectManager(HeaderComponent headerComponent) {
+    public PageObjectManager(NavigationBar navigationBar) {
 
-        this.headerComponent = headerComponent;
+        this.navigationBar = navigationBar;
     }
 
     public PageObjectManager(LoginPage loginPage) {
@@ -35,14 +35,14 @@ public class PageObjectManager {
 
         this.signupPage = signupPage;
     }
-    public PageObjectManager(DeleteAccountMasage deleteAccountMasage) {
+    public PageObjectManager(DeleteAccountMessage deleteAccountMessage) {
 
-        this.deleteAccountMasage = deleteAccountMasage;
+        this.deleteAccountMessage = deleteAccountMessage;
     }
 
-    public PageObjectManager(CreateAccountMassage createAccountMassage) {
+    public PageObjectManager(CreateAccountMessage createAccountMessage) {
 
-        this.createAccountMassage = createAccountMassage;
+        this.createAccountMessage = createAccountMessage;
     }
 
     public PageObjectManager(WebDriver driver) {
@@ -56,9 +56,9 @@ public class PageObjectManager {
                 homePage = new HomePage(driver) : homePage;
     }
 
-    public HeaderComponent getHeaderComponent() {
-        return (headerComponent == null) ?
-                headerComponent = new HeaderComponent(driver) : headerComponent;
+    public NavigationBar getNavigationBar() {
+        return (navigationBar == null) ?
+                navigationBar = new NavigationBar(driver) : navigationBar;
     }
 
     public LoginPage getLoginPage() {
@@ -69,12 +69,12 @@ public class PageObjectManager {
         return (signupPage == null) ? signupPage = new SignupPage(driver) : signupPage;
     }
 
-    public CreateAccountMassage getAccountCreatedPage() {
-        return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
+    public CreateAccountMessage getCreateAccountMessage() {
+        return (createAccountMessage == null) ? createAccountMessage = new CreateAccountMessage(driver) : createAccountMessage;
     }
 
-    public DeleteAccountMasage getDeleteAccountPage() {
-        return (deleteAccountMasage == null) ? deleteAccountMasage = new DeleteAccountMasage(driver) : deleteAccountMasage;
+    public DeleteAccountMessage getDeleteAccountMessage() {
+        return (deleteAccountMessage == null) ? deleteAccountMessage = new DeleteAccountMessage(driver) : deleteAccountMessage;
     }
 
 }

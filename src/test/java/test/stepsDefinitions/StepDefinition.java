@@ -22,11 +22,11 @@ public class StepDefinition {
 
 
     HomePage homePage;
-    HeaderComponent headerComponent;
+    NavigationBar navigationBar;
     LoginPage loginPage;
     SignupPage signupPage;
-    CreateAccountMassage createAccountMassage;
-    DeleteAccountMasage deleteAccountMasage;
+    CreateAccountMessage createAccountMessage;
+    DeleteAccountMessage deleteAccountMessage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
 
@@ -43,11 +43,11 @@ public class StepDefinition {
     @Before
     public void uploadPageObjects() {
         homePage = pageObjectManager.getHomePage();
-        headerComponent = pageObjectManager.getHeaderComponent();
+        navigationBar = pageObjectManager.getNavigationBar();
         loginPage = pageObjectManager.getLoginPage();
         signupPage = pageObjectManager.getSignupPage();
-        createAccountMassage = pageObjectManager.getAccountCreatedPage();
-        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
+        createAccountMessage = pageObjectManager.getCreateAccountMessage();
+        deleteAccountMessage = pageObjectManager.getDeleteAccountMessage();
 
     }
         //START FEATURE
@@ -58,14 +58,12 @@ public class StepDefinition {
     public void johnOnHomePage() {
 
         homePage.goToHomePage();
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl());
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(),"URL not equals HomePage URL ");
 
     }
-
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
-
-        headerComponent.clickLogin();
+        navigationBar.clickLogin();
     }
 
     @When("John move to LoginPage")
@@ -174,14 +172,14 @@ public class StepDefinition {
         signupPage.createAccButtonClick();
     }
 
-    @When("John see Account Created massage")
-    public void johnOnAccountCreatedMassagePage() {
-        Assertions.assertEquals(createAccountMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
+    @When("John see Account Created message")
+    public void johnOnAccountCreatedMessagePage() {
+        Assertions.assertEquals(createAccountMessage.accCreateMessageTextGet(), "ACCOUNT CREATED!");
     }
 
     @When("John press Continue")
     public void johnPressContinue() {
-        createAccountMassage.accCreateConfirm();
+        createAccountMessage.accCreateConfirm();
 
     }
 
@@ -192,18 +190,18 @@ public class StepDefinition {
 
     @Then("John is logged")
     public void johnIsLogged() {
-        Assertions.assertEquals(headerComponent.loggedNameGet(), loginPage.getName());
+        Assertions.assertEquals(navigationBar.loggedNameGet(), loginPage.getName());
     }
         // END OF REGISTRATION
         //START LOGOUT
     @When("John press Logout")
     public void johnPressLogout() {
-        headerComponent.clickLogout();
+        navigationBar.clickLogout();
     }
 
     @Then("John not logged")
     public void johnNotLogged() {
-        Assumptions.assumeTrue(headerComponent.loginButtonDisplaed());
+        Assumptions.assumeTrue(navigationBar.loginButtonDisplaed());
     }
         //END LOGOUT
 
@@ -228,13 +226,13 @@ public class StepDefinition {
         //START DELETE
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {
-        headerComponent.deleteAccount();
+        navigationBar.deleteAccount();
     }
 
     @When("Confirm Account Deleted masage")
     public void confirmAccountDeletedMasage() {
-        Assertions.assertEquals(deleteAccountMasage.accDeleteMassageTextget(), "ACCOUNT DELETED!");
-        deleteAccountMasage.accDeleteConfirm();
+        Assertions.assertEquals(deleteAccountMessage.accDeleteMessageTextGet(), "ACCOUNT DELETED!");
+        deleteAccountMessage.accDeleteConfirm();
 
     }
     //END DELETE

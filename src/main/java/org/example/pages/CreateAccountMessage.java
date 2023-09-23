@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-public class CreateAccountMassage {
+public class CreateAccountMessage {
     final WebDriver driver;
 
-    public CreateAccountMassage(WebDriver driver){
+    public CreateAccountMessage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -26,7 +26,7 @@ public class CreateAccountMassage {
         }
     }
 
-    public String accCreateMassageTextget(){
+    public String accCreateMessageTextGet(){
         return accCreateH2Text.getText();
 
     }
