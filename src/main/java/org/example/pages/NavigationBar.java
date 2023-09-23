@@ -11,6 +11,8 @@ import java.time.Duration;
 
 public class NavigationBar {
     final WebDriver driver;
+    private final String baseUrl = "https://automationexercise.com/delete_account";
+    //PAGE LOCATORS
     @FindBy(xpath = "//*[@href='/login']")
     WebElement loginButtonLink;
     @FindBy(xpath = "//*[@href='/logout']")
@@ -34,8 +36,8 @@ public class NavigationBar {
 //        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
 //        wait.until(d -> loginButton.isDisplayed());
 //    }
-
-    public boolean loginButtonDisplaed() {
+    //PAGE ACTIONS
+    public boolean loginButtonDisplayed() {
         return loginButtonLink.isDisplayed();
     }
 
@@ -67,11 +69,7 @@ public class NavigationBar {
 
     public void deleteAccountClick() {
         deleteAccountLink.click();
-        String url = driver.getCurrentUrl();
-        if (url.equals("https://automationexercise.com/#google_vignette")) {
-            driver.get("https://automationexercise.com/");
-            deleteAccountLink.click();
-        }
+
     }
 
 

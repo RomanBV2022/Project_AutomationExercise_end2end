@@ -35,8 +35,8 @@ public class StepDefinition {
     }
 
     @When("John put {string} and  {string} in Signup form")
-    public void johnPutAndInSignupForm(String name, String email) {
-        accountManagementTest.signupNameFieldTest(name);
+    public void johnPutAndInSignupForm(String nickName, String email) {
+        accountManagementTest.signupNameFieldTest(nickName);
         accountManagementTest.signupEmailFieldTest(email);
         accountManagementTest.signupButtonTest();
 
@@ -65,8 +65,8 @@ public class StepDefinition {
         accountManagementTest.zipcodeInputFieldAddressInfoTest(zipcode);
         accountManagementTest.phoneInputFieldAddressInfoTest(phone);
         accountManagementTest.createAccountButtonTest();
-        accountManagementTest.createAccountMassageTest();
-        accountManagementTest.confirmButtonAccountCreatedMassageTest();
+        accountManagementTest.createAccountMessageTest();
+        accountManagementTest.confirmButtonAccountCreatedMessageTest();
     }
 
     @Then("John back to HomePage")
@@ -109,9 +109,9 @@ public class StepDefinition {
         accountManagementTest.deleteAccountNavBarLinkTest();
     }
 
-    @When("Confirm Account Deleted massage")
-    public void confirmAccountDeletedMassage() {
-        accountManagementTest.deleteAccountMassageTest();
+    @When("Confirm Account Deleted message")
+    public void confirmAccountDeletedMessage() {
+        accountManagementTest.deleteAccountMessageTest();
     }
     //END DELETE
 
