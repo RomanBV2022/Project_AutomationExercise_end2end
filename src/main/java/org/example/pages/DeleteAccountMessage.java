@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DeleteAccountMasage {
+public class DeleteAccountMessage {
     final WebDriver driver;
 
-    public DeleteAccountMasage(WebDriver driver) {
+    public DeleteAccountMessage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -20,7 +20,7 @@ public class DeleteAccountMasage {
     public void accDeleteConfirm() {
 
         String url = driver.getCurrentUrl();
-        if (url.equals("https://automationexercise.com/delete_account#google_vignette")) {
+        if (url.equals("https://automationexercise.com/#google_vignette")) {
             driver.get("https://automationexercise.com/delete_account");
             continueButton.click();
         } else {
@@ -28,7 +28,7 @@ public class DeleteAccountMasage {
         }
     }
 
-    public String accDeleteMassageTextget(){
+    public String accDeleteMessageTextGet(){
         return accDeleteH2Text.getText();
 
     }
