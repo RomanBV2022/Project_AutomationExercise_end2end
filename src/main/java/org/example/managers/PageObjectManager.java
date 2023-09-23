@@ -10,8 +10,8 @@ public class PageObjectManager {
     private HeaderComponent headerComponent;
     private LoginPage loginPage;
     private SignupPage signupPage;
-    private CreateAccountMassage createAccountMassage;
-    private DeleteAccountMasage deleteAccountMasage;
+    private CreateAccountMessage createAccountMessage;
+    private DeleteAccountMessage deleteAccountMessage;
 
     public PageObjectManager() {
     }
@@ -35,14 +35,14 @@ public class PageObjectManager {
 
         this.signupPage = signupPage;
     }
-    public PageObjectManager(DeleteAccountMasage deleteAccountMasage) {
+    public PageObjectManager(DeleteAccountMessage deleteAccountMessage) {
 
-        this.deleteAccountMasage = deleteAccountMasage;
+        this.deleteAccountMessage = deleteAccountMessage;
     }
 
-    public PageObjectManager(CreateAccountMassage createAccountMassage) {
+    public PageObjectManager(CreateAccountMessage createAccountMessage) {
 
-        this.createAccountMassage = createAccountMassage;
+        this.createAccountMessage = createAccountMessage;
     }
 
     public PageObjectManager(WebDriver driver) {
@@ -69,12 +69,12 @@ public class PageObjectManager {
         return (signupPage == null) ? signupPage = new SignupPage(driver) : signupPage;
     }
 
-    public CreateAccountMassage getAccountCreatedPage() {
-        return (createAccountMassage == null) ? createAccountMassage = new CreateAccountMassage(driver) : createAccountMassage;
+    public CreateAccountMessage getAccountCreatedMessage() {
+        return (createAccountMessage == null) ? createAccountMessage = new CreateAccountMessage(driver) : createAccountMessage;
     }
 
-    public DeleteAccountMasage getDeleteAccountPage() {
-        return (deleteAccountMasage == null) ? deleteAccountMasage = new DeleteAccountMasage(driver) : deleteAccountMasage;
+    public DeleteAccountMessage getDeleteAccountMessage() {
+        return (deleteAccountMessage == null) ? deleteAccountMessage = new DeleteAccountMessage(driver) : deleteAccountMessage;
     }
 
 }

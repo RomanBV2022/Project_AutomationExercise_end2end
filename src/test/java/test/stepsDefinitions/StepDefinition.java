@@ -25,8 +25,8 @@ public class StepDefinition {
     HeaderComponent headerComponent;
     LoginPage loginPage;
     SignupPage signupPage;
-    CreateAccountMassage createAccountMassage;
-    DeleteAccountMasage deleteAccountMasage;
+    CreateAccountMessage createAccountMessage;
+    DeleteAccountMessage deleteAccountMessage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
 
@@ -46,8 +46,8 @@ public class StepDefinition {
         headerComponent = pageObjectManager.getHeaderComponent();
         loginPage = pageObjectManager.getLoginPage();
         signupPage = pageObjectManager.getSignupPage();
-        createAccountMassage = pageObjectManager.getAccountCreatedPage();
-        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
+        createAccountMessage = pageObjectManager.getAccountCreatedMessage();
+        deleteAccountMessage = pageObjectManager.getDeleteAccountMessage();
 
     }
         //START FEATURE
@@ -73,29 +73,27 @@ public class StepDefinition {
         Assertions.assertEquals("https://automationexercise.com/login", driver.getCurrentUrl());
     }
 
-    @Then("John be able to fill signup form")
+    @Given("John be able to fill signup form")
     public void johnBeAbleToFillSignupForm() {
-        Assertions.assertEquals(loginPage.getBaseUrl(), driver.getCurrentUrl());
+
     }
 
-    @When("John input Name: {string}")
-    public void johnInputName(String name) {
+    @When("John input Name: {string} and Email Address: {string}")
+    public void johnInputName(String name,String email) {
         loginPage.nameInput(name);
-    }
-
-    @When("John input Email Address: {string}")
-    public void johnInputEmailAddress(String email) {
         loginPage.emailInputSignupForm(email);
     }
-
-    @Then("John can signup")
-    public void johnCanSingup() {
+    @When("John press Signup button")
+    public void johnPressSignupButton() {
         loginPage.signupButtonClick();
     }
 
-    @When("John on SignupPage")
+
+
+
+    @Given("John on SignupPage")
     public void johnOnSignupPage() {
-//        Assertions.assertEquals(signupPage.getBaseUrl(),driver.getCurrentUrl());
+        Assertions.assertEquals(signupPage.getBaseUrl(),driver.getCurrentUrl());
         signupPage.accountInformatinFormIsPresent();
     }
 
@@ -174,14 +172,14 @@ public class StepDefinition {
         signupPage.createAccButtonClick();
     }
 
-    @When("John see Account Created massage")
-    public void johnOnAccountCreatedMassagePage() {
-        Assertions.assertEquals(createAccountMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
+    @When("John see Account Created message")
+    public void johnOnAccountCreatedMessagePage() {
+        Assertions.assertEquals(createAccountMessage.accCreateMessageTextGet(), "ACCOUNT CREATED!");
     }
 
     @When("John press Continue")
     public void johnPressContinue() {
-        createAccountMassage.accCreateConfirm();
+        createAccountMessage.accCreateConfirm();
 
     }
 
@@ -231,10 +229,10 @@ public class StepDefinition {
         headerComponent.deleteAccount();
     }
 
-    @When("Confirm Account Deleted masage")
-    public void confirmAccountDeletedMasage() {
-        Assertions.assertEquals(deleteAccountMasage.accDeleteMassageTextget(), "ACCOUNT DELETED!");
-        deleteAccountMasage.accDeleteConfirm();
+    @When("Confirm Account Deleted message")
+    public void confirmAccountDeletedMessage() {
+        Assertions.assertEquals(deleteAccountMessage.accDeleteMessageTextGet(), "ACCOUNT DELETED!");
+        deleteAccountMessage.accDeleteConfirm();
 
     }
     //END DELETE
