@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.1">
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.1 with smoke e2e verify">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/E2E.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/E2E.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/verifyContent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/verifyContent.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695411086629</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="stable v.2.1 with smoke e2e verify">
+      <created>1695572884126</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695572884127</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +219,7 @@
     <MESSAGE value="new branch stage" />
     <MESSAGE value=" stage update" />
     <MESSAGE value="stable v.2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="stable v.2.1" />
+    <MESSAGE value="stable v.2.1 with smoke e2e verify" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable v.2.1 with smoke e2e verify" />
   </component>
 </project>
