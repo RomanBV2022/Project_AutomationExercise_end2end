@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.0">
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/WebDriverSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/E2E.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/verifyContent.feature" afterDir="false" />
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/SignUpPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/end2end.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/smoke.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/E2E.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/E2E.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/verifyContent.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/verifyContent.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="restAssured_main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,17 +47,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Disk D/Java-Selenium/Timofej_DriverManager&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Disk D/Java-Selenium/Timofej_DriverManager",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Disk D\Java-Selenium\Selenium_AutomationExercise\src\main\resources" />
@@ -165,9 +161,9 @@
       <list>
         <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="JUnit.TestRunnerVerifyContent" />
-        <item itemvalue="Cucumber Java.Feature: verifyContent" />
         <item itemvalue="Cucumber Java.Scenario: Registration new user" />
         <item itemvalue="Cucumber Java.Scenario: Login to account" />
+        <item itemvalue="Cucumber Java.Feature: verifyContent" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694625286773</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="stable v.2.1">
+      <created>1695411086629</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695411086629</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +215,7 @@
     <MESSAGE value="new brain stage" />
     <MESSAGE value="new branch stage" />
     <MESSAGE value=" stage update" />
-    <option name="LAST_COMMIT_MESSAGE" value=" stage update" />
+    <MESSAGE value="stable v.2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable v.2.1" />
   </component>
 </project>
