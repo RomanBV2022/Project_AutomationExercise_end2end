@@ -33,7 +33,7 @@ public class LogoutTest {
     @Order(30)
     public void logoutLinkInNavBarTest(){
         navigationBar = pageObjectManager.getNavigationBar();
-        navigationBar.clickLogout();
+        navigationBar.logoutClick();
     }
     @Test
     @Order(40)

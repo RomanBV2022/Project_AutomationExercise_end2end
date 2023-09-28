@@ -16,14 +16,11 @@ public class DeleteAccountMessage {
     WebElement accDeleteH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
-    @FindBy(xpath = "//*[@id='google_esf']")
+    @FindBy(xpath = "//*[@id='aswift_2']")
     WebElement adFrame;
     public void accDeleteConfirm(){
         continueButton.click();
-        if(adFrame.isEnabled()) {
-            driver.navigate().refresh();
-            continueButton.click();
-        }
+
     }
 
     public String accDeleteMessageTextGet(){
