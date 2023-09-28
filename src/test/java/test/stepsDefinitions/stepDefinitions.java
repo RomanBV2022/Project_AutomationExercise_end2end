@@ -7,7 +7,8 @@ import io.cucumber.java.en.When;
 import test.AccountManagementTest;
 
 
-public class StepDefinition {
+
+public class stepDefinitions {
 
     AccountManagementTest accountManagementTest = new AccountManagementTest();
 

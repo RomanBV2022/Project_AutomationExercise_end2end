@@ -16,7 +16,7 @@ public class CreateAccountMessage {
     WebElement accCreateH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
-    @FindBy(xpath = "//*[@id='google_esf']")
+    @FindBy(xpath = "//*[@id='aswift_2']")
     WebElement adFrame;
 
     public void accCreateConfirm(){

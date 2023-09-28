@@ -4,14 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class NavigationBar {
     final WebDriver driver;
-    private final String baseUrl = "https://automationexercise.com/delete_account";
+//    private final String baseUrl = "https://automationexercise.com/delete_account";
     //PAGE LOCATORS
     @FindBy(xpath = "//*[@href='/login']")
     WebElement loginButtonLink;
@@ -25,26 +21,22 @@ public class NavigationBar {
     WebElement loggedName;
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a")
     WebElement loggedLink;
-
+    @FindBy(xpath = "//*[@id='aswift_2']")
+    WebElement adFrame;
     public NavigationBar(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-//    public void loginButtonDisplaedWait() {
-//        Wait<WebDriver> wait;
-//        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
-//        wait.until(d -> loginButton.isDisplayed());
-//    }
+
+
     //PAGE ACTIONS
     public boolean loginButtonDisplayed() {
         return loginButtonLink.isDisplayed();
     }
 
     public void clickLogin() {
-        Wait<WebDriver> wait;
-        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
-        wait.until(d -> loginButtonLink.isDisplayed());
+
         loginButtonLink.click();
     }
 
@@ -57,11 +49,8 @@ public class NavigationBar {
     }
 
 
-    public void clickLogout() {
+    public void logoutClick() {
 
-        Wait<WebDriver> wait;
-        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
-        wait.until(d -> logoutButtonLink.isDisplayed());
 
         logoutButtonLink.click();
 
@@ -69,6 +58,7 @@ public class NavigationBar {
 
     public void deleteAccountClick() {
         deleteAccountLink.click();
+
 
     }
 

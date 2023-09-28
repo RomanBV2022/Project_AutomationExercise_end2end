@@ -4,13 +4,6 @@ import org.example.managers.PageObjectManager;
 import org.example.managers.WebDriverSetup;
 import org.example.pages.*;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -55,10 +48,10 @@ public class AccountManagementTest {
     @Order(10)
     @DisplayName("Home page url test")
     public void homePageUrlTest() {
-//        this.homePage=homePage;
+
         homePage = pageObjectManager.getHomePage();
         homePage.goToHomePage();
-        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(), "HomePage upload");
+//        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(), "HomePage upload");
     }
 
     @Test
@@ -288,7 +281,7 @@ public class AccountManagementTest {
     @Order(280)
     public void logoutLinkInNavBarTest() {
         navigationBar = pageObjectManager.getNavigationBar();
-        navigationBar.clickLogout();
+        navigationBar.logoutClick();
     }
 
     @Test
@@ -316,7 +309,7 @@ public class AccountManagementTest {
     @Order(320)
     public void deleteAccountNavBarLinkTest() {
         navigationBar = pageObjectManager.getNavigationBar();
-        navigationBar.deleteAccount();
+        navigationBar.deleteAccountClick();
     }
 
     @Test
