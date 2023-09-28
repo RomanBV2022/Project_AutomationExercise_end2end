@@ -21,7 +21,7 @@
 #    And I click 'View cart' button
 #    And I verify that product is displayed in Cart page
 #    Then I verify  exact quantity in cart
-
+#
 #  Scenario: Remove Products from cart
 #    And I click to 'Products' button
 #    And I click 'Add to cart' button
@@ -48,20 +48,3 @@
 #    And  I click Delete button to delete account
 #    Then <Robert> Account was Deleted
 #
-#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

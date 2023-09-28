@@ -14,7 +14,6 @@ Feature: Verify content on 'http://automationexercise.com' and other features
 
   Scenario: Verify products quantity in cart
     And I click view product of first
-    And I click view product of first product
     And I increase quantity to 4
     And I click 'Add to cart' button
     And I click 'View cart' button

@@ -12,21 +12,8 @@ public class PageObjectManager {
     private AccountCreated accountCreated;
     private ProductsPage productsPage;
     private CartPage cartPage;
+    private TestCasesPage testCasesPage;
 
-
-
-    public PageObjectManager(HomePage homePage) {
-        this.homePage = homePage;
-    }
-    public PageObjectManager(LoginPage loginPage) {
-        this.loginPage = loginPage;
-    }
-    public PageObjectManager(SignUpPage signUpPage) {
-        this.signUpPage= signUpPage;
-    }
-    public PageObjectManager(AccountCreated accountCreated) {
-        this.accountCreated = accountCreated;
-    }
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -51,4 +38,8 @@ public class PageObjectManager {
 
     public CartPage getCartPage() {
         return (cartPage==null) ? cartPage = new  CartPage(driver) : cartPage;}
+
+    public  TestCasesPage getTestCasesPage(){
+        return (testCasesPage==null) ? testCasesPage = new  TestCasesPage(driver) : testCasesPage;}
+
 }

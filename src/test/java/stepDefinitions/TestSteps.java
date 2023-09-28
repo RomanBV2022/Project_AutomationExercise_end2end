@@ -25,6 +25,7 @@ public class TestSteps {
     AccountCreated accountCreated;
     ProductsPage productsPage;
     CartPage cartPage;
+    TestCasesPage testCasesPage;
 
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
@@ -47,6 +48,7 @@ public class TestSteps {
         signUpPage = pageObjectManager.getSignUpPage();
         productsPage = pageObjectManager.getProductsPage();
         cartPage = pageObjectManager.getCartPage();
+        testCasesPage = pageObjectManager.getTestCasesPage();
         driver.getCurrentUrl();
     }
 
@@ -105,7 +107,7 @@ public class TestSteps {
     @Then("I am on HomePage logged in <Robert> account")
     public void i_am_on_home_page_logged_in_robert_account() {
         accountCreated.clickButtonContinue();
-        accountCreated.clickDismissAdd();
+        driver.navigate().back();driver.navigate().forward();
         Assertions.assertEquals("Home", accountCreated.showHomePage());
         Assertions.assertEquals("Robert", accountCreated.showLoggedUser());
     }
@@ -162,21 +164,30 @@ public class TestSteps {
     //*********************************************************************************************************
     @When("I click to 'Products' button")
     public void i_click_to_products_button() {
+        homePage.clickProductsPage();
+        driver.navigate().back();
+        driver.navigate().forward();
 
     }
 
     @And("I verify Product page and product list are visible")
     public void i_verify_product_page_and_product_list_are_visible() {
+        Assertions.assertEquals("https://automationexercise.com/products",productsPage.getCurrentUrl());
+        Assertions.assertTrue(productsPage.isListOfElementsDisplayed());
 
     }
 
     @And("I click view product of first product")
     public void i_click_view_product_of_first_product() {
+        productsPage.clickViewProductFirst();
 
     }
 
     @Then("I am on detail page and verify ':' product name, price, availability, condition, brand")
     public void i_am_on_detail_page_and_verify_product_name_price_availability_condition_brand() {
+       Assertions.assertEquals("[Blue Top, Rs. 500, Brand:, Availability:, Condition:]",
+                              productsPage.getProductElements());
+
 
     }
 
@@ -186,7 +197,12 @@ public class TestSteps {
     @And("I click view product of first")
     public void i_click_view_product_of_first() {
         homePage.clickProductsPage();
+        driver.navigate().back();
+        driver.navigate().forward();
         productsPage.clickViewProductFirst();
+
+
+
     }
 
     @And("I increase quantity to 4")
@@ -200,11 +216,12 @@ public class TestSteps {
     }
 
     @And("I click 'View cart' button")
-    public void i_click_view_cart_button() {
-        productsPage.clickViewCart();
+    public void i_click_view_cart_button()  {
+      driver.navigate().back();
+      productsPage.waitForAndViewCartClick();
     }
     @And("I verify that product is displayed in Cart page")
-    public void i_verify_that_product_is_displayed_in_cart_page() {
+    public void i_verify_that_product_is_displayed_in_cart_page()  {
         Assertions.assertEquals("Blue Top",cartPage.showProductNameInCart());
     }
     @Then("I verify  exact quantity in cart")
@@ -216,11 +233,14 @@ public class TestSteps {
     //*********************************************************************************************************
     @When("I click on 'Test Cases' button")
     public void i_click_on_test_cases_button() {
-
+            homePage.clickTestCasesPage();
+            driver.navigate().back();
+            driver.navigate().forward();
     }
 
     @Then("I verify that Test Cases page is displayed")
     public void i_verify_that_test_cases_page_is_displayed() {
+        Assertions.assertEquals("https://automationexercise.com/test_cases",testCasesPage.getCurrentUrl());;
 
     }
 

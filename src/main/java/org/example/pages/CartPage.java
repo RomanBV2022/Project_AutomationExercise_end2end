@@ -13,7 +13,7 @@ public class CartPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//td[@class=\"cart_description\"]/h4")
+    @FindBy(xpath = "//td/h4/a")
     WebElement productNameInCart_xpath;
 
     @FindBy(xpath = "//button[@class='disabled']")
