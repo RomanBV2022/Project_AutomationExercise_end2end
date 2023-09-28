@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/TestSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/WebDriverSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/WebDriverSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/E2E.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/E2E.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +84,15 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestRunner">
-    <configuration name="Scenario: Registration new user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Test Cases page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/end2end.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Selenium_AutomationExercise" />
-      <option name="NAME_FILTER" value="^Registration new user$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registration new user$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registration new user" />
+      <option name="NAME_FILTER" value="^Verify Test Cases page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Test Cases page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify Test Cases page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -170,10 +177,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestRunner" />
-        <item itemvalue="Cucumber Java.Scenario: Verify all products and product detail page" />
         <item itemvalue="Cucumber Java.Scenario: Verify products quantity in cart" />
+        <item itemvalue="Cucumber Java.Scenario: Verify Test Cases page" />
+        <item itemvalue="Cucumber Java.Scenario: Verify all products and product detail page" />
         <item itemvalue="JUnit.TestRunnerVerifyContent" />
-        <item itemvalue="Cucumber Java.Scenario: Registration new user" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695839264450</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
+      <created>1695931907944</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695931907944</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

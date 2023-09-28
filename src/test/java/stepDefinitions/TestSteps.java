@@ -9,22 +9,22 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.managers.PageObjectManager;
-import org.example.pages.AccountCreated;
-import org.example.pages.HomePage;
-import org.example.pages.LoginPage;
-import org.example.pages.SignUpPage;
+import org.example.pages.*;
+
 
 import org.junit.jupiter.api.Assertions;
 
 import org.openqa.selenium.WebDriver;
 
 
-public class Steps {
+public class TestSteps {
     static WebDriver driver;
     HomePage homePage;
     LoginPage loginPage;
     SignUpPage signUpPage;
     AccountCreated accountCreated;
+    ProductsPage productsPage;
+    CartPage cartPage;
 
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
@@ -45,6 +45,8 @@ public class Steps {
         loginPage = pageObjectManager.getLoginPage();
         accountCreated = pageObjectManager.getAccountCreated();
         signUpPage = pageObjectManager.getSignUpPage();
+        productsPage = pageObjectManager.getProductsPage();
+        cartPage = pageObjectManager.getCartPage();
         driver.getCurrentUrl();
     }
 
@@ -183,30 +185,31 @@ public class Steps {
 
     @And("I click view product of first")
     public void i_click_view_product_of_first() {
-
+        homePage.clickProductsPage();
+        productsPage.clickViewProductFirst();
     }
 
     @And("I increase quantity to 4")
     public void i_increase_quantity_to_4() {
-
+        productsPage.inputQuantityProductFirst(4);
     }
 
     @And("I click 'Add to cart' button")
     public void i_click_add_to_cart_button() {
-
+        productsPage.clickAddToCart();
     }
 
     @And("I click 'View cart' button")
     public void i_click_view_cart_button() {
-
+        productsPage.clickViewCart();
     }
     @And("I verify that product is displayed in Cart page")
     public void i_verify_that_product_is_displayed_in_cart_page() {
-
+        Assertions.assertEquals("Blue Top",cartPage.showProductNameInCart());
     }
     @Then("I verify  exact quantity in cart")
     public void i_verify_exact_quantity_in_cart() {
-
+        Assertions.assertEquals("4",cartPage.showQuantityInCart());
     }
 
     //Scenario: Verify Test Cases page
@@ -252,10 +255,10 @@ public class Steps {
 
     //Scenario: Remove Products from cart
     //*********************************************************************************************************
-  @And("I click 'X' button for remove product from cart")
-   public void i_click_x_button_for_remove_product_from_cart() {
+    @And("I click 'X' button for remove product from cart")
+    public void i_click_x_button_for_remove_product_from_cart() {
 
-   }
+    }
     @And("I verify that product removed from cart")
     public void i_verify_that_product_removed_from_cart() {
 
