@@ -65,7 +65,7 @@ Feature: Automation end2end tests to account management functionality
   Scenario Outline: John LOGIN to shop
     Given John on HomePage
     And John not logged
-  When John press Signup/Login
+    When John press Signup/Login
     When John move to LoginPage
     And John input e-mail <e-mail>
     And John input password <passwd>

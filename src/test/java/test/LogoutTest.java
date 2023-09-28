@@ -1,7 +1,6 @@
 package test;
 
 import org.example.managers.PageObjectManager;
-import org.example.managers.WebDriverSetup;
 import org.example.pages.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
@@ -47,7 +46,7 @@ public class LogoutTest {
     public void loginStatusTest() {
 //        this.navigationBar = navigationBar;
         navigationBar = pageObjectManager.getNavigationBar();
-        Assumptions.assumeTrue(navigationBar.loginButtonDisplaed(), "Logit/Signup link is displaed");
+        Assumptions.assumeTrue(navigationBar.loginButtonDisplayed(), "Logit/Signup link is displaed");
     }
 
 }

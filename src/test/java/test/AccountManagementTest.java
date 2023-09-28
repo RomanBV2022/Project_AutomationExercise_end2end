@@ -4,6 +4,13 @@ import org.example.managers.PageObjectManager;
 import org.example.managers.WebDriverSetup;
 import org.example.pages.*;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -14,8 +21,8 @@ public class AccountManagementTest {
     NavigationBar navigationBar;
     LoginPage loginPage;
     SignupPage signupPage;
-    CreateAccountMassage createAccountMassage;
-    DeleteAccountMasage deleteAccountMasage;
+    CreateAccountMessage createAccountMessage;
+    DeleteAccountMessage deleteAccountMessage;
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
 
@@ -37,12 +44,11 @@ public class AccountManagementTest {
 //        navigationBar = pageObjectManager.getNavigationBar();
 //        loginPage = pageObjectManager.getLoginPage();
 //        signupPage = pageObjectManager.getSignupPage();
-//        createAccountMassage = pageObjectManager.getAccountCreatedPage();
-//        deleteAccountMasage = pageObjectManager.getDeleteAccountPage();
+//        createAccountMessage = pageObjectManager.getAccountCreatedPage();
+//        deleteAccountMessage = pageObjectManager.getDeleteAccountPage();
 //
 //
 //    }
-
 
 
     @Test
@@ -59,9 +65,8 @@ public class AccountManagementTest {
     @Order(15)
     @DisplayName("User logged or not logged test")
     public void loginStatusTest() {
-//        this.navigationBar = navigationBar;
         navigationBar = pageObjectManager.getNavigationBar();
-        Assumptions.assumeTrue(navigationBar.loginButtonDisplaed(), "Logit/Signup link is displaed");
+        Assumptions.assumeTrue(navigationBar.loginButtonDisplayed(), "Logit/Signup link not displaed");
     }
 
     @Test
@@ -71,34 +76,37 @@ public class AccountManagementTest {
 
         navigationBar = pageObjectManager.getNavigationBar();
         loginPage = pageObjectManager.getLoginPage();
-        loginPage = pageObjectManager.getLoginPage();
-        Assumptions.assumeTrue(navigationBar.loginButtonDisplaed(), "Logit/Signup link is displaed");
+        Assumptions.assumeTrue(navigationBar.loginButtonDisplayed(), "Login/Signup link not displayed");
         navigationBar.clickLogin();
 
     }
+
     @Test
     @Order(25)
-    public void loginPageUploadTest(){
-        loginPage=pageObjectManager.getLoginPage();
+    public void loginPageUploadTest() {
+        loginPage = pageObjectManager.getLoginPage();
         Assertions.assertEquals(loginPage.getBaseUrl(), driver.getCurrentUrl());
 
     }
+
     @Test
     @Order(30)
-    public void signupFormTest(String name) {
-        loginPage=pageObjectManager.getLoginPage();
-        Assumptions.assumeTrue(loginPage.signupFormDisplayed(),"Signup form is displayed");
+    public void signupFormTest() {
+        loginPage = pageObjectManager.getLoginPage();
+        Assumptions.assumeTrue(loginPage.signupFormDisplayed(), "Signup form is displayed");
 
     }
 
     @Test
     @Order(35)
     @DisplayName("Name field Signup form test")
-    public void signupNameFieldTest(String name) {
+    public void signupNameFieldTest(String nickName) {
+
         loginPage = pageObjectManager.getLoginPage();
-        Assumptions.assumeTrue(loginPage.nameSignupInputFieldDisplayed(),"Name field Signup form displayed");
-        loginPage.nameInput(name);
+        Assumptions.assumeTrue(loginPage.nameSignupInputFieldDisplayed(), "Name field Signup form displayed");
+        loginPage.nameInput(nickName);
     }
+
 
     @Test
     @Order(40)
@@ -112,8 +120,6 @@ public class AccountManagementTest {
     public void signupButtonTest() {
         loginPage = pageObjectManager.getLoginPage();
         loginPage.signupButtonClick();
-//        Wait<WebDriver> wait;
-//        wait = new WebDriverWait((WebDriver) driver, Duration.ofSeconds(5));
 //        signupPage= pageObjectManager.getSignupPage();
 //        Assertions.assertEquals(signupPage.getBaseUrl(),driver.getCurrentUrl());
     }
@@ -124,7 +130,7 @@ public class AccountManagementTest {
 
         signupPage = pageObjectManager.getSignupPage();
 //        Assertions.assertEquals(signupPage.getBaseUrl(),driver.getCurrentUrl());
-        Assumptions.assumeTrue(signupPage.accountInformatinFormIsPresent(),"Account Information form is not displayed");
+        Assumptions.assumeTrue(signupPage.accountInformatinFormIsPresent(), "Account Information form is not displayed");
     }
 
     @Test
@@ -136,6 +142,7 @@ public class AccountManagementTest {
     @Test
     @Order(80)
     public void nameAccountInformationFieldTest() {
+        signupPage = pageObjectManager.getSignupPage();
 
     }
 
@@ -184,126 +191,146 @@ public class AccountManagementTest {
     public void checkConfirmReceiveSpecialOffersFromOurPartnersTest() {
         signupPage.offerClick();
     }
+
     @Test
     @Order(160)
-    public void firstNameInputFieldAddressInfoTest(String firstName){
+    public void firstNameInputFieldAddressInfoTest(String firstName) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.first_nameInput(firstName);
     }
+
     @Test
     @Order(170)
-    public void lastNameInputFieldAddressInfoTest(String lastName){
+    public void lastNameInputFieldAddressInfoTest(String lastName) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.last_nameInput(lastName);
     }
+
     @Test
     @Order(180)
-    public void addressInputFieldAddressInfoTest(String address){
+    public void addressInputFieldAddressInfoTest(String address) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.addressInput(address);
     }
+
     @Test
     @Order(190)
-    public void countrySelectFieldAddressInfoTest(String country){
+    public void countrySelectFieldAddressInfoTest(String country) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.countrySelect(country);
     }
+
     @Test
     @Order(200)
-    public void stateInputFieldAddressInfoTest(String state){
+    public void stateInputFieldAddressInfoTest(String state) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.stateInput(state);
     }
+
     @Test
     @Order(210)
-    public void cityInputFieldAddressInfoTest(String city){
+    public void cityInputFieldAddressInfoTest(String city) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.cityInput(city);
     }
+
     @Test
     @Order(220)
-    public void zipcodeInputFieldAddressInfoTest(Integer zipcode){
+    public void zipcodeInputFieldAddressInfoTest(Integer zipcode) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.zipcodeInput(zipcode);
     }
+
     @Test
     @Order(230)
-    public void phoneInputFieldAddressInfoTest(String phone){
+    public void phoneInputFieldAddressInfoTest(String phone) {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.phoneInput(phone);
     }
+
     @Test
     @Order(240)
-    public void createAccountButtonTest(){
+    public void createAccountButtonTest() {
         signupPage = pageObjectManager.getSignupPage();
         signupPage.createAccButtonClick();
     }
+
     @Test
     @Order(250)
-    public void createAccountMassageTest(){
-        createAccountMassage = pageObjectManager.getAccountCreatedMassage();
-        Assertions.assertEquals(createAccountMassage.accCreateMassageTextget(), "ACCOUNT CREATED!");
+    public void createAccountMessageTest() {
+        createAccountMessage = pageObjectManager.getAccountCreatedMessage();
+        Assertions.assertEquals(createAccountMessage.accCreateMessageTextGet(), "ACCOUNT CREATED!");
     }
+
     @Test
     @Order(260)
-    public void confirmButtonAccountCreatedMassageTest(){
-        createAccountMassage = pageObjectManager.getAccountCreatedMassage();
-        createAccountMassage.accCreateConfirm();
+    public void confirmButtonAccountCreatedMessageTest() {
+        createAccountMessage = pageObjectManager.getAccountCreatedMessage();
+        createAccountMessage.accCreateConfirm();
     }
+
     @Test
     @Order(265)
-    public void returnToHomePageTest(){
+    public void returnToHomePageTest() {
         homePage = pageObjectManager.getHomePage();
         Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
     }
+
     @Test
     @Order(270)
-    public void loggedNameInNavBarTest(){
+    public void loggedNameInNavBarTest() {
         navigationBar = pageObjectManager.getNavigationBar();
         loginPage = pageObjectManager.getLoginPage();
         Assertions.assertEquals(navigationBar.loggedNameGet(), loginPage.getName());
     }
+
     @Test
     @Order(280)
-    public void logoutLinkInNavBarTest(){
+    public void logoutLinkInNavBarTest() {
         navigationBar = pageObjectManager.getNavigationBar();
         navigationBar.clickLogout();
     }
+
     @Test
     @Order(290)
-    public void emailInputLoginFormTest(String email){
+    public void emailInputLoginFormTest(String email) {
         loginPage = pageObjectManager.getLoginPage();
         loginPage.emailLoginInputField(email);
     }
+
     @Test
     @Order(300)
-    public void passwdInputLoginFormTest(String password){
+    public void passwdInputLoginFormTest(String password) {
         loginPage = pageObjectManager.getLoginPage();
         loginPage.PasswdLLoginInputField(password);
     }
+
     @Test
     @Order(310)
-    public void loginButtonTest(){
+    public void loginButtonTest() {
         loginPage = pageObjectManager.getLoginPage();
         loginPage.loginButtonSubmit();
     }
+
     @Test
     @Order(320)
-    public void deleteAccountNavBarLinkTest(){
+    public void deleteAccountNavBarLinkTest() {
         navigationBar = pageObjectManager.getNavigationBar();
         navigationBar.deleteAccount();
     }
+
     @Test
     @Order(330)
-    public void deleteAccountMassageTest(){
-        deleteAccountMasage = pageObjectManager.getDeleteAccountMassage();
-        Assertions.assertEquals(deleteAccountMasage.accDeleteMassageTextget(), "ACCOUNT DELETED!");
-        deleteAccountMasage.accDeleteConfirm();
+    public void deleteAccountMessageTest() {
+        deleteAccountMessage = pageObjectManager.getDeleteAccountMessage();
+        Assertions.assertEquals(deleteAccountMessage.accDeleteMessageTextGet(), "ACCOUNT DELETED!");
+        deleteAccountMessage.accDeleteConfirm();
 
     }
+
     @Test
     @Order(340)
-    public void driverStop(){
+    public void driverStop() {
         driver.quit();
     }
 }
