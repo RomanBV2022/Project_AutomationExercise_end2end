@@ -16,12 +16,12 @@ public class DeleteAccountMasage {
     WebElement accDeleteH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
-
+    @FindBy(xpath = "//*[@id='google_esf']")
+    WebElement adFrame;
     public void accDeleteConfirm(){
         continueButton.click();
-        String url = driver.getCurrentUrl();
-        if(url.equals("https://automationexercise.com/#google_vignette")) {
-            driver.get("https://automationexercise.com/delete_account");
+        if(adFrame.isEnabled()) {
+            driver.navigate().refresh();
             continueButton.click();
         }
     }

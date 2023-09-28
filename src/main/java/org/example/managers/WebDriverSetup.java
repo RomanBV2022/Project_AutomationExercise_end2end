@@ -8,6 +8,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.time.Duration;
+
 public class WebDriverSetup {
 
         public static WebDriver initializeDriver() {
@@ -30,6 +32,7 @@ public class WebDriverSetup {
                 WebDriverManager.edgedriver().setup();
                 WebDriver driver = new EdgeDriver();
                 driver.manage().window().maximize();
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                 return driver;
             }
 //            case "safari" -> {
