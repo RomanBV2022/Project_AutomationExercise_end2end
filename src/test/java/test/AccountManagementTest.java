@@ -52,7 +52,7 @@ public class AccountManagementTest {
 //        this.homePage=homePage;
         homePage = pageObjectManager.getHomePage();
         homePage.goToHomePage();
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl(), "HomePage upload");
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(), "HomePage upload");
     }
 
     @Test

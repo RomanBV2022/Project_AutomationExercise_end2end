@@ -21,7 +21,7 @@ public class LogoutTest {
 
         homePage = pageObjectManager.getHomePage();
         homePage.goToHomePage();
-        Assertions.assertEquals(homePage.urlCurrentGet(), homePage.getBaseUrl(), "HomePage upload");
+        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(), "HomePage upload");
     }
     @Test
     @Order(20)

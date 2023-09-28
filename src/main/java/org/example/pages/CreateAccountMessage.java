@@ -16,14 +16,16 @@ public class CreateAccountMessage {
     WebElement accCreateH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
+    @FindBy(xpath = "//*[@id='google_esf']")
+    WebElement adFrame;
 
     public void accCreateConfirm(){
        continueButton.click();
-        String url = driver.getCurrentUrl();
-        if(!url.equals("https://automationexercise.com/")) {
-            driver.get("https://automationexercise.com/account_created");
+        if(adFrame.isEnabled()) {
+            driver.navigate().refresh();
             continueButton.click();
         }
+
     }
 
     public String accCreateMessageTextGet(){
