@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="Scenario: Verify products quantity in cart">
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/CartPage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695931907944</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Scenario: Verify products quantity in cart">
+      <created>1695943103703</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695943103703</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +298,8 @@
     <MESSAGE value="stable v.2.1" />
     <MESSAGE value="stable v.2.1 with smoke e2e verify" />
     <MESSAGE value="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart" />
+    <MESSAGE value="Scenario: Verify products quantity in cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scenario: Verify products quantity in cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
