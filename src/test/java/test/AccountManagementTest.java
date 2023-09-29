@@ -266,7 +266,9 @@ public class AccountManagementTest {
     @Order(265)
     public void returnToHomePageTest() {
         homePage = pageObjectManager.getHomePage();
-        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl());
+        Assertions.assertEquals(driver.getCurrentUrl(),homePage.getBaseUrl());
+
+
     }
 
     @Test
@@ -317,7 +319,9 @@ public class AccountManagementTest {
     public void deleteAccountMessageTest() {
         deleteAccountMessage = pageObjectManager.getDeleteAccountMessage();
         Assertions.assertEquals(deleteAccountMessage.accDeleteMessageTextGet(), "ACCOUNT DELETED!");
+//        System.out.println(deleteAccountMessage.accDeleteMessageTextGet());
         deleteAccountMessage.accDeleteConfirm();
+
 
     }
 

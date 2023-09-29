@@ -57,8 +57,11 @@ public class NavigationBar {
     }
 
     public void deleteAccountClick() {
-        deleteAccountLink.click();
+//        deleteAccountLink.click();
+        if(!adFrame.isEnabled()){
+            deleteAccountLink.click();
 
+        }else driver.get("https://automationexercise.com/delete_account");
 
     }
 
