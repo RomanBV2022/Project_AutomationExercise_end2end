@@ -20,7 +20,11 @@ public class DeleteAccountMessage {
     WebElement adFrame;
     public void accDeleteConfirm(){
         continueButton.click();
+    }
 
+
+    public WebElement getAdFrame(){
+        return adFrame;
     }
 
     public String accDeleteMessageTextGet(){
