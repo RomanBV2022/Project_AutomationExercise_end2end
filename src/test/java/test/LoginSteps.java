@@ -1,6 +1,6 @@
 package test;
 
-public class LoginStep extends BaseStep {
+public class LoginSteps extends BaseStep {
     public void emailInputLoginFormTest(String email) {
         loginPage.emailLoginInputField(email);
     }
