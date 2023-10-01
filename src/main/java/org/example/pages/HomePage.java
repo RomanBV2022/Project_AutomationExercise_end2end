@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-    WebDriver driver;
+    static WebDriver driver;
     private final String baseUrl = "https://automationexercise.com/";
     public HomePage(WebDriver driver) {
         this.driver = driver;

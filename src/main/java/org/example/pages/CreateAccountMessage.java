@@ -16,12 +16,12 @@ public class CreateAccountMessage {
     WebElement accCreateH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
-    @FindBy(xpath = "//*[@id='aswift_2']")
-    WebElement adFrame;
+
 
     public void accCreateConfirm(){
        continueButton.click();
-        if(adFrame.isEnabled()) {
+       String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/account_created#google_vignette")){
             driver.navigate().refresh();
             continueButton.click();
         }

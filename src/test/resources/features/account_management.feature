@@ -11,7 +11,7 @@ Feature: Automation end2end tests to account management functionality
     And   John not logged
     When John press Signup/Login
     And John put <NickName> and  <E-mail> in Signup form
-    And John put required data in ACCOUNT INFORMATION form: <Password> ,<DateOfBirth>
+    And John put required data in ACCOUNT INFORMATION form: <Password> ,DateOfBirth
     And John put required data in ADDRESS INFORMATION form: <First name>, <Last name>, <Address>,  <Country>, <State>, <City>, <Zipcode>,<Phone>
     Then John back to HomePage
     And John is logged
