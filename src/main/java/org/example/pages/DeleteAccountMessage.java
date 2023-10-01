@@ -16,15 +16,15 @@ public class DeleteAccountMessage {
     WebElement accDeleteH2Text;
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
-    @FindBy(xpath = "//*[@id='aswift_2']")
-    WebElement adFrame;
+
     public void accDeleteConfirm(){
+
         continueButton.click();
-    }
-
-
-    public WebElement getAdFrame(){
-        return adFrame;
+        String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/delete_account#google_vignette")){
+            driver.navigate().refresh();
+            continueButton.click();
+        }
     }
 
     public String accDeleteMessageTextGet(){

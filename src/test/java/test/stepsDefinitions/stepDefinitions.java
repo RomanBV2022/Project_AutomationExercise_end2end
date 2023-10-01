@@ -4,14 +4,18 @@ package test.stepsDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import test.AccountManagementTest;
-
+import test.CreateAccountStep;
+import test.DeleteAccountStep;
+import test.LoginStep;
+import test.LogoutStep;
 
 
 public class stepDefinitions {
 
-    AccountManagementTest accountManagementTest = new AccountManagementTest();
-
+    CreateAccountStep createAccountSteps = new CreateAccountStep();
+    DeleteAccountStep deleteAccountSteps = new DeleteAccountStep();
+    LogoutStep logoutSteps = new LogoutStep();
+    LoginStep loginSteps = new LoginStep();
 
     //START FEATURE
 
@@ -19,65 +23,65 @@ public class stepDefinitions {
 
     @Given("John on HomePage")
     public void johnOnHomePage() {
-        accountManagementTest.homePageUrlTest();
+        createAccountSteps.homePageUrlTest();
     }
 
     @Given("John not logged")
     public void johnNotLogged() {
-        accountManagementTest.loginStatusTest();
+        createAccountSteps.loginStatusTest();
     }
 
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
 
-        accountManagementTest.loginLinkNavBarTest();
-        accountManagementTest.loginPageUploadTest();
+        createAccountSteps.loginLinkNavBarTest();
+        createAccountSteps.loginPageUploadTest();
 
     }
 
     @When("John put {string} and  {string} in Signup form")
     public void johnPutAndInSignupForm(String nickName, String email) {
-        accountManagementTest.signupNameFieldTest(nickName);
-        accountManagementTest.signupEmailFieldTest(email);
-        accountManagementTest.signupButtonTest();
+        createAccountSteps.signupNameFieldTest(nickName);
+        createAccountSteps.signupEmailFieldTest(email);
+        createAccountSteps.signupButtonTest();
 
     }
 
-    @When("John put required data in ACCOUNT INFORMATION form: {string} ,{string}")
-    public void johnPutRequiredDataInACCOUNTINFORMATIONForm(String password, String string2) {
-        accountManagementTest.accountInformationFormTest();
-        accountManagementTest.titleRadioButtonTest();
-        accountManagementTest.passwdAccountInformationFieldTest(password);
-        accountManagementTest.dayOfBirthTest();
-        accountManagementTest.monthOfBirthTest();
-        accountManagementTest.yearOfBirthTest();
-        accountManagementTest.checkConfirmSignUpForOurNewsletterTest();
-        accountManagementTest.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
+    @When("John put required data in ACCOUNT INFORMATION form: {string} ,DateOfBirth")
+    public void johnPutRequiredDataInACCOUNTINFORMATIONForm(String password) {
+        createAccountSteps.accountInformationFormTest();
+        createAccountSteps.titleRadioButtonTest();
+        createAccountSteps.passwdAccountInformationFieldTest(password);
+        createAccountSteps.dayOfBirthTest();
+        createAccountSteps.monthOfBirthTest();
+        createAccountSteps.yearOfBirthTest();
+        createAccountSteps.checkConfirmSignUpForOurNewsletterTest();
+        createAccountSteps.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
     }
 
     @When("John put required data in ADDRESS INFORMATION form: {string}, {string}, {string},  {string}, {string}, {string}, {int},{string}")
     public void johnPutRequiredDataInADDRESSINFORMATIONForm(String firstName, String lastName, String address, String country, String state, String city, Integer zipcode, String phone) {
-        accountManagementTest.firstNameInputFieldAddressInfoTest(firstName);
-        accountManagementTest.lastNameInputFieldAddressInfoTest(lastName);
-        accountManagementTest.addressInputFieldAddressInfoTest(address);
-        accountManagementTest.countrySelectFieldAddressInfoTest(country);
-        accountManagementTest.stateInputFieldAddressInfoTest(state);
-        accountManagementTest.cityInputFieldAddressInfoTest(city);
-        accountManagementTest.zipcodeInputFieldAddressInfoTest(zipcode);
-        accountManagementTest.phoneInputFieldAddressInfoTest(phone);
-        accountManagementTest.createAccountButtonTest();
-        accountManagementTest.createAccountMessageTest();
-        accountManagementTest.confirmButtonAccountCreatedMessageTest();
+        createAccountSteps.firstNameInputFieldAddressInfoTest(firstName);
+        createAccountSteps.lastNameInputFieldAddressInfoTest(lastName);
+        createAccountSteps.addressInputFieldAddressInfoTest(address);
+        createAccountSteps.countrySelectFieldAddressInfoTest(country);
+        createAccountSteps.stateInputFieldAddressInfoTest(state);
+        createAccountSteps.cityInputFieldAddressInfoTest(city);
+        createAccountSteps.zipcodeInputFieldAddressInfoTest(zipcode);
+        createAccountSteps.phoneInputFieldAddressInfoTest(phone);
+        createAccountSteps.createAccountButtonTest();
+        createAccountSteps.createAccountMessageTest();
+        createAccountSteps.confirmButtonAccountCreatedMessageTest();
     }
 
     @Then("John back to HomePage")
     public void johnBackToHomePage() {
-        accountManagementTest.returnToHomePageTest();
+        createAccountSteps.returnToHomePageTest();
     }
 
     @Then("John is logged")
     public void johnIsLogged() {
-        accountManagementTest.loggedNameInNavBarTest();
+        createAccountSteps.loggedNameInNavBarTest();
     }
 
     // END OF REGISTRATION
@@ -85,12 +89,12 @@ public class stepDefinitions {
     //START LOGOUT
     @When("John press Logout")
     public void johnPressLogout() {
-        accountManagementTest.logoutLinkInNavBarTest();
+        logoutSteps.logoutLinkInNavBarTest();
     }
 
     @When("John move to LoginPage")
     public void johnMoveToLoginPage() {
-        accountManagementTest.loginPageUploadTest();
+        createAccountSteps.loginPageUploadTest();
     }
     //END LOGOUT
 
@@ -98,21 +102,21 @@ public class stepDefinitions {
 
     @When("John put {string} and {string} in Login form")
     public void johnPutAndInLoginForm(String email, String password) {
-        accountManagementTest.emailInputLoginFormTest(email);
-        accountManagementTest.passwdInputLoginFormTest(password);
-        accountManagementTest.loginButtonTest();
+        loginSteps.emailInputLoginFormTest(email);
+        loginSteps.passwdInputLoginFormTest(password);
+        loginSteps.loginButtonTest();
     }
     //END LOGIN
 
     //START DELETE
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {
-        accountManagementTest.deleteAccountNavBarLinkTest();
+        deleteAccountSteps.deleteAccountNavBarLinkTest();
     }
 
     @When("Confirm Account Deleted message")
     public void confirmAccountDeletedMessage() {
-        accountManagementTest.deleteAccountMessageTest();
+        deleteAccountSteps.deleteAccountMessageTest();
     }
     //END DELETE
 
