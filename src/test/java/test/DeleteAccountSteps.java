@@ -3,7 +3,7 @@ package test;
 
 import org.junit.jupiter.api.*;
 
-public class DeleteAccountStep extends BaseStep {
+public class DeleteAccountSteps extends BaseStep {
 
 
     public void deleteAccountNavBarLinkTest() {

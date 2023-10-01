@@ -4,18 +4,18 @@ package test.stepsDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import test.CreateAccountStep;
-import test.DeleteAccountStep;
-import test.LoginStep;
-import test.LogoutStep;
+import test.CreateAccountSteps;
+import test.DeleteAccountSteps;
+import test.LoginSteps;
+import test.LogoutSteps;
 
 
 public class stepDefinitions {
 
-    CreateAccountStep createAccountSteps = new CreateAccountStep();
-    DeleteAccountStep deleteAccountSteps = new DeleteAccountStep();
-    LogoutStep logoutSteps = new LogoutStep();
-    LoginStep loginSteps = new LoginStep();
+    CreateAccountSteps createAccountSteps = new CreateAccountSteps();
+    DeleteAccountSteps deleteAccountSteps = new DeleteAccountSteps();
+    LogoutSteps logoutSteps = new LogoutSteps();
+    LoginSteps loginSteps = new LoginSteps();
 
     //START FEATURE
 
