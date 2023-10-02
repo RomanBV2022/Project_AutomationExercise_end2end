@@ -17,13 +17,15 @@ public class CreateAccountMessage {
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
 
+
     public void accCreateConfirm(){
        continueButton.click();
-        String url = driver.getCurrentUrl();
-        if(url.equals("https://automationexercise.com/account_created#google_vignette")) {
-            driver.get("https://automationexercise.com/account_created");
+       String url = driver.getCurrentUrl();
+        if(url.equals("https://automationexercise.com/account_created#google_vignette")){
+            driver.navigate().refresh();
             continueButton.click();
         }
+
     }
 
     public String accCreateMessageTextGet(){

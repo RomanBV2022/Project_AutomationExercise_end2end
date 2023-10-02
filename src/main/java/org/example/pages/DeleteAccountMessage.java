@@ -17,13 +17,12 @@ public class DeleteAccountMessage {
     @FindBy(xpath = "//*[@data-qa='continue-button']")
     WebElement continueButton;
 
-    public void accDeleteConfirm() {
+    public void accDeleteConfirm(){
 
+        continueButton.click();
         String url = driver.getCurrentUrl();
-        if (url.equals("https://automationexercise.com/#google_vignette")) {
-            driver.get("https://automationexercise.com/delete_account");
-            continueButton.click();
-        } else {
+        if(url.equals("https://automationexercise.com/delete_account#google_vignette")){
+            driver.navigate().refresh();
             continueButton.click();
         }
     }
