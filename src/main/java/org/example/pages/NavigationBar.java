@@ -21,8 +21,7 @@ public class NavigationBar {
     WebElement loggedName;
     @FindBy(xpath = "//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a")
     WebElement loggedLink;
-    @FindBy(xpath = "//*[@id='aswift_2']")
-    WebElement adFrame;
+
     public NavigationBar(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -50,20 +49,14 @@ public class NavigationBar {
 
 
     public void logoutClick() {
-
-
         logoutButtonLink.click();
-
     }
 
     public void deleteAccountClick() {
-//        deleteAccountLink.click();
-        if(!adFrame.isEnabled()){
-            deleteAccountLink.click();
-
-        }else driver.get("https://automationexercise.com/delete_account");
-
+        deleteAccountLink.click();
+        String url = driver.getCurrentUrl();
+        if (url.equals("https://automationexercise.com/#google_vignette")) {
+            driver.get("https://automationexercise.com/delete_account");
+        }
     }
-
-
 }

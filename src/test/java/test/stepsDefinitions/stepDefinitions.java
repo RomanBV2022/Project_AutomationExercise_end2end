@@ -1,21 +1,24 @@
 package test.stepsDefinitions;
 
 
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import test.CreateAccountSteps;
-import test.DeleteAccountSteps;
-import test.LoginSteps;
-import test.LogoutSteps;
+import test.*;
 
 
-public class stepDefinitions {
+public class stepDefinitions{
 
     CreateAccountSteps createAccountSteps = new CreateAccountSteps();
     DeleteAccountSteps deleteAccountSteps = new DeleteAccountSteps();
     LogoutSteps logoutSteps = new LogoutSteps();
     LoginSteps loginSteps = new LoginSteps();
+
+    @AfterAll
+    public static void closeDriver(){
+        BaseStep.getDriver().quit();
+    }
 
     //START FEATURE
 
