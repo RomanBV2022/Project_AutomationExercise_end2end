@@ -1,9 +1,6 @@
 package org.example.managers;
 
-import org.example.pages.AccountCreated;
-import org.example.pages.HomePage;
-import org.example.pages.LoginPage;
-import org.example.pages.SignUpPage;
+import org.example.pages.*;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
@@ -14,7 +11,7 @@ public class PageObjectManager {
     private SignUpPage signUpPage;
     private AccountCreated accountCreated;
 
-
+    private AccountDelete accountDelete;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -32,7 +29,7 @@ public class PageObjectManager {
     public PageObjectManager(AccountCreated accountCreated) {
         this.accountCreated = accountCreated;
     }
-
+    public PageObjectManager(AccountDelete accountDelete){this.accountDelete = accountDelete;}
 
     public HomePage getHomePage() {
         return (homePage == null) ? homePage = new HomePage(driver) : homePage;
@@ -46,6 +43,8 @@ public class PageObjectManager {
     public  AccountCreated getAccountCreated() {
         return (accountCreated == null) ? accountCreated= new AccountCreated(driver) : accountCreated;
     }
-
+    public AccountDelete getAccountDelete(){
+        return (accountDelete == null) ? accountDelete = new AccountDelete(driver) : accountDelete;
+    }
 
 }
