@@ -1,9 +1,12 @@
 package org.example.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.concurrent.TimeUnit;
 
 public class AccountCreated {
 
@@ -14,7 +17,6 @@ public class AccountCreated {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
 
 
 
@@ -50,9 +52,11 @@ public class AccountCreated {
     }
 
     public void clickDismissAdd() {
-        //dismissAdd.click();
-        //System.out.println(dismissAdd.getText());
-        driver.quit();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        if (driver.getPageSource()!= "https://automationexercise.com/") {
+            driver.get("https://automationexercise.com/");
+        }
 
     }
+
 }
