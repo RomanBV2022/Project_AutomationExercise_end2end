@@ -11,7 +11,6 @@
     <properties>
         <!-- Maven properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.basedir>"D:\JavaProg\JunitPageObjectCucumberExample"</project.basedir>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
@@ -106,12 +105,6 @@
             <version>${junit.jupiter.version}</version>
 
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter-engine</artifactId>-->
-<!--            <version>${junit.jupiter.version}</version>-->
-
-<!--        </dependency>-->
 
         <!-- Logging -->
         <dependency>

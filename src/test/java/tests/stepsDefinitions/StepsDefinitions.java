@@ -6,11 +6,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
-import tests.BaseStep;
-import tests.LoginSteps;
-import tests.LogoutSteps;
 import tests.CreateAccountSteps;
 import tests.DeleteAccountSteps;
+import tests.LoginSteps;
+import tests.LogoutSteps;
 
 import static tests.BaseStep.getDriver;
 
