@@ -140,15 +140,15 @@
                 <executions>
                     <execution>
                         <id>report</id>
-                        <phase>post-integration-test</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>reporting</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
+                    <sourceJsonReportDirectory>${project.basedir}/output/cucumber-report</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.basedir}/output/generated-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
 
