@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 public class LoginSteps extends BaseStep {
     public void emailInputLoginFormTest(String email) {

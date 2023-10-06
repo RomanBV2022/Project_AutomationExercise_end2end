@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 public class LogoutSteps extends BaseStep {
     public void logoutLinkInNavBarTest() {

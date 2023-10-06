@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import org.example.managers.WebDriverSetup;
 import org.example.pages.*;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BaseStep {
 
-        static WebDriver driver = WebDriverSetup.initializeDriver();
+        public static WebDriver driver = WebDriverSetup.initializeDriver();
 
         HomePage homePage = new HomePage(driver);
         NavigationBar navigationBar = new NavigationBar(driver);

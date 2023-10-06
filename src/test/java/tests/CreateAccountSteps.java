@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 
 import org.junit.jupiter.api.*;
@@ -7,12 +7,14 @@ import org.junit.jupiter.api.*;
 public class CreateAccountSteps extends BaseStep {
 
 
-    @DisplayName("Home page url test")
-    public void homePageUrlTest() {
-        homePage.goToHomePage();
-        Assertions.assertEquals(driver.getCurrentUrl(), homePage.getBaseUrl(), "HomePage upload");
+    @DisplayName("Navigate to HomePage Step")
+    public void navigateToHomePage() {
+        driver.get(homePage.getBaseUrl());
     }
-
+    @DisplayName("Home page test")
+    public void homePageTest() {
+        Assertions.assertEquals(homePage.getBaseUrl(),driver.getCurrentUrl(),  "HomePage not upload");
+    }
     @DisplayName("User logged or not logged test")
     public void loginStatusTest() {
         Assumptions.assumeTrue(navigationBar.loginButtonDisplayed(), "Logit/Signup link not displaed");
