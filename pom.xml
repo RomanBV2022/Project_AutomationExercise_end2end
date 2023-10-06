@@ -26,6 +26,7 @@
         <aspectj.version>1.9.20.1</aspectj.version>
         <allure-cucumber7-jvm.version>2.24.0</allure-cucumber7-jvm.version>
         <gherkin.version>27.0.0</gherkin.version>
+        <cluecumber-maven.version>3.4.0</cluecumber-maven.version>
     </properties>
 
     <dependencies>
@@ -160,7 +161,7 @@
             <plugin>
                 <groupId>com.trivago.rta</groupId>
                 <artifactId>cluecumber-maven</artifactId>
-                <version>3.1.0</version>
+                <version>${cluecumber-maven.version}</version>
                 <executions>
                     <execution>
                         <id>report</id>
