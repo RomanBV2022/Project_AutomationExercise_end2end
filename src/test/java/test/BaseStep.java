@@ -8,7 +8,7 @@ public class BaseStep {
 
         static WebDriver driver = WebDriverSetup.initializeDriver();
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         NavigationBar navigationBar = new NavigationBar(driver);
         LoginPage loginPage = new LoginPage(driver);
         SignupPage signupPage = new SignupPage(driver);
