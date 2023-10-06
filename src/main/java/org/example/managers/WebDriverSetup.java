@@ -14,7 +14,7 @@ public class WebDriverSetup {
 
         public static WebDriver initializeDriver() {
 
-        String webdriver = System.getProperty("browser");
+        String webdriver = System.getProperty("browser","edge");
         switch(webdriver) {
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();

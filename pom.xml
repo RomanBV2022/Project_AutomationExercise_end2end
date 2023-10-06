@@ -11,18 +11,22 @@
     <properties>
         <!-- Maven properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.basedir>"D:\JavaProg\JunitPageObjectCucumberExample"</project.basedir>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
         <maven.surefire.plugin>3.1.0</maven.surefire.plugin>
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
         <!-- Plugins versions -->
-        <org.slf4j.version>2.0.7</org.slf4j.version>
+        <org.slf4j.version>2.0.9</org.slf4j.version>
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
         <junit.version>4.13.2</junit.version>
         <selenium.version>4.13.0</selenium.version>
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
         <cucumber.version>7.14.0</cucumber.version>
+        <aspectj.version>1.9.20.1</aspectj.version>
+        <allure-cucumber7-jvm.version>2.24.0</allure-cucumber7-jvm.version>
+        <gherkin.version>27.0.0</gherkin.version>
     </properties>
 
     <dependencies>
@@ -56,10 +60,32 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
-            <scope>test</scope>
+
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>${gherkin.version}</version>
         </dependency>
 
 
+        <!--Allure-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure-cucumber7-jvm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-cucumber7-jvm.version}</version>
+
+        </dependency>
 
         <!-- Junit 5 -->
         <dependency>
@@ -72,14 +98,20 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
+
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
+
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-engine</artifactId>-->
+<!--            <version>${junit.jupiter.version}</version>-->
+
+<!--        </dependency>-->
 
         <!-- Logging -->
         <dependency>
@@ -91,7 +123,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${org.slf4j.version}</version>
-            <scope>test</scope>
+
         </dependency>
 
 
@@ -100,6 +132,8 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -117,12 +151,17 @@
                 <configuration>
                     <includes>
                         <include>**/*Tests.java</include>
+
                     </includes>
-<!--                    <properties>-->
-<!--                        <configurationParameters>-->
-<!--                            cucumber.junit-platform.naming-strategy=long-->
-<!--                        </configurationParameters>-->
-<!--                    </properties>-->
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dcucumber.options="--plugin io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                    </argLine>
+                    <properties>
+                        <configurationParameters>
+                            cucumber.junit-platform.naming-strategy=long
+                        </configurationParameters>
+                    </properties>
                 </configuration>
             </plugin>
 
