@@ -1,0 +1,24 @@
+
+.color-passed {
+    color: #60cc79 !important;
+}
+
+.border-color-passed {
+    border-color: #60cc79 !important;
+}
+
+.color-failed {
+    color: #fc7180 !important;
+}
+
+.border-color-failed {
+    border-color: #fc7180 !important;
+}
+
+.color-skipped  {
+    color: #f7c42b !important;
+}
+
+.border-color-skipped  {
+    border-color: #f7c42b !important;
+}

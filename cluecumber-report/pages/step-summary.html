@@ -1,0 +1,669 @@
+
+    <!--
+    Copyright 2019 trivago N.V.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <base href="..">
+    <head title="Cluecumber Report - All Steps">
+        <title>Cluecumber Report - All Steps</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+connect-src * data: blob: 'unsafe-inline';
+img-src * data: blob: 'unsafe-inline';
+frame-src * data: blob: ;
+style-src * data: blob: 'unsafe-inline';
+font-src * data: blob: 'unsafe-inline';"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Cluecumber Report">
+<meta name="author" content="Cluecumber Report version 3.4.0">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/datatables.min.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+<link rel="stylesheet" href="css/cluecumber.css" type="text/css">
+<link rel="stylesheet" href="css/cluecumber-custom.css"/>
+<link rel="stylesheet" href="css/cluecumber-additional.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/datatables.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/Chart.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+            // Data tables
+            $('.renderAsDataTable').on('draw.dt', function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            }).DataTable({
+                "oLanguage": {
+                    "sSearch": "Search:"
+                },
+                "pageLength": 25,
+                "responsive": true
+            });
+
+            $('.collapse').on('shown.bs.collapse', function (e) {
+                $(e.target).find("iframe").each(function (index, iframe) {
+                    resizeIframe(iframe);
+                })
+            });
+
+            // Lightbox
+            $("a.grouped_elements").fancybox();
+
+            // Tool tips
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Chart
+                var canvas = document.getElementById('chart-area');
+                const ctx = canvas.getContext("2d");
+                const chart = new Chart(ctx, {
+  "data": {
+    "labels": [
+      "John press Signup/Login",
+      "John press Logout",
+      "John put {} and {} in Login form",
+      "Press DeleteAccount",
+      "John on HomePage",
+      "John move to LoginPage",
+      "John is logged",
+      "John not logged",
+      "John back to HomePage",
+      "John put {} and  {} in Signup form",
+      "John put required data in ADDRESS INFORMATION form: {}, {}, {},  {}, {}, {}, {},{}",
+      "John put required data in ACCOUNT INFORMATION form: {} ,DateOfBirth",
+      "Confirm Account Deleted message"
+    ],
+    "datasets": [
+      {
+        "data": [
+          2.0,
+          1.0,
+          1.0,
+          1.0,
+          2.0,
+          1.0,
+          4.0,
+          4.0,
+          3.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "backgroundColor": [
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)",
+          "rgba(96, 204, 121, 1.000)"
+        ],
+        "label": "passed"
+      },
+      {
+        "data": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "backgroundColor": [
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)",
+          "rgba(252, 113, 128, 1.000)"
+        ],
+        "label": "failed"
+      },
+      {
+        "data": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "backgroundColor": [
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)",
+          "rgba(247, 196, 43, 1.000)"
+        ],
+        "label": "skipped"
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "xAxes": [
+        {
+          "ticks": {
+            "min": 0,
+            "stepSize": 0.0,
+            "display": false
+          },
+          "stacked": true,
+          "scaleLabel": {
+            "display": true,
+            "labelString": "13 Steps"
+          },
+          "stepSize": 0.0
+        }
+      ],
+      "yAxes": [
+        {
+          "ticks": {
+            "min": 0,
+            "stepSize": 4.0,
+            "display": true
+          },
+          "stacked": true,
+          "scaleLabel": {
+            "display": true,
+            "labelString": "Number of Usages"
+          },
+          "stepSize": 0.0
+        }
+      ]
+    },
+    "events": [
+      "click",
+      "mousemove"
+    ]
+  },
+  "type": "bar"
+});
+                let original;
+                if (chart.config.type === "pie") {
+                    original = Chart.defaults.pie.legend.onClick;
+                    chart.options.onClick = function (evt, elements) {
+                        chartArea = elements[0];
+                        if (chartArea === undefined) return;
+                        chartArea.hidden = !chartArea.hidden;
+                        chart.update();
+                        toggleVisibilityByStatus(chartArea._model.label, !chartArea.hidden)
+                    };
+                } else if (chart.config.type === "bar") {
+                        const chartUrls = {
+                            "John press Logout": "pages/step-scenarios/step_0256534923.html",
+                            "John is logged": "pages/step-scenarios/step_02023714428.html",
+                            "John move to LoginPage": "pages/step-scenarios/step_0682126380.html",
+                            "John put required data in ACCOUNT INFORMATION form: {} ,DateOfBirth": "pages/step-scenarios/step_01401263453.html",
+                            "John put {} and {} in Login form": "pages/step-scenarios/step_01019422596.html",
+                            "John put {} and  {} in Signup form": "pages/step-scenarios/step_668449795.html",
+                            "Confirm Account Deleted message": "pages/step-scenarios/step_0646615192.html",
+                            "Press DeleteAccount": "pages/step-scenarios/step_01813228852.html",
+                            "John back to HomePage": "pages/step-scenarios/step_01786587352.html",
+                            "John on HomePage": "pages/step-scenarios/step_02019131643.html",
+                            "John put required data in ADDRESS INFORMATION form: {}, {}, {},  {}, {}, {}, {},{}": "pages/step-scenarios/step_0463313318.html",
+                            "John not logged": "pages/step-scenarios/step_440068349.html",
+                            "John press Signup/Login": "pages/step-scenarios/step_1936095910.html",
+                        };
+                        canvas.onclick = function (evt) {
+                            const activePoints = chart.getElementsAtEvent(evt);
+                            if (activePoints.length <= 0) return;
+                            const clickedElementindex = activePoints[0]["_index"];
+                            const label = chart.data.labels[clickedElementindex];
+                            if (label == null) return;
+                            urlSnippet = chartUrls[label];
+                            if (urlSnippet == null) return;
+                            window.location.href = urlSnippet;
+                        }
+                    original = Chart.defaults.global.legend.onClick;
+                }
+
+                chart.options.legend.onClick = function (evt, label) {
+                    original.call(this, evt, label);
+                    toggleVisibilityByStatus(label.text, label.hidden);
+                };
+
+                function toggleVisibilityByStatus(statusText, show) {
+                    const card = $("#card_" + statusText);
+                    if (card !== undefined) {
+                        if (show) {
+                            card.show();
+                        } else {
+                            card.hide();
+                        }
+                    }
+
+                    const row = $(".table-row-" + statusText);
+                    if (row !== undefined) {
+                        if (show) {
+                            row.show();
+                        } else {
+                            row.hide();
+                        }
+                    }
+                }
+
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='before-after-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='step-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='doc-strings-button']").click();
+            }
+        }
+    );
+
+    function resizeIframe(iframe) {
+        iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 25) + 'px';
+    }
+</script>    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                        <a class="nav-link " href="pages/scenario-summary.html">All Scenarios</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link " href="pages/scenario-sequence.html">Scenario Sequence</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link " href="pages/tag-summary.html">All Tags</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link text-white" href="pages/step-summary.html">All Steps</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link " href="pages/feature-summary.html">All Features</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link " href="pages/tree-view.html">Tree View</a>
+                </li>
+            </ul>
+            <span class="text-light">2023-10-07 22:39:05</span>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="cluecumber-template">
+            <div class="col-sm-12 h-auto text-center">
+                    <h3>All Steps</h3>
+            </div>
+
+
+    <div class="row" id="step-summary">
+    <div class="col-sm-9  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Step Summary Result Chart</div>
+            <div class="card-body">
+    <div id="canvas-holder" class="w-auto h-auto text-center" style="min-height: 15rem;" data-cluecumber-item="chart">
+        <canvas id="chart-area" class="w-100"></canvas>
+    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Step Summary</div>
+            <div class="card-body">
+            <ul class="list-group list-group-flush" data-cluecumber-item="step-summary">
+                <li class="list-group-item">
+                    13 Steps from
+                    <br>
+                    4 Scenarios
+                </li>
+                <li class="list-group-item">
+                    4 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+
+                    <br>
+                    0 failed     <i class="color-failed cluecumber-icon icon-failed" data-toggle="tooltip"
+       title="failed"><span style="display:none">failed</span></i>
+
+                    <br>
+                    0 skipped    <i class="color-skipped cluecumber-icon icon-skipped" data-toggle="tooltip"
+       title="skipped"><span style="display:none">skipped</span></i>
+
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row" id="available-steps">
+    <div class="col-sm-12  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">13 Steps</div>
+            <div class="card-body">
+            <table id="step_summary" class="table table-hover renderAsDataTable"
+                   data-cluecumber-item="step-summary-table">
+                <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Total</th>
+                    <th class="passedCell">    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+</th>
+                    <th class="failedCell">    <i class="color-failed cluecumber-icon icon-failed" data-toggle="tooltip"
+       title="failed"><span style="display:none">failed</span></i>
+</th>
+                    <th class="skippedCell">    <i class="color-skipped cluecumber-icon icon-skipped" data-toggle="tooltip"
+       title="skipped"><span style="display:none">skipped</span></i>
+</th>
+                    <th>Min Time</th>
+                    <th>Max Time</th>
+                    <th>Ø Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPressSignupLogin()">
+                                <a href="pages/step-scenarios/step_1936095910.html">John press Signup/Login</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>2</strong></td>
+                        <td class="text-center passedCell">2</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 922ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 01s 491ms</a>
+                        </td>
+                        <td class="text-right small">0m 01s 206ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPressLogout()">
+                                <a href="pages/step-scenarios/step_0256534923.html">John press Logout</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_2.html">0m 01s 334ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_2.html">0m 01s 334ms</a>
+                        </td>
+                        <td class="text-right small">0m 01s 334ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPutAndInLoginForm(java.lang.String,java.lang.String)">
+                                <a href="pages/step-scenarios/step_01019422596.html">John put {} and {} in Login form</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 07s 629ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 07s 629ms</a>
+                        </td>
+                        <td class="text-right small">0m 07s 629ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.pressDeleteAccount()">
+                                <a href="pages/step-scenarios/step_01813228852.html">Press DeleteAccount</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 873ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 873ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 873ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnOnHomePage()">
+                                <a href="pages/step-scenarios/step_02019131643.html">John on HomePage</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>2</strong></td>
+                        <td class="text-center passedCell">2</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 05s 607ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 11s 668ms</a>
+                        </td>
+                        <td class="text-right small">0m 08s 638ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnMoveToLoginPage()">
+                                <a href="pages/step-scenarios/step_0682126380.html">John move to LoginPage</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 005ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 005ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 005ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnIsLogged()">
+                                <a href="pages/step-scenarios/step_02023714428.html">John is logged</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>4</strong></td>
+                        <td class="text-center passedCell">4</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 016ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 019ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 017ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnNotLogged()">
+                                <a href="pages/step-scenarios/step_440068349.html">John not logged</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>4</strong></td>
+                        <td class="text-center passedCell">4</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 017ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 033ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 022ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnBackToHomePage()">
+                                <a href="pages/step-scenarios/step_01786587352.html">John back to HomePage</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>3</strong></td>
+                        <td class="text-center passedCell">3</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 002ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 005ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 004ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPutAndInSignupForm(java.lang.String,java.lang.String)">
+                                <a href="pages/step-scenarios/step_668449795.html">John put {} and  {} in Signup form</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 01s 473ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 01s 473ms</a>
+                        </td>
+                        <td class="text-right small">0m 01s 473ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPutRequiredDataInADDRESSINFORMATIONForm(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String)">
+                                <a href="pages/step-scenarios/step_0463313318.html">John put required data in ADDRESS INFORMATION form: {}, {}, {},  {}, {}, {}, {},{}</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 07s 866ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 07s 866ms</a>
+                        </td>
+                        <td class="text-right small">0m 07s 866ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.johnPutRequiredDataInACCOUNTINFORMATIONForm(java.lang.String)">
+                                <a href="pages/step-scenarios/step_01401263453.html">John put required data in ACCOUNT INFORMATION form: {} ,DateOfBirth</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 747ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 747ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 747ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="tests.stepsDefinitions.StepsDefinitions.confirmAccountDeletedMessage()">
+                                <a href="pages/step-scenarios/step_0646615192.html">Confirm Account Deleted message</a>
+                            </span>
+                        </td>
+                        <td class="text-center"><strong>1</strong></td>
+                        <td class="text-center passedCell">1</td>
+                        <td class="text-center failedCell">0</td>
+                        <td class="text-center skippedCell">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 05s 854ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_4.html">0m 05s 854ms</a>
+                        </td>
+                        <td class="text-right small">0m 05s 854ms</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    </div>
+        </div>
+    </main>
+
+<footer class="footer navbar-dark">
+    <div class="container-fluid">
+        <span><a href="https://github.com/trivago/cluecumber-report-plugin" target="_blank" class="text-white">Cluecumber Report version 3.4.0</a> - Report generated on 2023-10-07 22:39:05.</span>
+    </div>
+</footer>    </body>
+    </html>
+
