@@ -14,7 +14,7 @@ public class WebDriverSetup {
 
         public static WebDriver initializeDriver() {
 
-        String webdriver = System.getProperty("browser","edge");
+        String webdriver = System.getProperty("browser","chrome");
         switch(webdriver) {
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
@@ -34,7 +34,7 @@ public class WebDriverSetup {
                 WebDriverManager.edgedriver().setup();
                 WebDriver driver = new EdgeDriver();
                 driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                 return driver;
             }
 //            case "safari" -> {

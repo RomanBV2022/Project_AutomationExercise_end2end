@@ -24,6 +24,7 @@ public class StepsDefinitions {
 
     @AfterAll
     public static void closeDriver(){
+        getDriver().close();
         getDriver().quit();
     }
 
