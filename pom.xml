@@ -172,8 +172,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceJsonReportDirectory>${project.basedir}cluecumber/cucumber-json-report</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>${project.basedir}cluecumber/generated-report</generatedHtmlReportDirectory>
+                    <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
 
