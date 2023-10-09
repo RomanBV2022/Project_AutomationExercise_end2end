@@ -9,14 +9,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.managers.PageObjectManager;
-import org.example.pages.AccountCreated;
-import org.example.pages.HomePage;
-import org.example.pages.LoginPage;
-import org.example.pages.SignUpPage;
+import org.example.pages.*;
 
 import org.junit.jupiter.api.Assertions;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class Steps {
@@ -25,6 +26,7 @@ public class Steps {
     LoginPage loginPage;
     SignUpPage signUpPage;
     AccountCreated accountCreated;
+    ProductPage productPage;
 
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
@@ -34,10 +36,10 @@ public class Steps {
         System.out.println(driver);
     }
 
-    @AfterAll
-    public static void cleanEnvironment() {
-        driver.quit();
-    }
+//    @AfterAll
+//    public static void cleanEnvironment() {
+//        driver.quit();
+//    }
 
     @Before
     public void uploadPageObjects() {
@@ -45,6 +47,7 @@ public class Steps {
         loginPage = pageObjectManager.getLoginPage();
         accountCreated = pageObjectManager.getAccountCreated();
         signUpPage = pageObjectManager.getSignUpPage();
+        productPage = pageObjectManager.getProductPage();
         driver.getCurrentUrl();
     }
 
@@ -65,7 +68,7 @@ public class Steps {
         } catch (AssertionError e) {
             System.out.println(e.getMessage());
         }
-
+        System.out.println(driver.getCurrentUrl());
     }
 
     @When("I click to Login {string} SingIn button to create account")
@@ -170,7 +173,7 @@ public class Steps {
 
     @And("I click view product of first product")
     public void i_click_view_product_of_first_product() {
-
+        productPage.clickFirstViewProductButton();
     }
 
     @Then("I am on detail page and verify ':' product name, price, availability, condition, brand")
@@ -188,25 +191,25 @@ public class Steps {
 
     @And("I increase quantity to 4")
     public void i_increase_quantity_to_4() {
-
+        productPage.increaseQuantityTo4();
     }
 
     @And("I click 'Add to cart' button")
     public void i_click_add_to_cart_button() {
-
+        productPage.clickAddToCartButton();
     }
 
     @And("I click 'View cart' button")
     public void i_click_view_cart_button() {
-
+        productPage.clickViewCartLink();
     }
     @And("I verify that product is displayed in Cart page")
     public void i_verify_that_product_is_displayed_in_cart_page() {
-
+        productPage.isProductDisplayed();
     }
     @Then("I verify  exact quantity in cart")
     public void i_verify_exact_quantity_in_cart() {
-
+        Assertions.assertEquals("4", productPage.actualQuantity());
     }
 
     //Scenario: Verify Test Cases page
