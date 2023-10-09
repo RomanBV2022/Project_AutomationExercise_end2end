@@ -11,6 +11,7 @@ public class PageObjectManager {
     private SignUpPage signUpPage;
     private AccountCreated accountCreated;
     private ProductPage productPage;
+    private TestCasesPage testCasesPage;
 
 
 
@@ -32,6 +33,10 @@ public class PageObjectManager {
     public PageObjectManager(ProductPage productPage){
         this.productPage = productPage;
     }
+    public PageObjectManager(TestCasesPage testCasesPage){
+        this.testCasesPage = testCasesPage
+        ;
+    }
 
 
     public HomePage getHomePage() {
@@ -49,6 +54,10 @@ public class PageObjectManager {
 
     public ProductPage getProductPage() {
         return (productPage == null) ? productPage = new ProductPage(driver) : productPage;
+    }
+
+    public TestCasesPage getTestCasesPage() {
+        return (testCasesPage == null) ? testCasesPage = new TestCasesPage(driver) : testCasesPage;
     }
 
 }

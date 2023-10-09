@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.1 with smoke e2e verify">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductPage.java" afterDir="false" />
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="Verify products quantity in cart">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/TestCasesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/E2E.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/E2E.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/smoke.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/smoke.feature" afterDir="false" />
@@ -87,15 +89,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Registration new user" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Test Cases page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/end2end.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Selenium_AutomationExercise" />
-      <option name="NAME_FILTER" value="^Registration new user$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Registration new user$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Registration new user" />
+      <option name="NAME_FILTER" value="^Verify Test Cases page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Test Cases page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify Test Cases page" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Verify all products and product detail page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Selenium_AutomationExercise" />
+      <option name="NAME_FILTER" value="^Verify all products and product detail page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify all products and product detail page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify all products and product detail page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -142,28 +164,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunnerVerifyContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_AutomationExercise" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.TestRunnerVerifyContent" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Verify all products and product detail page" />
+        <item itemvalue="Cucumber Java.Scenario: Verify Test Cases page" />
         <item itemvalue="Cucumber Java.Scenario: Verify products quantity in cart" />
         <item itemvalue="Cucumber Java.Feature: verifyContent" />
-        <item itemvalue="JUnit.TestRunnerVerifyContent" />
-        <item itemvalue="Cucumber Java.Scenario: Registration new user" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695572884127</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Verify products quantity in cart">
+      <option name="closed" value="true" />
+      <created>1696868244426</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696868244427</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Verify products quantity in cart">
+      <option name="closed" value="true" />
+      <created>1696868332288</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696868332288</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +247,7 @@
     <MESSAGE value=" stage update" />
     <MESSAGE value="stable v.2.1" />
     <MESSAGE value="stable v.2.1 with smoke e2e verify" />
-    <option name="LAST_COMMIT_MESSAGE" value="stable v.2.1 with smoke e2e verify" />
+    <MESSAGE value="Verify products quantity in cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verify products quantity in cart" />
   </component>
 </project>

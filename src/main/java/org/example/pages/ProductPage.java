@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class ProductPage {
 
     final WebDriver driver;
@@ -30,6 +33,18 @@ public class ProductPage {
     WebElement actualQuantity;
     @FindBy(xpath = "//div[@id = 'dismiss-button']")
     WebElement advertDismissButton;
+    @FindBy(xpath = "//div[@class = 'features_items']")
+    WebElement listOfElements;
+    @FindBy(xpath = "//h2[text() = 'Blue Top']")
+    WebElement nameOfProduct;
+    @FindBy(xpath = "//span[text() = 'Rs. 500']")
+    WebElement priceOfProduct;
+    @FindBy(xpath = "//b[text() = 'Availability:']")
+    WebElement availabilityOfProduct;
+    @FindBy(xpath = "//b[text() = 'Condition:']")
+    WebElement conditionOfProduct;
+    @FindBy(xpath = "//b[text() = 'Brand:']")
+    WebElement brandOfProduct;
 
 
     //Methods
@@ -62,5 +77,20 @@ public class ProductPage {
     }
     public String actualQuantity(){
         return actualQuantity.getText();
+    }
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
+    }
+    public boolean isListOfElementsDisplayed(){
+        return listOfElements.isDisplayed();
+    }
+    public String getProductElements(){
+        ArrayList<String> list = new ArrayList<>();
+            list.add(nameOfProduct.getText());
+            list.add(priceOfProduct.getText());
+            list.add(availabilityOfProduct.getText());
+            list.add(conditionOfProduct.getText());
+            list.add(brandOfProduct.getText());
+        return list.toString();
     }
 }
