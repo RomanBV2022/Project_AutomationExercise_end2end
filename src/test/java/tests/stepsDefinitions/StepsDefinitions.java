@@ -24,7 +24,6 @@ public class StepsDefinitions {
 
     @AfterAll
     public static void closeDriver(){
-        getDriver().close();
         getDriver().quit();
     }
 
@@ -32,19 +31,19 @@ public class StepsDefinitions {
 
     // START REGISTRATION
 
-    @Test
+
     @Given("John on HomePage")
     public void johnOnHomePage() {
         createAccountSteps.navigateToHomePage();
     }
 
-    @Test
+
     @Given("John not logged")
     public void johnNotLogged() {
         createAccountSteps.loginStatusTest();
     }
 
-    @Test
+
     @When("John press Signup\\/Login")
     public void johnPressSignupLogin() {
 
@@ -53,7 +52,7 @@ public class StepsDefinitions {
 
     }
 
-    @Test
+
     @When("John put {string} and  {string} in Signup form")
     public void johnPutAndInSignupForm(String nickName, String email) {
         createAccountSteps.signupNameFieldTest(nickName);
@@ -62,7 +61,7 @@ public class StepsDefinitions {
 
     }
 
-    @Test
+
     @When("John put required data in ACCOUNT INFORMATION form: {string} ,DateOfBirth")
     public void johnPutRequiredDataInACCOUNTINFORMATIONForm(String password) {
         createAccountSteps.accountInformationFormTest();
@@ -75,7 +74,7 @@ public class StepsDefinitions {
         createAccountSteps.checkConfirmReceiveSpecialOffersFromOurPartnersTest();
     }
 
-    @Test
+
     @When("John put required data in ADDRESS INFORMATION form: {string}, {string}, {string},  {string}, {string}, {string}, {int},{string}")
     public void johnPutRequiredDataInADDRESSINFORMATIONForm(String firstName, String lastName, String address, String country, String state, String city, Integer zipcode, String phone) {
         createAccountSteps.firstNameInputFieldAddressInfoTest(firstName);
@@ -91,13 +90,13 @@ public class StepsDefinitions {
         createAccountSteps.confirmButtonAccountCreatedMessageTest();
     }
 
-    @Test
+
     @Then("John back to HomePage")
     public void johnBackToHomePage() {
         createAccountSteps.returnToHomePageTest();
     }
 
-    @Test
+
     @Then("John is logged")
     public void johnIsLogged() {
         createAccountSteps.loggedNameInNavBarTest();
@@ -107,13 +106,13 @@ public class StepsDefinitions {
 
     //START LOGOUT
 
-    @Test
+
     @When("John press Logout")
     public void johnPressLogout() {
         logoutSteps.logoutLinkInNavBarTest();
     }
 
-    @Test
+
     @When("John move to LoginPage")
     public void johnMoveToLoginPage() {
         createAccountSteps.loginPageUploadTest();
@@ -122,7 +121,7 @@ public class StepsDefinitions {
 
     //START LOGIN
 
-    @Test
+
     @When("John put {string} and {string} in Login form")
     public void johnPutAndInLoginForm(String email, String password) {
         loginSteps.emailInputLoginFormTest(email);
@@ -133,13 +132,13 @@ public class StepsDefinitions {
 
     //START DELETE
 
-    @Test
+
     @When("Press DeleteAccount")
     public void pressDeleteAccount() {
         deleteAccountSteps.deleteAccountNavBarLinkTest();
     }
 
-    @Test
+
     @When("Confirm Account Deleted message")
     public void confirmAccountDeletedMessage() {
         deleteAccountSteps.deleteAccountMessageTest();
