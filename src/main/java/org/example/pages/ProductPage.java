@@ -46,7 +46,6 @@ public class ProductPage {
     @FindBy(xpath = "//b[text() = 'Brand:']")
     WebElement brandOfProduct;
 
-
     //Methods
     public void clickFirstViewProductButton(){
         JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -32,9 +32,6 @@ public class HomePage {
     @FindBy(xpath = "//li/a[@href = '/products']")
     WebElement buttonProducts;
 
-
-
-
     //Methods
 
     public  void goToHomePage() {

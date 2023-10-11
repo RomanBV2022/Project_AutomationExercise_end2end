@@ -14,7 +14,6 @@ public class PageObjectManager {
     private TestCasesPage testCasesPage;
 
 
-
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
