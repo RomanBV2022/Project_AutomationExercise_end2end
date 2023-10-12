@@ -1,10 +1,7 @@
 package org.example.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,20 +17,14 @@ public class ProductsPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//a[@href='/product_details/1']/i[@class='fa fa-plus-square']")
+    @FindBy(xpath = "//a[@href=\"/product_details/1\"]/i[@class='fa fa-plus-square']")
     WebElement viewProductFirst_xpath;
-//    @FindBy(xpath = "//div[@class='overlay-content']/a[@data-product-id='1']")
-//    WebElement AddToCardOnProductsPage;
-    @FindBy(xpath = "//*[@name='quantity']")
+
+    @FindBy(xpath = "//*[@name=\"quantity\"]")
     WebElement inputQuantityProductFirst_xpath;
-    @FindBy(xpath = "//img[@src='/get_product_picture/1']")
-    WebElement productFirstFoto;
-    @FindBy(xpath = "//img[@src='/get_product_picture/2']")
-    WebElement productSecondFoto;
-    @FindBy(xpath = "//div[@class='overlay-content']/a[@data-product-id='1']")
-    WebElement addToCartProductFirst_xpath;
-    @FindBy(xpath = "//div[@class='overlay-content']/a[@data-product-id='2']")
-    WebElement addToCartProductSecond_xpath;
+
+    @FindBy(xpath = "//button[@class='btn btn-default cart']")
+    WebElement addTocart_xpath;
 
     @FindBy(xpath = "//li/a[@href='/view_cart']")
     WebElement viewCart_xpath;
@@ -56,9 +47,6 @@ public class ProductsPage {
     @FindBy(xpath = "//b[text()='Brand:']")
     WebElement brandOfProducts;
 
-    @FindBy(xpath = "//div[@class='modal-footer']/button")
-    WebElement buttonContinueShopping;
-
     public void waitForAndViewCartClick() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         WebElement viewCartElement = wait.until(ExpectedConditions.visibilityOf(viewCart_xpath));
@@ -73,28 +61,11 @@ public class ProductsPage {
         inputQuantityProductFirst_xpath.clear();
         inputQuantityProductFirst_xpath.sendKeys(Integer.toString(i));
     }
-    public void moveToProductSlotFirst(){
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", productFirstFoto);
-        productFirstFoto.click();
-    }
-    public void moveToProductSlotSecond(){
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", productSecondFoto);
-        productSecondFoto.click();
+
+    public void clickAddToCart() {
+          addTocart_xpath.click();
     }
 
-    public void clickAddToCartProductFirst()  {
-
-        addToCartProductFirst_xpath.click();
-
-    }
-
-    public void clickAddToCartProductSecond() {
-//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartProductSecond_xpath);
-        addToCartProductSecond_xpath.click();
-    }
-    public void clickContinueShopping(){
-        buttonContinueShopping.click();
-    }
     public String getCurrentUrl(){ return driver.getCurrentUrl();}
 
     public boolean isListOfElementsDisplayed(){

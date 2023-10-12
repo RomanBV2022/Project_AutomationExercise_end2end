@@ -27,22 +27,22 @@ public class HomePage {
     WebElement logOut;
     @FindBy(xpath = "//li[5]/a[@href=\"/delete_account\"]")
     WebElement deleteAccount;
-    @FindBy(xpath = "//li/a[@href = '/test_cases']")
-    WebElement buttonTestCase;
-//    @FindBy(xpath = "//li/a[@href = '/products']")
-//    WebElement buttonProducts;
+    @FindBy(xpath = "//a[@href='/products']")
+    WebElement productsLink_xpath;
+
     @FindBy(xpath = "//li/a[@href='/test_cases']")
     WebElement testCasesLink_xpath;
 
-    @FindBy(xpath = "//a[@href='/products']")
-    WebElement productsLink_xpath;
     @FindBy(xpath = "//a[@data-product-id='1']")
     WebElement viewProductFirstOnHome_xpath;
 
+
+
+
     //Methods
 
-    public  void goToHomePage() {
-        driver.get("https://automationexercise.com");
+    public void goToHomePage() {
+        driver.get("http://automationexercise.com");
     }
 
     public String notLogged() {
@@ -50,22 +50,17 @@ public class HomePage {
         return login.getText();
     }
 
-
-    public String getLoginLogoutBtnText(){
-        return login.getText();
-    }
     public void clickLogin() {
-        if(getLoginLogoutBtnText().equals("Signup / Login")){
+        if(login.getText().equals("Signup / Login")){
             login.click();
         }
-        else if(getLoginLogoutBtnText().equals("Logout")){
+        else if(login.getText().equals("Logout")){
             login.click();
         }
         else {
             System.out .println(login.getText());
 
         }
-
 
     }
 
@@ -95,11 +90,4 @@ public class HomePage {
     }
 
 
-    public void clickTestCaseButton(){
-        buttonTestCase.click();
-    }
-
-//    public void clickProductsButton(){
-//        buttonProducts.click();
-//    }
 }

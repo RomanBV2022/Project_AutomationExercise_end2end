@@ -12,10 +12,10 @@ public class TestCasesPage {
         PageFactory.initElements(driver, this);
     }
 
-    //Locators
-
-    //Methods
-    public String getCurrentUrl(){
-        return driver.getCurrentUrl();
+    public WebDriver getDriver() {
+        return driver;
     }
+
+    public String getCurrentUrl(){ return driver.getCurrentUrl();}
+
 }
