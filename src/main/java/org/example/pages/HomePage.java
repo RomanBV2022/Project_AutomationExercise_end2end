@@ -41,7 +41,7 @@ public class HomePage {
 
     //Methods
 
-    public  void goToHomePage() {
+    public void goToHomePage() {
         driver.get("http://automationexercise.com");
     }
 
@@ -70,6 +70,9 @@ public class HomePage {
 
     public String checkNameUser() {
         return nameUser.getText();
+    }
+    public void deleteAccount(){
+        deleteAccount.click();
     }
 
     public void clickLogOut() {
