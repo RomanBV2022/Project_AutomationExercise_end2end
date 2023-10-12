@@ -27,6 +27,14 @@ public class HomePage {
     WebElement logOut;
     @FindBy(xpath = "//li[5]/a[@href=\"/delete_account\"]")
     WebElement deleteAccount;
+    @FindBy(xpath = "//a[@href='/products']")
+    WebElement productsLink_xpath;
+
+    @FindBy(xpath = "//li/a[@href='/test_cases']")
+    WebElement testCasesLink_xpath;
+
+    @FindBy(xpath = "//a[@data-product-id='1']")
+    WebElement viewProductFirstOnHome_xpath;
 
 
 
@@ -73,9 +81,13 @@ public class HomePage {
     public void clickDeleteAccount() {
         deleteAccount.click();
     }
-
-
-
+    public void clickProductsPage() {
+        productsLink_xpath.click();
+    }
+    public void clickTestCasesPage() {testCasesLink_xpath.click();}
+    public void clickViewProductFirstOnHome() {
+        viewProductFirstOnHome_xpath.click();
+    }
 
 
 }

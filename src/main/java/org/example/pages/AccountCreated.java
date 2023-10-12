@@ -51,12 +51,5 @@ public class AccountCreated {
         return getHomePage.getText();
     }
 
-    public void clickDismissAdd() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        if (driver.getPageSource()!= "https://automationexercise.com/") {
-            driver.get("https://automationexercise.com/");
-        }
-
-    }
 
 }

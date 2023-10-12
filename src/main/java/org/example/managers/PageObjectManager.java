@@ -10,26 +10,15 @@ public class PageObjectManager {
     private LoginPage loginPage;
     private SignUpPage signUpPage;
     private AccountCreated accountCreated;
+    private ProductsPage productsPage;
+    private CartPage cartPage;
+    private TestCasesPage testCasesPage;
 
-    private AccountDelete accountDelete;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public PageObjectManager(HomePage homePage) {
-        this.homePage = homePage;
-    }
-    public PageObjectManager(LoginPage loginPage) {
-        this.loginPage = loginPage;
-    }
-    public PageObjectManager(SignUpPage signUpPage) {
-        this.signUpPage= signUpPage;
-    }
-    public PageObjectManager(AccountCreated accountCreated) {
-        this.accountCreated = accountCreated;
-    }
-    public PageObjectManager(AccountDelete accountDelete){this.accountDelete = accountDelete;}
 
     public HomePage getHomePage() {
         return (homePage == null) ? homePage = new HomePage(driver) : homePage;
@@ -37,14 +26,20 @@ public class PageObjectManager {
     public LoginPage getLoginPage() {
         return (loginPage==null) ? loginPage = new LoginPage(driver) : loginPage;
     }
+    public ProductsPage getProductsPage() {
+        return (productsPage==null) ? productsPage = new ProductsPage(driver) : productsPage;}
+
     public SignUpPage getSignUpPage() {
         return (signUpPage == null) ? signUpPage = new SignUpPage(driver) : signUpPage;
     }
     public  AccountCreated getAccountCreated() {
         return (accountCreated == null) ? accountCreated= new AccountCreated(driver) : accountCreated;
     }
-    public AccountDelete getAccountDelete(){
-        return (accountDelete == null) ? accountDelete = new AccountDelete(driver) : accountDelete;
-    }
+
+    public CartPage getCartPage() {
+        return (cartPage==null) ? cartPage = new  CartPage(driver) : cartPage;}
+
+    public  TestCasesPage getTestCasesPage(){
+        return (testCasesPage==null) ? testCasesPage = new  TestCasesPage(driver) : testCasesPage;}
 
 }
