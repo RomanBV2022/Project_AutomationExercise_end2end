@@ -20,14 +20,14 @@
         <org.slf4j.version>2.0.9</org.slf4j.version>
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
         <junit.version>4.13.2</junit.version>
-        <selenium.version>4.13.0</selenium.version>
+        <selenium.version>4.14.1</selenium.version>
         <webdrivermanager.version>5.5.3</webdrivermanager.version>
         <cucumber.version>7.14.0</cucumber.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <allure-cucumber7-jvm.version>2.24.0</allure-cucumber7-jvm.version>
         <gherkin.version>26.2.0</gherkin.version>
         <cluecumber-maven.version>3.4.0</cluecumber-maven.version>
-
+        <httpclient5.version>5.2.1</httpclient5.version>
     </properties>
 
     <dependencies>
@@ -45,9 +45,26 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents.client5</groupId>
+                    <artifactId>httpclient5</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+
         </dependency>
-
-
 
         <!-- Cucumber -->
         <dependency>
@@ -79,6 +96,12 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
             <version>${allure-cucumber7-jvm.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -89,6 +112,16 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>${allure-cucumber7-jvm.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-launcher</artifactId>
+                </exclusion>
+            </exclusions>
 
         </dependency>
 
@@ -106,13 +139,6 @@
             <version>${junit.version}</version>
 
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.jupiter.version}</version>
-
-        </dependency>
-
 
         <!-- Logging -->
         <dependency>
@@ -127,6 +153,27 @@
 
         </dependency>
 
+<!-- VERSIONS CONTROL REPAIR -->
+
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.2.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.13.0</version>
+        </dependency>
 
     </dependencies>
 
@@ -181,7 +228,6 @@
                     <generatedHtmlReportDirectory>${project.basedir}/cluecumber-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
