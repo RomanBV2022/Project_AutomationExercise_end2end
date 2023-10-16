@@ -25,7 +25,6 @@
         <cucumber.version>7.14.0</cucumber.version>
         <httpclient5.version>5.2.1</httpclient5.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <cluecumber-maven.version>3.4.0</cluecumber-maven.version>
     </properties>
 
     <dependencies>
@@ -145,31 +144,13 @@
                 <version>${maven.surefire.plugin}</version>
                 <configuration>
                     <includes>
-                        <include>**/Test*.java</include>
+                        <include>**/*Tests.java</include>
                     </includes>
                     <properties>
                         <configurationParameters>
                             cucumber.junit-platform.naming-strategy=long
                         </configurationParameters>
                     </properties>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.trivago.rta</groupId>
-                <artifactId>cluecumber-maven</artifactId>
-                <version>${cluecumber-maven.version}</version>
-                <executions>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>reporting</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceJsonReportDirectory>${project.basedir}/reports/cucumber-json-report</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>${project.basedir}/reports/cluecumber-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
 
