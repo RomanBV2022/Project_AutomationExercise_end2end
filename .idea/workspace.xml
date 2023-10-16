@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="Scenario: Verify products quantity in cart" />
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="Rebase stage 2.0">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/TestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/TestSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/smoke.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/smoke.feature" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,29 +30,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="c2893f99-4adb-465e-b578-4c9aeb144205" />
-        <option name="url" value="https://github.com/RomanBV2022/Project_AutomationExercise_end2end.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2TFPXCvM3mDiSm5dkyLQHjsHsbj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,11 +47,17 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tzipi/IdeaProjects/JenkinsQA_06&quot;,
+// SHBranch
+    &quot;git-widget-placeholder&quot;: &quot;SHBranch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/QA_For_Everyone/Cucumber_Project&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Disk D/Java-Selenium/Timofej_DriverManager&quot;,
+// main
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -75,15 +69,14 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestRunner">
-    <configuration name="Scenario: Verify Test Cases page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: verifyContent (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Selenium_AutomationExercise" />
-      <option name="NAME_FILTER" value="^Verify Test Cases page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Test Cases page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify Test Cases page" />
+      <module name="Project_AutomationExercise_end2end" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: verifyContent" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -95,15 +88,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Verify all products and product detail page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Search product" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/E2E.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Selenium_AutomationExercise" />
-      <option name="NAME_FILTER" value="^Verify all products and product detail page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify all products and product detail page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify all products and product detail page" />
+      <module name="Project_AutomationExercise_end2end" />
+      <option name="NAME_FILTER" value="^Search product$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Search product$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Search product" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -115,22 +108,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Verify products quantity in cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
-      <option name="GLUE" value="stepDefinitions" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Selenium_AutomationExercise" />
-      <option name="NAME_FILTER" value="^Verify products quantity in cart$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify products quantity in cart$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify products quantity in cart" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+    <configuration name="TestRunner (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_AutomationExercise_end2end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="PATTERN" value="runners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="runners" />
+      <option name="MAIN_CLASS_NAME" value="runners.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,12 +153,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Selenium_AutomationExercise" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Selenium_AutomationExercise" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestRunner" />
-        <item itemvalue="Cucumber Java.Scenario: Verify products quantity in cart" />
-        <item itemvalue="Cucumber Java.Scenario: Verify Test Cases page" />
-        <item itemvalue="Cucumber Java.Scenario: Verify all products and product detail page" />
+        <item itemvalue="Cucumber Java.Scenario: Search product" />
+        <item itemvalue="JUnit.TestRunner (1)" />
+        <item itemvalue="Cucumber Java.Feature: verifyContent (1)" />
         <item itemvalue="JUnit.TestRunnerVerifyContent" />
       </list>
     </recent_temporary>
@@ -212,84 +213,39 @@
       <option name="project" value="LOCAL" />
       <updated>1695572884127</updated>
     </task>
-    <task id="LOCAL-00005" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695795326917</created>
+    <task id="LOCAL-00005" summary="Verify products quantity in cart">
+      <option name="closed" value="true" />
+      <created>1696868244426</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1695795326918</updated>
+      <updated>1696868244427</updated>
     </task>
-    <task id="LOCAL-00006" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695818031697</created>
+    <task id="LOCAL-00006" summary="Verify products quantity in cart">
+      <option name="closed" value="true" />
+      <created>1696868332288</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1695818031697</updated>
+      <updated>1696868332288</updated>
     </task>
-    <task id="LOCAL-00007" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695818212044</created>
+    <task id="LOCAL-00007" summary="Verify all products and product detail page">
+      <option name="closed" value="true" />
+      <created>1696872699653</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1695818212044</updated>
+      <updated>1696872699653</updated>
     </task>
-    <task id="LOCAL-00008" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695834949369</created>
+    <task id="LOCAL-00008" summary="Rebase stage 2.0">
+      <option name="closed" value="true" />
+      <created>1697487904663</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1695834949369</updated>
+      <updated>1697487904663</updated>
     </task>
-    <task id="LOCAL-00009" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695837798673</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1695837798673</updated>
-    </task>
-    <task id="LOCAL-00010" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695839264450</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1695839264450</updated>
-    </task>
-    <task id="LOCAL-00011" summary="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart">
-      <created>1695931907944</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1695931907944</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Scenario: Verify products quantity in cart">
-      <created>1695943103703</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1695943103703</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Scenario: Verify products quantity in cart">
-      <created>1695943154729</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1695943154729</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Scenario: Verify products quantity in cart">
-      <created>1695945014123</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1695945014123</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Scenario: Verify products quantity in cart">
-      <created>1697068490875</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1697068490875</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,22 +265,10 @@
     <MESSAGE value=" stage update" />
     <MESSAGE value="stable v.2.1" />
     <MESSAGE value="stable v.2.1 with smoke e2e verify" />
-    <MESSAGE value="1.на Homepage  добавляем WebElement viewProductFirst_xpath&#10;   и метод  public void clickViewProductFirst&#10;2.создаем класс ProductsPage&#10;  добавляем &#10;            WebElement inputQuantityProductFirst_xpath;&#10;            WebElement addTocart_xpath;&#10;            WebElement viewCart_xpath;&#10;     метод &#10;            inputQuantityProductFirst(int quantity)&#10;            clickAddToCart()&#10;            viewCart_xpath.click()&#10;3.создаем класс CartPag&#10;  добавляем &#10;            WebElement productNameInCart_xpath;&#10;            WebElement quantityProductInCart_xpath;&#10;      метод&#10;            String showProductNameInCart()&#10;            String showQuantityInCart()&#10;4.в классе Steps поля нов. страниц плюс getters &#10;  заполняем шаги Scenario: Verify products quantity in cart" />
-    <MESSAGE value="Scenario: Verify products quantity in cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scenario: Verify products quantity in cart" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint type="java-exception">
-          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="Verify products quantity in cart" />
+    <MESSAGE value="Verify all products and product detail page" />
+    <MESSAGE value="Rebase stage 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebase stage 2.0" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
