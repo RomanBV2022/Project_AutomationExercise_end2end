@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import io.cucumber.java.zh_cn.而且;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

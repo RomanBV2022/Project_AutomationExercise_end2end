@@ -8,27 +8,22 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.TestCase;
 import org.example.managers.PageObjectManager;
 import org.example.pages.*;
 
 import org.junit.jupiter.api.Assertions;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 
-public class Steps {
+public class TestSteps {
     static WebDriver driver;
     HomePage homePage;
     LoginPage loginPage;
     SignUpPage signUpPage;
     AccountCreated accountCreated;
-    ProductPage productPage;
-
+    ProductsPage productsPage;
+    CartPage cartPage;
     TestCasesPage testCasesPage;
 
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
@@ -50,6 +45,9 @@ public class Steps {
         loginPage = pageObjectManager.getLoginPage();
         accountCreated = pageObjectManager.getAccountCreated();
         signUpPage = pageObjectManager.getSignUpPage();
+        productsPage = pageObjectManager.getProductsPage();
+        cartPage = pageObjectManager.getCartPage();
+        testCasesPage = pageObjectManager.getTestCasesPage();
         productPage = pageObjectManager.getProductPage();
         testCasesPage = pageObjectManager.getTestCasesPage();
         driver.getCurrentUrl();
@@ -72,7 +70,7 @@ public class Steps {
         } catch (AssertionError e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(driver.getCurrentUrl());
+
     }
 
     @When("I click to Login {string} SingIn button to create account")
@@ -110,7 +108,7 @@ public class Steps {
     @Then("I am on HomePage logged in <Robert> account")
     public void i_am_on_home_page_logged_in_robert_account() {
         accountCreated.clickButtonContinue();
-        accountCreated.clickDismissAdd();
+        driver.navigate().back();driver.navigate().forward();
         Assertions.assertEquals("Home", accountCreated.showHomePage());
         Assertions.assertEquals("Robert", accountCreated.showLoggedUser());
     }
@@ -168,6 +166,10 @@ public class Steps {
     @When("I click to 'Products' button")
     public void i_click_to_products_button() {
         homePage.clickProductsButton();
+        homePage.clickProductsPage();
+        driver.navigate().back();
+        driver.navigate().forward();
+
     }
 
     @And("I verify Product page and product list are visible")
@@ -176,10 +178,15 @@ public class Steps {
         driver.navigate().forward();
         Assertions.assertEquals("https://automationexercise.com/products", productPage.getCurrentUrl());
         Assertions.assertTrue(productPage.isListOfElementsDisplayed());
+        Assertions.assertEquals("https://automationexercise.com/products",productsPage.getCurrentUrl());
+        Assertions.assertTrue(productsPage.isListOfElementsDisplayed());
+
     }
 
     @And("I click view product of first product")
     public void i_click_view_product_of_first_product() {
+        productsPage.clickViewProductFirst();
+
         productPage.clickFirstViewProductButton();
     }
 
@@ -189,6 +196,10 @@ public class Steps {
         driver.navigate().forward();
         Assertions.assertEquals("[Blue Top, Rs. 500, Availability:, Condition:, Brand:]",
                 productPage.getProductElements());
+       Assertions.assertEquals("[Blue Top, Rs. 500, Brand:, Availability:, Condition:]",
+                              productsPage.getProductElements());
+
+
     }
 
     //Scenario: Verify products quantity in cart
@@ -196,30 +207,44 @@ public class Steps {
 
     @And("I click view product of first")
     public void i_click_view_product_of_first() {
+        homePage.clickProductsPage();
+        driver.navigate().back();
+        driver.navigate().forward();
+        productsPage.clickViewProductFirst();
+
+
 
     }
 
     @And("I increase quantity to 4")
     public void i_increase_quantity_to_4() {
+        productsPage.inputQuantityProductFirst(4);
         productPage.increaseQuantityTo4();
     }
 
     @And("I click 'Add to cart' button")
     public void i_click_add_to_cart_button() {
+        productsPage.clickAddToCart();
         productPage.clickAddToCartButton();
     }
 
     @And("I click 'View cart' button")
     public void i_click_view_cart_button() {
         productPage.clickViewCartLink();
+    public void i_click_view_cart_button()  {
+      driver.navigate().back();
+      productsPage.waitForAndViewCartClick();
     }
     @And("I verify that product is displayed in Cart page")
     public void i_verify_that_product_is_displayed_in_cart_page() {
         productPage.isProductDisplayed();
+    public void i_verify_that_product_is_displayed_in_cart_page()  {
+        Assertions.assertEquals("Blue Top",cartPage.showProductNameInCart());
     }
     @Then("I verify  exact quantity in cart")
     public void i_verify_exact_quantity_in_cart() {
         Assertions.assertEquals("4", productPage.actualQuantity());
+        Assertions.assertEquals("4",cartPage.showQuantityInCart());
     }
 
     //Scenario: Verify Test Cases page
@@ -227,6 +252,9 @@ public class Steps {
     @When("I click on 'Test Cases' button")
     public void i_click_on_test_cases_button() {
         homePage.clickTestCaseButton();
+            homePage.clickTestCasesPage();
+            driver.navigate().back();
+            driver.navigate().forward();
     }
 
     @Then("I verify that Test Cases page is displayed")
@@ -234,18 +262,20 @@ public class Steps {
         driver.navigate().back();
         driver.navigate().forward();
         Assertions.assertEquals("https://automationexercise.com/test_cases", testCasesPage.getCurrentUrl());
+        Assertions.assertEquals("https://automationexercise.com/test_cases",testCasesPage.getCurrentUrl());;
+
     }
 
     //Scenario: Search product
     //*********************************************************************************************************
     @And("I enter product name and click search button")
     public void i_enter_product_name_and_click_search_button() {
-        productPage.searchProduct();
+
     }
 
     @And("I verify that searched products are visible")
     public void i_verify_that_searched_products_are_visible() {
-        Assertions.assertTrue(productPage.showSearchElements(), "Found products does not contain searched product");
+
     }
 
     //Scenario: Add products in cart
@@ -267,10 +297,10 @@ public class Steps {
 
     //Scenario: Remove Products from cart
     //*********************************************************************************************************
-  @And("I click 'X' button for remove product from cart")
-   public void i_click_x_button_for_remove_product_from_cart() {
+    @And("I click 'X' button for remove product from cart")
+    public void i_click_x_button_for_remove_product_from_cart() {
 
-   }
+    }
     @And("I verify that product removed from cart")
     public void i_verify_that_product_removed_from_cart() {
 

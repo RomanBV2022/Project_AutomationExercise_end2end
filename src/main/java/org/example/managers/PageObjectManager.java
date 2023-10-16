@@ -10,6 +10,9 @@ public class PageObjectManager {
     private LoginPage loginPage;
     private SignUpPage signUpPage;
     private AccountCreated accountCreated;
+    private ProductsPage productsPage;
+    private CartPage cartPage;
+    private TestCasesPage testCasesPage;
     private ProductPage productPage;
     private TestCasesPage testCasesPage;
 
@@ -44,6 +47,9 @@ public class PageObjectManager {
     public LoginPage getLoginPage() {
         return (loginPage==null) ? loginPage = new LoginPage(driver) : loginPage;
     }
+    public ProductsPage getProductsPage() {
+        return (productsPage==null) ? productsPage = new ProductsPage(driver) : productsPage;}
+
     public SignUpPage getSignUpPage() {
         return (signUpPage == null) ? signUpPage = new SignUpPage(driver) : signUpPage;
     }
@@ -58,5 +64,7 @@ public class PageObjectManager {
     public TestCasesPage getTestCasesPage() {
         return (testCasesPage == null) ? testCasesPage = new TestCasesPage(driver) : testCasesPage;
     }
+    public CartPage getCartPage() {
+        return (cartPage==null) ? cartPage = new  CartPage(driver) : cartPage;}
 
 }

@@ -64,6 +64,9 @@ public class HomePage {
     public String checkNameUser() {
         return nameUser.getText();
     }
+    public void deleteAccount(){
+        deleteAccount.click();
+    }
 
     public void clickLogOut() {
         logOut.click();
@@ -71,6 +74,14 @@ public class HomePage {
     public void clickDeleteAccount() {
         deleteAccount.click();
     }
+    public void clickProductsPage() {
+        productsLink_xpath.click();
+    }
+    public void clickTestCasesPage() {testCasesLink_xpath.click();}
+    public void clickViewProductFirstOnHome() {
+        viewProductFirstOnHome_xpath.click();
+    }
+
 
     public void clickTestCaseButton(){
         buttonTestCase.click();
