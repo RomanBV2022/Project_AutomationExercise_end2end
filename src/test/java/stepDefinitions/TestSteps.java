@@ -60,17 +60,15 @@ public class TestSteps {
     @Given("I am on HomePage")
     public void i_am_on_home_page() {
         homePage.goToHomePage();
-        driver.getCurrentUrl();
+       String url =  driver.getCurrentUrl();
+        Assertions.assertEquals(url,"https://automationexercise.com/");
+
     }
 
     @And("I am not logged")
-    public void i_am_not_logged() throws InterruptedException {
-        try {
-            //Assertions.assertEquals("Signup / Login", homePage.notLogged());
-            System.out.println(driver.getCurrentUrl());
-        } catch (AssertionError e) {
-            System.out.println(e.getMessage());
-        }
+    public void i_am_not_logged() {
+                Assertions.assertEquals("Signup / Login", homePage.getLoginLogoutBtnText());
+
 
     }
 

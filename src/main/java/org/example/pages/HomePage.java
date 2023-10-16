@@ -42,7 +42,7 @@ public class HomePage {
     //Methods
 
     public  void goToHomePage() {
-        driver.get("http://automationexercise.com");
+        driver.get("https://automationexercise.com");
     }
 
     public String notLogged() {
@@ -50,11 +50,15 @@ public class HomePage {
         return login.getText();
     }
 
+
+    public String getLoginLogoutBtnText(){
+        return login.getText();
+    }
     public void clickLogin() {
-        if(login.getText().equals("Signup / Login")){
+        if(getLoginLogoutBtnText().equals("Signup / Login")){
             login.click();
         }
-        else if(login.getText().equals("Logout")){
+        else if(getLoginLogoutBtnText().equals("Logout")){
             login.click();
         }
         else {
