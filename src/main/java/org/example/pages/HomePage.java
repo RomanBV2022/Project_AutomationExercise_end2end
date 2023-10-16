@@ -31,6 +31,13 @@ public class HomePage {
     WebElement buttonTestCase;
     @FindBy(xpath = "//li/a[@href = '/products']")
     WebElement buttonProducts;
+    @FindBy(xpath = "//li/a[@href='/test_cases']")
+    WebElement testCasesLink_xpath;
+
+    @FindBy(xpath = "//a[@href='/products']")
+    WebElement productsLink_xpath;
+    @FindBy(xpath = "//a[@data-product-id='1']")
+    WebElement viewProductFirstOnHome_xpath;
 
     //Methods
 
@@ -54,6 +61,7 @@ public class HomePage {
             System.out .println(login.getText());
 
         }
+
 
     }
 

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="stable v.2.1 with smoke e2e verify">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Steps.java" afterDir="false" />
+    <list default="true" id="23d0fdb5-30c9-4ac6-ad6e-e66ca3773119" name="Changes" comment="Rebase stage 2.0">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/TestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/TestSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/smoke.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/smoke.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
       <recent name="stepDefinitions" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Search product">
+  <component name="RunManager" selected="JUnit.TestRunner">
     <configuration name="Feature: verifyContent (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/verifyContent.feature" />
@@ -153,12 +153,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Selenium_AutomationExercise" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Selenium_AutomationExercise" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="Cucumber Java.Scenario: Search product" />
         <item itemvalue="JUnit.TestRunner (1)" />
         <item itemvalue="Cucumber Java.Feature: verifyContent (1)" />
-        <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="JUnit.TestRunnerVerifyContent" />
       </list>
     </recent_temporary>
@@ -224,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696872699653</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rebase stage 2.0">
+      <option name="closed" value="true" />
+      <created>1697487904663</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697487904663</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +267,8 @@
     <MESSAGE value="stable v.2.1 with smoke e2e verify" />
     <MESSAGE value="Verify products quantity in cart" />
     <MESSAGE value="Verify all products and product detail page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verify all products and product detail page" />
+    <MESSAGE value="Rebase stage 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebase stage 2.0" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
