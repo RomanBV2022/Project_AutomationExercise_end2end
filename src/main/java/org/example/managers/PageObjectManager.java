@@ -1,9 +1,6 @@
 package org.example.managers;
 
-import org.example.pages.AccountCreated;
-import org.example.pages.HomePage;
-import org.example.pages.LoginPage;
-import org.example.pages.SignUpPage;
+import org.example.pages.*;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
@@ -13,13 +10,13 @@ public class PageObjectManager {
     private LoginPage loginPage;
     private SignUpPage signUpPage;
     private AccountCreated accountCreated;
-
+    private ProductPage productPage;
+    private TestCasesPage testCasesPage;
 
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
-
     public PageObjectManager(HomePage homePage) {
         this.homePage = homePage;
     }
@@ -31,6 +28,13 @@ public class PageObjectManager {
     }
     public PageObjectManager(AccountCreated accountCreated) {
         this.accountCreated = accountCreated;
+    }
+    public PageObjectManager(ProductPage productPage){
+        this.productPage = productPage;
+    }
+    public PageObjectManager(TestCasesPage testCasesPage){
+        this.testCasesPage = testCasesPage
+        ;
     }
 
 
@@ -47,5 +51,12 @@ public class PageObjectManager {
         return (accountCreated == null) ? accountCreated= new AccountCreated(driver) : accountCreated;
     }
 
+    public ProductPage getProductPage() {
+        return (productPage == null) ? productPage = new ProductPage(driver) : productPage;
+    }
+
+    public TestCasesPage getTestCasesPage() {
+        return (testCasesPage == null) ? testCasesPage = new TestCasesPage(driver) : testCasesPage;
+    }
 
 }

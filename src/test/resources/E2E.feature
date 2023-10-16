@@ -47,21 +47,3 @@ Feature: End2End tests for  'http://automationexercise.com'
     And I verify success message 'Your order has been placed successfully!'
     And  I click Delete button to delete account
     Then <Robert> Account was Deleted
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -13,7 +13,6 @@ Feature: Verify content on 'http://automationexercise.com' and other features
     Then I am on detail page and verify ':' product name, price, availability, condition, brand
 
   Scenario: Verify products quantity in cart
-    And I click view product of first
     And I click view product of first product
     And I increase quantity to 4
     And I click 'Add to cart' button
@@ -24,8 +23,3 @@ Feature: Verify content on 'http://automationexercise.com' and other features
   Scenario: Verify Test Cases page
     When I click on 'Test Cases' button
     Then I verify that Test Cases page is displayed
-
-
-
-
-

@@ -27,9 +27,10 @@ public class HomePage {
     WebElement logOut;
     @FindBy(xpath = "//li[5]/a[@href=\"/delete_account\"]")
     WebElement deleteAccount;
-
-
-
+    @FindBy(xpath = "//li/a[@href = '/test_cases']")
+    WebElement buttonTestCase;
+    @FindBy(xpath = "//li/a[@href = '/products']")
+    WebElement buttonProducts;
 
     //Methods
 
@@ -71,8 +72,11 @@ public class HomePage {
         deleteAccount.click();
     }
 
+    public void clickTestCaseButton(){
+        buttonTestCase.click();
+    }
 
-
-
-
+    public void clickProductsButton(){
+        buttonProducts.click();
+    }
 }

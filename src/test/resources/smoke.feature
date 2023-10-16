@@ -28,32 +28,10 @@ Feature: Smoke tests   create user account, login/logout and delete
     Then  I verify that email exist
 
 
-
-
-
-
-
-
-
   Scenario: Login to <Robert> account with correct email and Delete account
     And  I am login to <Robert`s> account
     And  I click Delete button to delete account
     Then <Robert> Account was Deleted
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #  Scenario Outline: Login to <Robert> account with Incorrect email and Delete account
