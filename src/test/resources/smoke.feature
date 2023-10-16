@@ -21,41 +21,26 @@
 #    And   I am login to <Robert`s> account
 #    And   I click  Logout link for logout from <Robert`s> account
 #    Then  I logout from <Robert`s> account
-
-
+#
+#
 #  Scenario: Register <Robert> with existing email
 #    And   I create <Robert`s> account
 #    Then  I verify that email exist
-
-
+#
+#
 #  Scenario: Login to <Robert> account with correct email and Delete account
 #    And  I am login to <Robert`s> account
 #    And  I click Delete button to delete account
 #    Then <Robert> Account was Deleted
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#  Scenario Outline: Login to <Robert> account with Incorrect email and Delete account
 #
-#    Given I am on HomePage and not logged yet
-#    When I click login and try to login  to "Robert`s" account
-#    And  Type <email> and <password>
-#    Then result is <result>
-#    Examples:
-#      |email|password|result|
-#      |emwe@we.pl|1111|ok   |
-#      |ert@wp.pl |1222|ok   |
+#
+##  Scenario Outline: Login to <Robert> account with Incorrect email and Delete account
+##
+##    Given I am on HomePage and not logged yet
+##    When I click login and try to login  to "Robert`s" account
+##    And  Type <email> and <password>
+##    Then result is <result>
+##    Examples:
+##      |email|password|result|
+##      |emwe@we.pl|1111|ok   |
+##      |ert@wp.pl |1222|ok   |
