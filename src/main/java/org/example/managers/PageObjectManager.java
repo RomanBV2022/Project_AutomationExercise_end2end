@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
 
+    private ProductPage productPage;
     private WebDriver driver;
     private HomePage homePage;
     private LoginPage loginPage;
@@ -16,10 +17,12 @@ public class PageObjectManager {
     private ProductPage productPage;
     private TestCasesPage testCasesPage;
 
+    private AccountDelete accountDelete;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
+
     public PageObjectManager(HomePage homePage) {
         this.homePage = homePage;
     }
@@ -32,7 +35,12 @@ public class PageObjectManager {
     public PageObjectManager(AccountCreated accountCreated) {
         this.accountCreated = accountCreated;
     }
-    public PageObjectManager(ProductPage productPage){
+
+    public PageObjectManager(AccountDelete accountDelete) {
+        this.accountDelete = accountDelete;
+    }
+
+    public PageObjectManager(ProductPage productPage) {
         this.productPage = productPage;
     }
     public PageObjectManager(TestCasesPage testCasesPage){
@@ -56,6 +64,9 @@ public class PageObjectManager {
     public  AccountCreated getAccountCreated() {
         return (accountCreated == null) ? accountCreated= new AccountCreated(driver) : accountCreated;
     }
+    public AccountDelete getAccountDelete(){
+        return (accountDelete == null) ? accountDelete = new AccountDelete(driver) : accountDelete;
+    }
 
     public ProductPage getProductPage() {
         return (productPage == null) ? productPage = new ProductPage(driver) : productPage;
@@ -67,4 +78,8 @@ public class PageObjectManager {
     public CartPage getCartPage() {
         return (cartPage==null) ? cartPage = new  CartPage(driver) : cartPage;}
 
-}
+    public CartPage getCartPage() {
+        return (cartPage==null) ? cartPage = new  CartPage(driver) : cartPage;}
+
+    public  TestCasesPage getTestCasesPage(){
+        return (testCasesPage==null) ? testCasesPage = new  TestCasesPage(driver) : testCasesPage;}
