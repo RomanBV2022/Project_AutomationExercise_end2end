@@ -39,10 +39,10 @@ public class Steps {
         System.out.println(driver);
     }
 
-//    @AfterAll
-//    public static void cleanEnvironment() {
-//        driver.quit();
-//    }
+    @AfterAll
+    public static void cleanEnvironment() {
+        driver.quit();
+    }
 
     @Before
     public void uploadPageObjects() {
@@ -240,12 +240,12 @@ public class Steps {
     //*********************************************************************************************************
     @And("I enter product name and click search button")
     public void i_enter_product_name_and_click_search_button() {
-
+        productPage.searchProduct();
     }
 
     @And("I verify that searched products are visible")
     public void i_verify_that_searched_products_are_visible() {
-
+        Assertions.assertTrue(productPage.showSearchElements(), "Found products does not contain searched product");
     }
 
     //Scenario: Add products in cart

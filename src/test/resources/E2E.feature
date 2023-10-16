@@ -12,6 +12,8 @@ Feature: End2End tests for  'http://automationexercise.com'
     And I enter product name and click search button
     And I verify that searched products are visible
 
+
+
   Scenario: Add products in cart
     And I click to 'Products' button
     And I hover over first product and click 'Add to cart'

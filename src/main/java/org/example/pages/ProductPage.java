@@ -7,8 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductPage {
 
@@ -45,24 +46,32 @@ public class ProductPage {
     WebElement conditionOfProduct;
     @FindBy(xpath = "//b[text() = 'Brand:']")
     WebElement brandOfProduct;
+    @FindBy(xpath = "//input[@id=\"search_product\"]")
+    WebElement searchInputField;
+    @FindBy(xpath = "//button[@id='submit_search]")
+    WebElement searchButton;
+    @FindBy(xpath = "//div[@class=\"productinfo text-center\"]//p")
+    List<WebElement> productElements;
 
-    //Methods
-    public void clickFirstViewProductButton(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", firstViewProduct);
+
+            //Methods
+            public void clickFirstViewProductButton(){
+            JavascriptExecutor js=(JavascriptExecutor) driver;
+            js.executeScript("arguments[0].scrollIntoView();", firstViewProduct);
         firstViewProduct.click();
-    }
+}
 
-    public void increaseQuantityTo4(){
+    public void increaseQuantityTo4() {
         driver.navigate().back();
         driver.navigate().forward();
         quantityField.clear();
         quantityField.sendKeys("4");
     }
 
-    public void clickAddToCartButton(){
+    public void clickAddToCartButton() {
         buttonAddToCart.click();
     }
+
     public void clickViewCartLink() {
         try {
             Thread.sleep(1000);
@@ -71,25 +80,47 @@ public class ProductPage {
         }
         viewCartLink.click();
     }
-    public void isProductDisplayed(){
+
+    public void isProductDisplayed() {
         Assertions.assertTrue(firstViewProduct.isDisplayed());
     }
-    public String actualQuantity(){
+
+    public String actualQuantity() {
         return actualQuantity.getText();
     }
-    public String getCurrentUrl(){
+
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-    public boolean isListOfElementsDisplayed(){
+
+    public boolean isListOfElementsDisplayed() {
         return listOfElements.isDisplayed();
     }
-    public String getProductElements(){
+
+    public String getProductElements() {
         ArrayList<String> list = new ArrayList<>();
-            list.add(nameOfProduct.getText());
-            list.add(priceOfProduct.getText());
-            list.add(availabilityOfProduct.getText());
-            list.add(conditionOfProduct.getText());
-            list.add(brandOfProduct.getText());
+        list.add(nameOfProduct.getText());
+        list.add(priceOfProduct.getText());
+        list.add(availabilityOfProduct.getText());
+        list.add(conditionOfProduct.getText());
+        list.add(brandOfProduct.getText());
         return list.toString();
     }
+
+    public void searchProduct() {
+        searchInputField.clear();
+        searchInputField.sendKeys("women");
+        searchButton.click();
+    }
+
+    public boolean showSearchElements() {
+     for(WebElement element : productElements){
+         if(!element.getText().contains("women")){
+             return false;
+         }
+
+     }
+     return true;
+    }
+
 }
