@@ -74,11 +74,11 @@ public class ProductsPage {
         inputQuantityProductFirst_xpath.sendKeys(Integer.toString(i));
     }
     public void moveToProductSlotFirst(){
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", productFirstFoto);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", productFirstFoto);
         productFirstFoto.click();
     }
     public void moveToProductSlotSecond(){
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", productSecondFoto);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", productSecondFoto);
         productSecondFoto.click();
     }
 
