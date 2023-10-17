@@ -15,17 +15,17 @@ Feature: End2End tests for  'http://automationexercise.com'
   Scenario: Add products in cart
     And I click to 'Products' button
     And I hover over first product and click 'Add to cart'
-    And I click 'Add to cart' button
     And I click 'Continue shopping' button
     And I hover over second product and click 'Add to cart'
-    And I click 'View cart' button
+    And I click 'Continue shopping' button
+    And I click 'Cart' button
     And I verify that product is displayed in Cart page
     Then I verify  exact quantity in cart
 
   Scenario: Remove Products from cart
     And I click to 'Products' button
     And I click 'Add to cart' button
-    And I click 'View cart' button
+    And I click 'Cart' button
     And I verify that product is displayed in Cart page
     And I click 'X' button for remove product from cart
     And I verify that product removed from cart
@@ -37,7 +37,7 @@ Feature: End2End tests for  'http://automationexercise.com'
     And I verify that account created
     Then I am on HomePage logged in <Robert> account
     And I click 'Add to cart' button
-    And I click 'View cart' button
+    And I click 'Cart' button
     And I verify that product is displayed in Cart page
     And I click Proceed to checkout
     And I verify Address Details and Review my Order
