@@ -82,9 +82,10 @@ public class ProductsPage {
         productSecondFoto.click();
     }
 
-    public void clickAddToCartProductFirst() {
+    public void clickAddToCartProductFirst()  {
 
         addToCartProductFirst_xpath.click();
+
     }
 
     public void clickAddToCartProductSecond() {

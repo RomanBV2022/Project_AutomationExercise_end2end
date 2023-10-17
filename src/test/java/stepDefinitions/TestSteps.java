@@ -293,8 +293,8 @@ public class TestSteps {
     public void i_hover_over_first_product_and_click_add_to_cart() {
 
         productsPage.moveToProductSlotFirst();
-
         productsPage.clickAddToCartProductFirst();
+
     }
 
     @And("I click 'Continue shopping' button")
