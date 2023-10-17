@@ -13,7 +13,9 @@ import org.example.pages.*;
 
 import org.junit.jupiter.api.Assertions;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 
 public class TestSteps {
@@ -165,7 +167,7 @@ public class TestSteps {
     //*********************************************************************************************************
     @When("I click to 'Products' button")
     public void i_click_to_products_button() {
-        homePage.clickProductsButton();
+//        homePage.clickProductsButton();
         homePage.clickProductsPage();
         driver.navigate().back();
         driver.navigate().forward();
@@ -223,13 +225,12 @@ public class TestSteps {
 
     @And("I click 'Add to cart' button")
     public void i_click_add_to_cart_button() {
-        productsPage.clickAddToCart();
+//        productsPage.clickAddToCart();
         productPage.clickAddToCartButton();
     }
 
-    @And("I click 'View cart' button")
-
-    public void i_click_view_cart_button() {
+    @And("I click 'Cart' button")
+    public void i_click_cart_button() {
         driver.navigate().back();
         productsPage.waitForAndViewCartClick();
     }
@@ -291,16 +292,21 @@ public class TestSteps {
     @And("I hover over first product and click 'Add to cart'")
     public void i_hover_over_first_product_and_click_add_to_cart() {
 
+        productsPage.moveToProductSlotFirst();
+
+        productsPage.clickAddToCartProductFirst();
     }
 
     @And("I click 'Continue shopping' button")
     public void i_click_continue_shopping_button() {
-
+        productsPage.clickContinueShopping();
     }
 
     @And("I hover over second product and click 'Add to cart'")
     public void i_hover_over_second_product_and_click_add_to_cart() {
+        productsPage.moveToProductSlotSecond();
 
+        productsPage.clickAddToCartProductSecond();
     }
 
     //Scenario: Remove Products from cart
