@@ -34,7 +34,7 @@ public class TestSteps {
     @BeforeAll
     public static void setupEnvironment() {
         driver = WebDriverSetup.turnOnDriver();
-        System.out.println(driver);
+
     }
 
     @AfterAll
@@ -53,7 +53,7 @@ public class TestSteps {
         testCasesPage = pageObjectManager.getTestCasesPage();
         productPage = pageObjectManager.getProductPage();
         testCasesPage = pageObjectManager.getTestCasesPage();
-        driver.getCurrentUrl();
+
     }
 
 
@@ -62,14 +62,14 @@ public class TestSteps {
     @Given("I am on HomePage")
     public void i_am_on_home_page() {
         homePage.goToHomePage();
-       String url =  driver.getCurrentUrl();
-        Assertions.assertEquals(url,"https://automationexercise.com/");
+        String url = driver.getCurrentUrl();
+        Assertions.assertEquals(url, "https://automationexercise.com/");
 
     }
 
     @And("I am not logged")
     public void i_am_not_logged() {
-                Assertions.assertEquals("Signup / Login", homePage.getLoginLogoutBtnText());
+        Assertions.assertEquals("Signup / Login", homePage.getLoginLogoutBtnText());
 
 
     }
@@ -180,9 +180,6 @@ public class TestSteps {
         driver.navigate().forward();
         Assertions.assertEquals("https://automationexercise.com/products", productPage.getCurrentUrl());
         Assertions.assertTrue(productPage.isListOfElementsDisplayed());
-        Assertions.assertEquals("https://automationexercise.com/products", productsPage.getCurrentUrl());
-        Assertions.assertTrue(productsPage.isListOfElementsDisplayed());
-
     }
 
     @And("I click view product of first product")
@@ -196,10 +193,8 @@ public class TestSteps {
     public void i_am_on_detail_page_and_verify_product_name_price_availability_condition_brand() {
         driver.navigate().back();
         driver.navigate().forward();
-        Assertions.assertEquals("[Blue Top, Rs. 500, Availability:, Condition:, Brand:]",
-                productPage.getProductElements());
-        Assertions.assertEquals("[Blue Top, Rs. 500, Brand:, Availability:, Condition:]",
-                productsPage.getProductElements());
+        Assertions.assertEquals("[Blue Top, Rs. 500, Availability:, Condition:, Brand:]", productPage.getProductElements());
+        Assertions.assertEquals("[Blue Top, Rs. 500, Brand:, Availability:, Condition:]", productsPage.getProductElements());
 
 
     }
@@ -238,8 +233,7 @@ public class TestSteps {
     @And("I verify that product is displayed in Cart page")
     public void i_verify_that_product_is_displayed_in_cart_page() {
         productPage.isProductDisplayed();
-        Assertions.assertEquals("Blue Top",
-                cartPage.showProductNameInCart());
+        Assertions.assertEquals("Blue Top", cartPage.showProductNameInCart());
     }
 
 //    public void i_verify_that_product_is_displayed_in_cart_page() {
@@ -291,10 +285,8 @@ public class TestSteps {
 
     @And("I hover over first product and click 'Add to cart'")
     public void i_hover_over_first_product_and_click_add_to_cart() {
-
         productsPage.moveToProductSlotFirst();
         productsPage.clickAddToCartProductFirst();
-
     }
 
     @And("I click 'Continue shopping' button")
@@ -305,7 +297,6 @@ public class TestSteps {
     @And("I hover over second product and click 'Add to cart'")
     public void i_hover_over_second_product_and_click_add_to_cart() {
         productsPage.moveToProductSlotSecond();
-
         productsPage.clickAddToCartProductSecond();
     }
 
