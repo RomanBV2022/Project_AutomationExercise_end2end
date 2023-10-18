@@ -12,6 +12,7 @@ public class PageObjectManager {
     private AccountCreated accountCreated;
     private ProductPage productPage;
     private TestCasesPage testCasesPage;
+    private ViewCartPage viewCartPage;
 
 
     public PageObjectManager(WebDriver driver) {
@@ -32,11 +33,8 @@ public class PageObjectManager {
     public PageObjectManager(ProductPage productPage){
         this.productPage = productPage;
     }
-    public PageObjectManager(TestCasesPage testCasesPage){
-        this.testCasesPage = testCasesPage
-        ;
-    }
-
+    public PageObjectManager(TestCasesPage testCasesPage){this.testCasesPage = testCasesPage; }
+    public PageObjectManager(ViewCartPage viewCartPage){this.viewCartPage = viewCartPage; }
 
     public HomePage getHomePage() {
         return (homePage == null) ? homePage = new HomePage(driver) : homePage;
@@ -57,6 +55,9 @@ public class PageObjectManager {
 
     public TestCasesPage getTestCasesPage() {
         return (testCasesPage == null) ? testCasesPage = new TestCasesPage(driver) : testCasesPage;
+    }
+    public ViewCartPage getViewCartPage() {
+        return (viewCartPage == null) ? viewCartPage = new ViewCartPage(driver) : viewCartPage;
     }
 
 }

@@ -16,8 +16,11 @@ import org.junit.jupiter.api.Assertions;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.*;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
@@ -28,8 +31,8 @@ public class Steps {
     SignUpPage signUpPage;
     AccountCreated accountCreated;
     ProductPage productPage;
-
     TestCasesPage testCasesPage;
+    ViewCartPage viewCartPage;
 
     PageObjectManager pageObjectManager = new PageObjectManager(driver);
 
@@ -41,7 +44,7 @@ public class Steps {
 
     @AfterAll
     public static void cleanEnvironment() {
-        driver.quit();
+       driver.quit();
     }
 
     @Before
@@ -52,6 +55,7 @@ public class Steps {
         signUpPage = pageObjectManager.getSignUpPage();
         productPage = pageObjectManager.getProductPage();
         testCasesPage = pageObjectManager.getTestCasesPage();
+        viewCartPage = pageObjectManager.getViewCartPage();
         driver.getCurrentUrl();
     }
 
@@ -206,6 +210,8 @@ public class Steps {
 
     @And("I click 'Add to cart' button")
     public void i_click_add_to_cart_button() {
+        driver.navigate().back();
+        driver.navigate().forward();
         productPage.clickAddToCartButton();
     }
 
@@ -269,11 +275,13 @@ public class Steps {
     //*********************************************************************************************************
   @And("I click 'X' button for remove product from cart")
    public void i_click_x_button_for_remove_product_from_cart() {
-
+      viewCartPage.removeProduct();
    }
     @And("I verify that product removed from cart")
     public void i_verify_that_product_removed_from_cart() {
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Assertions.assertEquals(viewCartPage.getTextEmptyCart(), "Cart is empty!");
     }
 
     //Scenario: Order Product: Register and Login  before purchase

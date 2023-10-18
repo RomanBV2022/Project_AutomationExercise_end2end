@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,11 @@ public class ProductPage {
     //Locators
     @FindBy(xpath = "//a[@href = '/product_details/1']")
     WebElement firstViewProduct;
+    @FindBy(xpath = "//div[@class='overlay-content']//a[@data-product-id='1']")
+    WebElement firstAddToCart;
+
+    @FindBy(xpath = "//a[@href = '/product_details/4']")
+    WebElement fourthViewProduct;
     @FindBy(xpath = "//input[@name = 'quantity']")
     WebElement quantityField;
     @FindBy(xpath = "//button[@class = 'btn btn-default cart']")
@@ -69,6 +76,10 @@ public class ProductPage {
     }
 
     public void clickAddToCartButton() {
+        Actions action = new Actions(driver);
+        action.scrollToElement(fourthViewProduct).perform();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        firstViewProduct.click();
         buttonAddToCart.click();
     }
 
@@ -122,5 +133,9 @@ public class ProductPage {
      }
      return true;
     }
+    public String getTextFirstProduct(){
+                return firstViewProduct.getText();
+    }
+
 
 }
